@@ -1,9 +1,9 @@
-import {useAlert} from "../common/alert/useAlert.ts";
 import {useState} from "react";
 import {ApiHeaders, ApiRequestBody, QueryParams} from "./useApiClient.type.ts";
-import {RootState, store} from "../store/store.ts";
-import {logout} from "../features/auth/slice/authSlice.ts";
 import {useLocation, useNavigate} from "react-router-dom";
+import {useAlert} from "../../common/alert/useAlert.ts";
+import {logout} from "../../features/auth/slice/authSlice.ts";
+import {RootState, store} from "../../store/store.ts";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
