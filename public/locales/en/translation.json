@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "Candidate Review Dashboard",
+    "version": "Version"
+  },
+  "common": {
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "loading": "Loading..."
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "menuManagement": "Menu",
+    "role": "Role",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Sign in to CRD",
+    "subtitle": "Candidate Review Dashboard",
+    "submit": "Sign in",
+    "loading": "Signing in...",
+    "invalid_credentials": "Invalid credentials",
+    "session_expired": "Your session has expired. Please sign in again.",
+    "already_authenticated": "You are already authenticated.",
+    "go_to_dashboard": "Go to Dashboard"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome",
+    "card1": "Card 1",
+    "card2": "Card 2",
+    "card3": "Card 3",
+    "test_alerts": "Test Alert System"
+  },
+  "not_found": {
+    "message": "Page not found",
+    "go_home": "Go to Dashboard"
+  },
+  "themes": {
+    "default": { "name": "Orange", "description": "Default theme" },
+    "blue": { "name": "Blue", "description": "Professional" },
+    "green": { "name": "Green", "description": "Nature" },
+    "indigo": { "name": "Indigo", "description": "Elegant" },
+    "teal": { "name": "Teal", "description": "Fresh" },
+    "rose": { "name": "Rose", "description": "Warm" },
+    "slate": { "name": "Gray", "description": "Minimalist" },
+    "dark": { "name": "Dark", "description": "Classic dark" },
+    "midnight": { "name": "Midnight", "description": "Night blue" }
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Customize your experience",
+    "tab_account": "Account",
+    "tab_theme": "Theme",
+    "personal_data": "Personal Data",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "role": "Role",
+    "theme_section": "Color Theme",
+    "theme_description": "Choose the main interface color",
+    "theme_info": "The selected theme will be saved to your account",
+    "light_themes": "Light Themes",
+    "dark_themes": "Dark Themes",
+    "eye_comfort": "Easy on the eyes",
+    "neutral_background": "Neutral background",
+    "neutral_background_desc": "Use a subtle gray background instead of the theme color",
+    "language_section": "Language",
+    "language_description": "Select the application language"
+  }
+}

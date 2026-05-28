@@ -1,0 +1,95 @@
+# Pattern React e Redux - Candidate Review Dashboard
+
+## Redux Toolkit
+
+### Struttura Feature
+Ogni feature segue questa struttura:
+```
+src/features/nomeFeature/
+├── slice/
+│   ├── nomeFeature.type.ts      # Interfacce e tipi
+│   └── nomeFeatureSlice.ts      # Slice Redux
+├── hooks/
+│   └── useNomeFeature.ts        # Hook principale
+└── api/                         # (opzionale)
+    └── nomeFeature.api.ts
+```
+
+### Hooks Pattern
+Gli hook incapsulano dispatch, selector e API. Il loading è gestito tramite useEffect nei componenti, non nello state Redux:
+
+```typescript
+import {useAppDispatch, useAppSelector} from "../../../store/store.ts";
+import {useApiClient} from "../../../hooks/useApiClient.ts";
+
+export const useCandidates = () => {
+    const dispatch = useAppDispatch();
+    const state = useAppSelector(state => state.candidates);
+    const {get, post} = useApiClient();
+
+    const fetchCandidates = async () => {
+        try {
+            const response = await get<ResponseType>('/candidates');
+            if (!response) {
+                dispatch(setError('Errore nel caricamento'));
+                return null;
+            }
+            dispatch(loadCandidates(response));
+            return {data: response};
+        } catch (error) {
+            const message = error instanceof Error ? error.message : 'Errore sconosciuto';
+            dispatch(setError(message));
+            return null;
+        }
+    };
+
+    return {
+        ...state,
+        fetchCandidates,
+    };
+};
+```
+
+## Context Providers
+
+### Alert System
+```typescript
+import { useAlert } from '../../../common/alert/AlertProvider';
+
+const { showAlert } = useAlert();
+showAlert('success', 'Operazione completata');
+```
+
+### Theme
+```typescript
+import { useTheme } from '../../../common/theme-selector/ThemeContext';
+
+const { theme, setTheme, isDark } = useTheme();
+```
+
+### Language
+```typescript
+import { useLanguage } from '../../../common/language-selector/LanguageContext';
+
+const { language, changeLanguage } = useLanguage();
+```
+
+## Componenti Common
+
+I componenti riutilizzabili sono in `src/common/` organizzati in cartelle:
+```
+src/common/
+├── alert/
+├── drawer/
+├── file-uploader/
+├── pagination/
+└── ...
+```
+
+## Lazy Loading
+
+Le pagine devono essere caricate lazy tranne Login:
+```typescript
+const CandidatesPage = lazy(() => import('../pages/CandidatesPage'));
+const CandidateDetailPage = lazy(() => import('../pages/CandidateDetailPage'));
+```

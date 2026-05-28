@@ -1,0 +1,64 @@
+{
+  "app": {
+    "name": "لوحة مراجعة المرشحين",
+    "version": "الإصدار"
+  },
+  "common": {
+    "close": "إغلاق",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "confirm": "تأكيد",
+    "loading": "جاري التحميل..."
+  },
+  "sidebar": {
+    "dashboard": "لوحة القيادة",
+    "settings": "الإعدادات",
+    "menuManagement": "القائمة",
+    "role": "الدور",
+    "logout": "تسجيل الخروج"
+  },
+  "login": {
+    "title": "تسجيل الدخول",
+    "subtitle": "لوحة مراجعة المرشحين",
+    "submit": "دخول",
+    "loading": "جاري تسجيل الدخول...",
+    "invalid_credentials": "بيانات اعتماد غير صالحة",
+    "session_expired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى.",
+    "already_authenticated": "أنت مسجل الدخول بالفعل.",
+    "go_to_dashboard": "الذهاب إلى لوحة القيادة"
+  },
+  "dashboard": {
+    "title": "لوحة القيادة",
+    "welcome": "مرحبا",
+    "card1": "بطاقة 1",
+    "card2": "بطاقة 2",
+    "card3": "بطاقة 3",
+    "test_alerts": "اختبار نظام التنبيهات"
+  },
+  "not_found": {
+    "message": "الصفحة غير موجودة",
+    "go_home": "العودة إلى لوحة القيادة"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "subtitle": "خصص تجربتك",
+    "tab_account": "الحساب",
+    "tab_theme": "السمة",
+    "personal_data": "البيانات الشخصية",
+    "first_name": "الاسم",
+    "last_name": "اللقب",
+    "role": "الدور",
+    "theme_section": "لون السمة",
+    "theme_description": "اختر اللون الرئيسي للواجهة",
+    "theme_info": "سيتم حفظ السمة المحددة لحسابك",
+    "light_themes": "سمات فاتحة",
+    "dark_themes": "سمات داكنة",
+    "eye_comfort": "مريح للعيون",
+    "neutral_background": "خلفية محايدة",
+    "neutral_background_desc": "استخدم خلفية رمادية بدلاً من لون السمة",
+    "language_section": "اللغة",
+    "language_description": "اختر لغة التطبيق"
+  }
+}

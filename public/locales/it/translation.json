@@ -1,0 +1,75 @@
+{
+  "app": {
+    "name": "Candidate Review Dashboard",
+    "version": "Versione"
+  },
+  "common": {
+    "close": "Chiudi",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "confirm": "Conferma",
+    "loading": "Caricamento..."
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "settings": "Impostazioni",
+    "menuManagement": "Menu",
+    "role": "Ruolo",
+    "logout": "Logout"
+  },
+  "login": {
+    "title": "Accedi a CRD",
+    "subtitle": "Candidate Review Dashboard",
+    "submit": "Accedi",
+    "loading": "Accesso in corso...",
+    "invalid_credentials": "Credenziali non valide",
+    "session_expired": "La tua sessione è scaduta. Per favore, effettua nuovamente l'accesso.",
+    "already_authenticated": "Sei già autenticato nel sistema.",
+    "go_to_dashboard": "Vai alla Dashboard"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Benvenuto",
+    "card1": "Card 1",
+    "card2": "Card 2",
+    "card3": "Card 3",
+    "test_alerts": "Test Sistema Alert"
+  },
+  "not_found": {
+    "message": "Pagina non trovata",
+    "go_home": "Torna alla Dashboard"
+  },
+  "themes": {
+    "default": { "name": "Arancione", "description": "Tema predefinito" },
+    "blue": { "name": "Blu", "description": "Professionale" },
+    "green": { "name": "Verde", "description": "Natura" },
+    "indigo": { "name": "Indaco", "description": "Elegante" },
+    "teal": { "name": "Teal", "description": "Fresco" },
+    "rose": { "name": "Rosa", "description": "Caldo" },
+    "slate": { "name": "Grigio", "description": "Minimalista" },
+    "dark": { "name": "Dark", "description": "Classico scuro" },
+    "midnight": { "name": "Midnight", "description": "Blu notte" }
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "subtitle": "Personalizza la tua esperienza",
+    "tab_account": "Account",
+    "tab_theme": "Tema",
+    "personal_data": "Dati Personali",
+    "first_name": "Nome",
+    "last_name": "Cognome",
+    "role": "Ruolo",
+    "theme_section": "Tema colore",
+    "theme_description": "Scegli il colore principale dell'interfaccia",
+    "theme_info": "Il tema selezionato verrà salvato per il tuo account",
+    "light_themes": "Temi Chiari",
+    "dark_themes": "Temi Scuri",
+    "eye_comfort": "Per riposare gli occhi",
+    "neutral_background": "Sfondo neutro",
+    "neutral_background_desc": "Usa uno sfondo grigio sobrio invece del colore del tema",
+    "language_section": "Lingua",
+    "language_description": "Seleziona la lingua dell'applicazione"
+  }
+}
