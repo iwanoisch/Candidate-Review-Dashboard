@@ -1,26 +1,16 @@
-import { useState, useLayoutEffect, useCallback, ReactNode } from 'react';
+import {useState, useLayoutEffect, useCallback} from 'react';
 import i18n from '../../i18n';
+import {LanguageContext} from '../../hooks/language/LanguageContext';
+import type {LanguageType, LanguageContextValue, LanguageProviderProps} from './language.types';
 import {
-    LanguageType,
-    LanguageContextValue,
-    LanguageContext,
     LANGUAGE_STORAGE_KEY,
     USER_LANGUAGE_PREFIX,
     DEFAULT_LANGUAGE,
     LANGUAGE_OPTIONS,
-    isValidLanguage
-} from './language.types';
+} from '../../constants/language.constant';
+import {getSavedLanguage, isValidLanguage} from '../../utility/language.utils';
 
-const getSavedLanguage = (): LanguageType => {
-    const saved = localStorage.getItem(LANGUAGE_STORAGE_KEY);
-    return isValidLanguage(saved) ? saved : DEFAULT_LANGUAGE;
-};
-
-interface LanguageProviderProps {
-    children: ReactNode;
-}
-
-export const LanguageProvider = ({ children }: LanguageProviderProps) => {
+export const LanguageProvider = ({children}: LanguageProviderProps) => {
     const [currentLanguage, setCurrentLanguage] = useState<LanguageType>(getSavedLanguage);
 
     useLayoutEffect(() => {

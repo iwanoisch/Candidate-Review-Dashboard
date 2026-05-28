@@ -1,18 +1,22 @@
-import {SpinnerProps} from "./spinner.type.ts";
+import {SpinnerProps, SPINNER_SIZES} from "./spinner.type.ts";
 
-export const Spinner = ({ size = 'md' }: SpinnerProps) => {
-    const sizeClasses = {
-        sm: 'h-4 w-4',
-        md: 'h-8 w-8',
-        lg: 'h-12 w-12',
-        xl: 'h-16 w-16'
+export const Spinner = ({size = 'md', centered = false}: SpinnerProps) => {
+    const spinner = (
+        <div
+            className={`inline-block ${SPINNER_SIZES[size]} animate-spin rounded-full border-4 border-solid border-current border-r-transparent`}
+            role="status"
+        >
+            <span className="sr-only">Loading...</span>
+        </div>
+    );
+
+    if (centered) {
+        return (
+            <div className="flex h-screen items-center justify-center">
+                {spinner}
+            </div>
+        );
     }
 
-    return (
-        <div className={`inline-block ${sizeClasses[size]} animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]`}>
-      <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-        Loading...
-      </span>
-        </div>
-    )
-}
+    return spinner;
+};

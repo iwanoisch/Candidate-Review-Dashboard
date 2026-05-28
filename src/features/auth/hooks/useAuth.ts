@@ -2,7 +2,7 @@ import {persistor, useAppDispatch, useAppSelector} from "../../../store/store.ts
 import {loginFailure, loginStart, loginSuccess, logout, restoreAuth} from "../slice/authSlice.ts";
 import {useAlert} from "../../../common/alert/useAlert.ts";
 import {useTheme} from "../../../hooks/theme/useTheme";
-import {useLanguage} from "../../../common/language-selector/useLanguage";
+import {useLanguage} from "../../../hooks/language/useLanguage";
 import {MOCK_USERS} from "../../../data_mock/AUTH_DATA_MOCK.ts";
 import {User} from "../slice/auth.type.ts";
 

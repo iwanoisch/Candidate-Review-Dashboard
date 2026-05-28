@@ -8,18 +8,14 @@ import {Spinner} from "./common/spinner/Spinner.tsx";
 import {ModalDialogProvider} from "./common/modal-dialog/ModalDialogProvider.tsx";
 import {AlertProvider} from "./common/alert/AlertProvider.tsx";
 import {ThemeProvider} from "./common/theme-selector/ThemeProvider.tsx";
-import {LanguageProvider} from "./common/language-selector/LanguageContext.tsx";
+import {LanguageProvider} from "./common/language-selector/LanguageProvider.tsx";
 
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-const loadSpinner = (
-    <div className="flex h-screen items-center justify-center">
-        <Spinner size="xl"/>
-    </div>
-);
+const loadSpinner = <Spinner size="xl" centered/>;
 
 root.render(
     <Provider store={store}>

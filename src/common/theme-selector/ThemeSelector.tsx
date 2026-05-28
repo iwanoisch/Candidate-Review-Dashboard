@@ -1,6 +1,6 @@
 import {SunIcon, SwatchIcon} from '@heroicons/react/24/solid';
 import {useTheme} from '../../hooks/theme/useTheme';
-import {LIGHT_THEMES} from '../../constant/theme.constant';
+import {LIGHT_THEMES} from '../../constants/theme.constant';
 import type {ThemeType} from './theme.type';
 import {useTranslation} from 'react-i18next';
 import {Switch} from '@headlessui/react';
@@ -42,37 +42,37 @@ export const ThemeSelector = () => {
                 </div>
 
                 <div className="mt-6 p-4 rounded-xl bg-slate-50 border border-slate-200">
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <SwatchIcon className="w-5 h-5 text-slate-500"/>
-                                <div>
-                                    <p className="text-sm font-medium text-slate-700">
-                                        {t('settings.neutral_background', 'Sfondo neutro')}
-                                    </p>
-                                    <p className="text-xs text-slate-500">
-                                        {t('settings.neutral_background_desc', 'Usa uno sfondo grigio sobrio invece del colore del tema')}
-                                    </p>
-                                </div>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <SwatchIcon className="w-5 h-5 text-slate-500"/>
+                            <div>
+                                <p className="text-sm font-medium text-slate-700">
+                                    {t('settings.neutral_background', 'Sfondo neutro')}
+                                </p>
+                                <p className="text-xs text-slate-500">
+                                    {t('settings.neutral_background_desc', 'Usa uno sfondo grigio sobrio invece del colore del tema')}
+                                </p>
                             </div>
-                            <Switch
-                                checked={backgroundMode === 'neutral'}
-                                onChange={handleBackgroundModeChange}
-                                className={`
+                        </div>
+                        <Switch
+                            checked={backgroundMode === 'neutral'}
+                            onChange={handleBackgroundModeChange}
+                            className={`
                                     relative inline-flex h-6 w-11 items-center rounded-full transition-colors
                                     focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
                                     ${backgroundMode === 'neutral' ? 'bg-primary-500' : 'bg-slate-300'}
                                 `}
-                            >
-                                <span className="sr-only">{t('settings.neutral_background', 'Sfondo neutro')}</span>
-                                <span
-                                    className={`
+                        >
+                            <span className="sr-only">{t('settings.neutral_background', 'Sfondo neutro')}</span>
+                            <span
+                                className={`
                                         inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform
                                         ${backgroundMode === 'neutral' ? 'translate-x-6' : 'translate-x-1'}
                                     `}
-                                />
-                            </Switch>
-                        </div>
+                            />
+                        </Switch>
                     </div>
+                </div>
             </div>
 
             <p className="text-xs text-slate-500 text-center">

@@ -12,16 +12,12 @@ import {
     ArrowLeftStartOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 import {NavLink, useNavigate} from 'react-router-dom';
-import {subMenuItems, UserRole} from '../../utility/menu-items-utils';
+import {subMenuItems} from '../../constants/menu.constant';
 import {useAuth} from '../../features/auth/hooks/useAuth';
 import LanguageSelector from '../language-selector/LanguageSelector';
 import {useTranslation} from "react-i18next";
-
-type SideBarProps = {
-    showFullSidebar?: boolean;
-    isCollapsed: boolean;
-    onToggle: () => void;
-};
+import {SideBarProps} from "./Sidebar.type.ts";
+import {UserRole} from "../../features/auth/slice/auth.type.ts";
 
 export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBarProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -106,7 +102,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                         <div className="flex items-center justify-between">
                                                             <div className="min-w-0">
                                                                 <p className="text-[10px] uppercase tracking-wider text-white/60 mb-1 font-bold">
-                                                                    {t('sidebar.role', 'Ruolo')}
+                                                                    {user?.role === 'admin' ? 'Admin' : 'Viewer'}
                                                                 </p>
                                                                 <p className="font-bold text-sm text-white truncate">
                                                                     {user?.first_name} {user?.last_name}
@@ -224,10 +220,10 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                     <div
                                                         className={`min-w-0 transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0' : 'opacity-100 max-w-48'}`}>
                                                         <p className="text-[10px] uppercase tracking-wider text-white/60 mb-1 font-bold">
-                                                            {t('sidebar.role', 'Ruolo')}
+                                                            {user?.role === 'admin' ? 'Admin' : 'Viewer'}
                                                         </p>
                                                         <p className="font-bold text-sm text-white truncate">
-                                                            {user?.role === 'admin' ? 'Admin' : 'Viewer'}
+                                                            {user?.first_name} {user?.last_name}
                                                         </p>
                                                     </div>
                                                     <button

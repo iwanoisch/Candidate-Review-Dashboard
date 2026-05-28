@@ -1,12 +1,6 @@
 import {CheckIcon} from '@heroicons/react/24/solid';
 import {useTranslation} from 'react-i18next';
-import type {ThemeOption} from './theme.type';
-
-interface ThemeButtonProps {
-    theme: ThemeOption;
-    isSelected: boolean;
-    onClick: () => void;
-}
+import type {ThemeButtonProps} from './theme.type';
 
 export const ThemeButton = ({theme, isSelected, onClick}: ThemeButtonProps) => {
     const {t} = useTranslation();
@@ -17,9 +11,9 @@ export const ThemeButton = ({theme, isSelected, onClick}: ThemeButtonProps) => {
             className={`
                 relative flex flex-col items-center p-4 rounded-xl border-2 transition-all duration-200
                 ${isSelected
-                    ? 'border-primary-500 bg-primary-50 shadow-md'
-                    : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
-                }
+                ? 'border-primary-500 bg-primary-50 shadow-md'
+                : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
+            }
             `}
         >
             <div

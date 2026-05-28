@@ -11,3 +11,8 @@ export const LIGHT_THEMES: ThemeOption[] = [
 ];
 
 export const THEME_OPTIONS: ThemeOption[] = [...LIGHT_THEMES];
+
+export const THEME_STORAGE_KEY = 'app_theme';
+export const BG_MODE_STORAGE_KEY = 'app_bg_mode';
+export const USER_THEME_PREFIX = 'user_theme_';
+export const USER_BG_MODE_PREFIX = 'user_bg_mode_';

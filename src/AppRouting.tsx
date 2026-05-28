@@ -1,35 +1,20 @@
 import {RootState, useAppDispatch} from "./store/store.ts";
 import {useSelector} from "react-redux";
-import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Layout} from "./components/layout/Layout.tsx";
 import {start} from "./features/init/slice/initSlice.ts";
-import {lazy, Suspense, useEffect, useLayoutEffect} from "react";
+import {lazy, Suspense, useEffect} from "react";
 import {useTranslation} from "react-i18next";
+import {Spinner} from "./common/spinner/Spinner.tsx";
 
 // Import immediati per le pagine iniziali
 import {Login} from "./pages/login/Login.tsx";
+import {ScrollToTop} from "./components/scroll-to-top/ScrollToTop.tsx";
 
 // Lazy loading per le altre pagine
 const Dashboard = lazy(() => import("./pages/dashboard/Dashboard.tsx").then(m => ({default: m.Dashboard})));
 const Settings = lazy(() => import("./pages/settings/Settings.tsx").then(m => ({default: m.Settings})));
 const NotFound = lazy(() => import("./pages/not-found/NotFound.tsx").then(m => ({default: m.NotFound})));
-
-// Scroll to top ad ogni cambio route
-const ScrollToTop = () => {
-    const {pathname} = useLocation();
-    useLayoutEffect(() => {
-        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-    }, [pathname]);
-    return null;
-};
-
-// Componente di loading
-const PageLoader = () => (
-    <div className="flex items-center justify-center h-full min-h-[200px]">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
-    </div>
-);
 
 function AppRouting() {
     const init = useSelector((state: RootState) => state.init);
@@ -48,7 +33,7 @@ function AppRouting() {
         <BrowserRouter>
             <ScrollToTop/>
             <Layout>
-                <Suspense fallback={<PageLoader/>}>
+                <Suspense fallback={<Spinner size="lg" centered/>}>
                     <Routes>
                         <Route path="/" element={<Dashboard/>}/>
                         <Route path="/login" element={<Login/>}/>

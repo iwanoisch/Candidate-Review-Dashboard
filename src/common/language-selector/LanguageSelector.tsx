@@ -1,10 +1,10 @@
+import React, {FC} from "react";
 import {ChevronDownIcon} from "@heroicons/react/24/solid";
 import {LanguageSelectorProps} from "./LanguageSelector.type.ts";
-import {FC} from "react";
 import {useSelector} from 'react-redux';
 import {RootState} from '../../store/store';
-import {useLanguage} from './useLanguage';
-import {LANGUAGE_OPTIONS} from './language.types';
+import {useLanguage} from '../../hooks/language/useLanguage';
+import {LANGUAGE_OPTIONS} from '../../constants/language.constant';
 import type {LanguageType} from './language.types';
 
 const LanguageSelector: FC<LanguageSelectorProps> = ({id, type}) => {

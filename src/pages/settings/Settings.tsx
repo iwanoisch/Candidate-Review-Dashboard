@@ -208,8 +208,6 @@ export const Settings = () => {
                                     </div>
                                 </div>
                             </form>
-
-                            <hr className="border-border-default"/>
                         </div>
                     </TabPanel>
 

@@ -4,7 +4,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState, useCallback} from "react";
 import {Spinner} from "../../common/spinner/Spinner.tsx";
 import {SideBar} from "../../common/side-bar/SideBar.tsx";
-import {SIDEBAR_STORAGE_KEY} from "../../utility/constants.ts";
+import {SIDEBAR_STORAGE_KEY} from "../../constants/layout.constant";
 
 export const Layout = ({children}: LayoutPagePros) => {
     const [isCollapsed, setIsCollapsed] = useState<boolean>(() => {
@@ -62,11 +62,7 @@ export const Layout = ({children}: LayoutPagePros) => {
     if (excludePath.includes(location.pathname)) return <div>{children}</div>;
 
     if (isLoading) {
-        return (
-            <div className="flex h-screen items-center justify-center">
-                <Spinner size="xl"/>
-            </div>
-        );
+        return <Spinner size="xl" centered/>;
     }
 
     return (

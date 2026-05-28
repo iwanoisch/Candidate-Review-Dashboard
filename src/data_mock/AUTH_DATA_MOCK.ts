@@ -7,8 +7,8 @@ export const MOCK_USERS: { email: string; password: string; user: User; token: s
         user: {
             id: "1",
             role: "admin",
-            first_name: "Admin",
-            last_name: "User",
+            first_name: "Gino",
+            last_name: "Strat",
             email: "admin@crd.local",
             name: "Admin User",
             short_name: "AU",

@@ -65,7 +65,7 @@ Located in `src/common/`: Alert, ModalDialog, Spinner, SideBar, Avatar, ThemeSel
 
 ### Navigation
 - Routes defined in `AppRouting.tsx`. Lazy-loaded pages: Dashboard, NotFound. Eager: Login
-- Sidebar menu items in `src/utility/menu-items-utils.ts` with role-based visibility support (`UserRole: 'admin' | 'viewer'`)
+- Sidebar menu items in `src/utility/menu-items.type.ts` with role-based visibility support (`UserRole: 'admin' | 'viewer'`)
 
 ### Path Aliases
 - `@` → `./src`

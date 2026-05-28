@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { LanguageContext } from './language.types';
-import type { LanguageContextValue } from './language.types';
+import {useContext} from 'react';
+import {LanguageContext} from './LanguageContext';
+import type {LanguageContextValue} from '../../common/language-selector/language.types';
 
 export const useLanguage = (): LanguageContextValue => {
     const context = useContext(LanguageContext);

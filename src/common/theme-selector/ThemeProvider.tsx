@@ -1,17 +1,17 @@
 import {useState, useLayoutEffect, useCallback, ReactNode} from 'react';
 import {ThemeContext} from '../../hooks/theme/ThemeContext';
-import {THEME_OPTIONS} from '../../constant/theme.constant';
+import {
+    THEME_OPTIONS,
+    THEME_STORAGE_KEY,
+    BG_MODE_STORAGE_KEY,
+    USER_THEME_PREFIX,
+    USER_BG_MODE_PREFIX,
+} from '../../constants/theme.constant';
 import type {
     ThemeType,
     BackgroundMode,
     ThemeContextValue,
     ThemeOption,
-} from './theme.type';
-import {
-    THEME_STORAGE_KEY,
-    BG_MODE_STORAGE_KEY,
-    USER_THEME_PREFIX,
-    USER_BG_MODE_PREFIX,
 } from './theme.type';
 
 const getSavedTheme = (): ThemeType => {

@@ -1,6 +1,12 @@
 export type ThemeType = 'default' | 'green' | 'blue' | 'indigo' | 'slate' | 'rose' | 'teal';
 export type BackgroundMode = 'themed' | 'neutral';
 
+export interface ThemeButtonProps {
+    theme: ThemeOption;
+    isSelected: boolean;
+    onClick: () => void;
+}
+
 export interface ThemeOption {
     id: ThemeType;
     name: string;
@@ -18,8 +24,3 @@ export interface ThemeContextValue {
     resetTheme: () => void;
     loadUserTheme: (userId: string | number) => void;
 }
-
-export const THEME_STORAGE_KEY = 'app_theme';
-export const BG_MODE_STORAGE_KEY = 'app_bg_mode';
-export const USER_THEME_PREFIX = 'user_theme_';
-export const USER_BG_MODE_PREFIX = 'user_bg_mode_';
