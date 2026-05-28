@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import {
     Dialog,
     DialogBackdrop,
@@ -12,19 +12,23 @@ import {
     ArrowLeftStartOnRectangleIcon,
 } from '@heroicons/react/24/outline';
 import {NavLink, useNavigate} from 'react-router-dom';
-import {subMenuItems} from '../../constants/menu.constant';
+import {MENU_ITEMS} from '../../constants/routes.constant';
 import {useAuth} from '../../features/auth/hooks/useAuth';
 import LanguageSelector from '../language-selector/LanguageSelector';
 import {useTranslation} from "react-i18next";
 import {SideBarProps} from "./Sidebar.type.ts";
-import {UserRole} from "../../features/auth/slice/auth.type.ts";
+import type {UserRole} from "../../features/auth/slice/auth.type.ts";
 
 export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBarProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const {user, logout} = useAuth();
     const navigate = useNavigate();
     const {t} = useTranslation();
-    const [userRole] = useState<UserRole | undefined>(user?.role as UserRole | undefined);
+
+    const visibleMenuItems = useMemo(() => {
+        const role = user?.role as UserRole | undefined;
+        return MENU_ITEMS.filter(route => !route.allowedRoles || (role && route.allowedRoles.includes(role)));
+    }, [user?.role]);
 
     const handleLogout = () => {
         logout();
@@ -64,12 +68,10 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                             <ul role="list" className="flex flex-1 flex-col gap-y-7">
                                                 <li>
                                                     <ul role="list" className="space-y-1">
-                                                        {subMenuItems
-                                                            .filter((item) => !item.role || (userRole && item.role.includes(userRole)))
-                                                            .map((item) => (
-                                                                <li key={item.id}>
+                                                        {visibleMenuItems.map((route) => (
+                                                                <li key={route.menu!.id}>
                                                                     <NavLink
-                                                                        to={item.href}
+                                                                        to={route.path}
                                                                         onClick={() => setSidebarOpen(false)}
                                                                         className={({isActive}) =>
                                                                             `${isActive
@@ -78,17 +80,20 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                                             } flex rounded-xl font-medium items-center transition-all duration-300 gap-3 px-4 py-3`
                                                                         }
                                                                     >
-                                                                        {({isActive}) => (
-                                                                            <>
-                                                                                {item.icon && (
-                                                                                    <item.icon
-                                                                                        className={`size-5 shrink-0 ${isActive ? 'text-white' : 'text-white/70'}`}
-                                                                                        aria-hidden="true"
-                                                                                    />
-                                                                                )}
-                                                                                <span>{t(`sidebar.${item.id}`, item.name)}</span>
-                                                                            </>
-                                                                        )}
+                                                                        {({isActive}) => {
+                                                                            const Icon = route.menu!.icon;
+                                                                            return (
+                                                                                <>
+                                                                                    {Icon && (
+                                                                                        <Icon
+                                                                                            className={`size-5 shrink-0 ${isActive ? 'text-white' : 'text-white/70'}`}
+                                                                                            aria-hidden="true"
+                                                                                        />
+                                                                                    )}
+                                                                                    <span>{t(`sidebar.${route.menu!.id}`, route.menu!.name)}</span>
+                                                                                </>
+                                                                            );
+                                                                        }}
                                                                     </NavLink>
                                                                 </li>
                                                             ))}
@@ -178,13 +183,13 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                                         <li>
                                             <ul role="list" className="space-y-1">
-                                                {subMenuItems
-                                                    .filter((item) => !item.role || (userRole && item.role.includes(userRole)))
-                                                    .map((item) => (
-                                                        <li key={item.id}>
+                                                {visibleMenuItems.map((route) => {
+                                                    const Icon = route.menu!.icon;
+                                                    return (
+                                                        <li key={route.menu!.id}>
                                                             <NavLink
-                                                                to={item.href}
-                                                                title={isCollapsed ? item.name : undefined}
+                                                                to={route.path}
+                                                                title={isCollapsed ? route.menu!.name : undefined}
                                                                 className={({isActive}) =>
                                                                     `${isActive
                                                                         ? 'bg-white/10 text-white shadow-lg backdrop-blur-sm'
@@ -194,21 +199,22 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                             >
                                                                 {({isActive}) => (
                                                                     <>
-                                                                        {item.icon && (
-                                                                            <item.icon
+                                                                        {Icon && (
+                                                                            <Icon
                                                                                 className={`size-5 shrink-0 ${isActive ? 'text-white' : 'text-white/70 group-hover:text-white'}`}
                                                                                 aria-hidden="true"
                                                                             />
                                                                         )}
                                                                         <span
                                                                             className={`whitespace-nowrap transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0' : 'opacity-100 max-w-48'}`}>
-                                                                            {t(`sidebar.${item.id}`, item.name)}
+                                                                            {t(`sidebar.${route.menu!.id}`, route.menu!.name)}
                                                                         </span>
                                                                     </>
                                                                 )}
                                                             </NavLink>
                                                         </li>
-                                                    ))}
+                                                    );
+                                                })}
                                             </ul>
                                         </li>
 
