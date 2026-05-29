@@ -13,11 +13,11 @@ import {
 } from '@heroicons/react/24/outline';
 import {NavLink, useNavigate} from 'react-router-dom';
 import {MENU_ITEMS} from '../../constants/routes.constant';
-import {useAuth} from '../../features/auth/hooks/useAuth';
+import {useAuth} from '../../features/auth/useAuth';
 import LanguageSelector from '../language-selector/LanguageSelector';
 import {useTranslation} from "react-i18next";
 import {SideBarProps} from "./Sidebar.type.ts";
-import type {UserRole} from "../../features/auth/slice/auth.type.ts";
+import type {UserRole} from "../../features/auth/auth.type.ts";
 
 export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBarProps) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);

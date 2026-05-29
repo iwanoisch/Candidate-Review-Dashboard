@@ -1,5 +1,5 @@
 import {Outlet} from "react-router-dom";
-import {useAuth} from "../../features/auth/hooks/useAuth.ts";
+import {useAuth} from "../../features/auth/useAuth.ts";
 import {useState, useCallback} from "react";
 import {SideBar} from "../../common/side-bar/SideBar.tsx";
 import {SIDEBAR_STORAGE_KEY} from "../../constants/layout.constant";

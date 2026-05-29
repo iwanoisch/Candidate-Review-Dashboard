@@ -1,4 +1,4 @@
-import type {UserRole} from "../features/auth/slice/auth.type";
+import type {UserRole} from "../features/auth/auth.type";
 
 export type Permission =
     | 'candidates:read'

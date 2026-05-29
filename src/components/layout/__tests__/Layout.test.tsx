@@ -2,7 +2,7 @@ import {screen} from '@testing-library/react';
 import {Route, Routes} from 'react-router-dom';
 import {Layout} from '../Layout';
 import {renderWithProviders, mockAdminUser, mockViewerUser, setupUser} from '../../../test/test-utils';
-import type {AuthState} from '../../../features/auth/slice/auth.type';
+import type {AuthState} from '../../../features/auth/auth.type';
 
 // Mock i18next
 vi.mock('react-i18next', () => ({

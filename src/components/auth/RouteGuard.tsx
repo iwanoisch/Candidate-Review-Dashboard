@@ -1,7 +1,7 @@
 import {Navigate, Outlet, useLocation} from "react-router-dom";
-import {useAuth} from "../../features/auth/hooks/useAuth.ts";
+import {useAuth} from "../../features/auth/useAuth.ts";
 import {Spinner} from "../../common/spinner/Spinner.tsx";
-import type {UserRole} from "../../features/auth/slice/auth.type.ts";
+import type {UserRole} from "../../features/auth/auth.type.ts";
 
 interface RouteGuardProps {
     access: 'public' | 'protected';

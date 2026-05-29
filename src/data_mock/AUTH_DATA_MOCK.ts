@@ -1,4 +1,4 @@
-import type {User} from "../features/auth/slice/auth.type.ts";
+import type {User} from "../features/auth/auth.type.ts";
 
 export const MOCK_USERS: { email: string; password: string; user: User; token: string }[] = [
     {

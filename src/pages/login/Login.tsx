@@ -1,6 +1,6 @@
 import {FormEvent, useState} from "react";
 import {useLocation, useNavigate, useSearchParams} from 'react-router-dom';
-import {useAuth} from "../../features/auth/hooks/useAuth.ts";
+import {useAuth} from "../../features/auth/useAuth.ts";
 import {useAlert} from "../../common/alert/useAlert.ts";
 import {useTranslation} from "react-i18next";
 

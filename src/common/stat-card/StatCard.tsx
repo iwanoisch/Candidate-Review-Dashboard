@@ -1,5 +1,5 @@
 import type {StatCardProps} from './StatCard.type';
-import {variantStyles} from './stat-card.utils';
+import {variantStyles} from "../../utility/stat-card.utils.ts";
 
 export const StatCard = ({label, value, description, icon: Icon, variant = 'primary'}: StatCardProps) => {
     const styles = variantStyles[variant];

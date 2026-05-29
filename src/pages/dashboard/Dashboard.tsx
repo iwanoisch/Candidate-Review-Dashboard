@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import {useAuth} from "../../features/auth/hooks/useAuth.ts";
+import {useAuth} from "../../features/auth/useAuth.ts";
 import {StatCard} from "../../common/stat-card/StatCard.tsx";
 import {
     UsersIcon,
@@ -7,10 +7,19 @@ import {
     UserPlusIcon,
     StarIcon,
 } from '@heroicons/react/24/outline';
+import {useApplicant} from "../../features/applicant/useApplicant.ts";
+import {useEffect} from "react";
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
+    const {stats, getApplicantStats} = useApplicant();
+
+    useEffect(() => {
+        (async () => {
+            await getApplicantStats();
+        })();
+    }, []);
 
     return (
         <div className="space-y-8">
@@ -29,28 +38,28 @@ export const Dashboard = () => {
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
                     <StatCard
                         label={t('dashboard.total_candidates', 'Candidati Totali')}
-                        value={7}
+                        value={stats?.totalCandidates ?? '-'}
                         description={t('dashboard.total_candidates_desc', 'Nel database attivo')}
                         icon={UsersIcon}
                         variant="primary"
                     />
                     <StatCard
                         label={t('dashboard.under_review', 'Sotto Valutazione')}
-                        value={3}
+                        value={stats?.underReview ?? '-'}
                         description={t('dashboard.under_review_desc', 'Screening e colloqui')}
                         icon={FlagIcon}
                         variant="amber"
                     />
                     <StatCard
                         label={t('dashboard.hired', 'Candidati Assunti')}
-                        value={1}
+                        value={stats?.hired ?? '-'}
                         description={t('dashboard.hired_desc', 'Risorse inserite in organico')}
                         icon={UserPlusIcon}
                         variant="emerald"
                     />
                     <StatCard
                         label={t('dashboard.avg_score', 'Punteggio Medio')}
-                        value="86/100"
+                        value={stats ? `${stats.avgScore}/100` : '-'}
                         description={t('dashboard.avg_score_desc', 'Valutazione media screening')}
                         icon={StarIcon}
                         variant="indigo"

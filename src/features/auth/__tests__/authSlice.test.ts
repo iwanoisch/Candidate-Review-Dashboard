@@ -5,8 +5,8 @@ import authReducer, {
     logout,
     restoreAuth,
     userError,
-} from '../slice/authSlice';
-import type {AuthState} from '../slice/auth.type';
+} from '../authSlice';
+import type {AuthState} from '../auth.type';
 import {mockAdminUser} from '../../../test/test-utils';
 
 const initialState: AuthState = {

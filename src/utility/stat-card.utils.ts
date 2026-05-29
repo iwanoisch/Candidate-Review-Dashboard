@@ -1,4 +1,4 @@
-import type {StatCardVariant} from './StatCard.type';
+import type {StatCardVariant} from '../common/stat-card/StatCard.type';
 
 export const variantStyles: Record<StatCardVariant, { bg: string; text: string; border: string }> = {
     primary: {

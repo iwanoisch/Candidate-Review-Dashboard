@@ -1,12 +1,12 @@
 import {useTranslation} from "react-i18next";
-import {useAuth} from "../../features/auth/hooks/useAuth.ts";
+import {useAuth} from "../../features/auth/useAuth.ts";
 import {useAlert} from "../../common/alert/useAlert.ts";
 import {ThemeSelector} from "../../common/theme-selector/ThemeSelector.tsx";
 import LanguageSelector from "../../common/language-selector/LanguageSelector.tsx";
 import {Tab, TabGroup, TabList, TabPanel, TabPanels} from "@headlessui/react";
 import {useState, useEffect, useMemo} from "react";
 import {UserCircleIcon, SwatchIcon} from "@heroicons/react/24/outline";
-import type {User} from "../../features/auth/slice/auth.type.ts";
+import type {User} from "../../features/auth/auth.type.ts";
 
 export const Settings = () => {
     const {t} = useTranslation();

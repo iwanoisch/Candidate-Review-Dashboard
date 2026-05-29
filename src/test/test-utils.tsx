@@ -8,7 +8,7 @@ import {reducers} from '../features/rootReducers';
 import {AlertContext} from '../common/alert/AlertContext';
 import {ThemeContext} from '../hooks/theme/ThemeContext';
 import {LanguageContext} from '../hooks/language/LanguageContext';
-import type {AuthState, User} from '../features/auth/slice/auth.type';
+import type {AuthState, User} from '../features/auth/auth.type';
 import type {AlertContextProps} from '../common/alert/Alert.type';
 import type {ThemeContextValue} from '../common/theme-selector/theme.type';
 import type {LanguageContextValue} from '../common/language-selector/language.types';

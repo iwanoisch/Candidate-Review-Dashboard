@@ -7,3 +7,21 @@ export type ApiHeaders = {
 };
 
 export type QueryParams = Record<string, string | number | boolean | undefined | null>;
+
+export interface IPagination {
+    currentPage: number;
+    pageSize: number;
+    totalPages: number;
+}
+
+export interface IMeta {
+    success: boolean;
+    status: number;
+    message: string | null;
+    pagination: IPagination | null;
+}
+
+export interface IApiResponse<T> {
+    data: T;
+    meta: IMeta;
+}

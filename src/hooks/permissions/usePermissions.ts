@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 import {useAppSelector} from "../../store/store.ts";
-import {UserRole} from "../../features/auth/slice/auth.type.ts";
+import {UserRole} from "../../features/auth/auth.type.ts";
 import {Permission, ROLE_PERMISSIONS} from "../../constants/permissions.constant.ts";
 
 export const usePermissions = () => {

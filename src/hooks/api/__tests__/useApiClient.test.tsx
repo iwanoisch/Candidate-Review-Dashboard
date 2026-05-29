@@ -7,7 +7,7 @@ import {AlertContext} from '../../../common/alert/AlertContext';
 import {configureStore} from '@reduxjs/toolkit';
 import {reducers} from '../../../features/rootReducers';
 import type {ReactNode} from 'react';
-import type {AuthState} from '../../../features/auth/slice/auth.type';
+import type {AuthState} from '../../../features/auth/auth.type';
 
 function createAuthStore(authenticated = true) {
     const authState: AuthState = authenticated

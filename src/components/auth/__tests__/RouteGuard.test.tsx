@@ -2,7 +2,7 @@ import {screen} from '@testing-library/react';
 import {Route, Routes} from 'react-router-dom';
 import {RouteGuard} from '../RouteGuard';
 import {renderWithProviders, mockAdminUser, mockViewerUser} from '../../../test/test-utils';
-import type {AuthState} from '../../../features/auth/slice/auth.type';
+import type {AuthState} from '../../../features/auth/auth.type';
 
 const TestChild = () => <div data-testid="child-content">Protected Content</div>;
 const LoginPage = () => <div data-testid="login-page">Login Page</div>;

@@ -1,5 +1,5 @@
 import {ComponentType, SVGProps} from "react";
-import type {UserRole} from "../features/auth/slice/auth.type";
+import type {UserRole} from "../features/auth/auth.type";
 
 export type MenuIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
