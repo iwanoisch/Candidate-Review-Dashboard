@@ -32,10 +32,15 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Benvenuto",
-    "card1": "Card 1",
-    "card2": "Card 2",
-    "card3": "Card 3",
-    "test_alerts": "Test Sistema Alert"
+    "stats_section": "Statistiche principali",
+    "total_candidates": "Candidati Totali",
+    "total_candidates_desc": "Nel database attivo",
+    "under_review": "Sotto Valutazione",
+    "under_review_desc": "Screening e colloqui",
+    "hired": "Candidati Assunti",
+    "hired_desc": "Risorse inserite in organico",
+    "avg_score": "Punteggio Medio",
+    "avg_score_desc": "Valutazione media screening"
   },
   "not_found": {
     "message": "Pagina non trovata",

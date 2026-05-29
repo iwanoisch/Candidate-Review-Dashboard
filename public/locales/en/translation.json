@@ -32,10 +32,15 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome",
-    "card1": "Card 1",
-    "card2": "Card 2",
-    "card3": "Card 3",
-    "test_alerts": "Test Alert System"
+    "stats_section": "Key statistics",
+    "total_candidates": "Total Candidates",
+    "total_candidates_desc": "In active database",
+    "under_review": "Under Review",
+    "under_review_desc": "Screening & interviews",
+    "hired": "Hired Candidates",
+    "hired_desc": "Resources added to staff",
+    "avg_score": "Average Score",
+    "avg_score_desc": "Screening average rating"
   },
   "not_found": {
     "message": "Page not found",
