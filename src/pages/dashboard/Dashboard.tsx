@@ -9,28 +9,45 @@ import {
     StarIcon,
 } from '@heroicons/react/24/outline';
 import {useApplicant} from "../../features/applicant/useApplicant.ts";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
+import {filterCandidates, extractDepartments} from "../../utility/candidate-filter.utils.ts";
+import {DEFAULT_FILTERS} from "../../constants/filter.constant.ts";
+import type {Candidate} from "../../features/applicant/applicant.type.ts";
+import {CandidateFilters} from "../../common/filterBar/FilterBar.type.ts";
+import {FilterBar} from "../../common/filterBar/FilterBar.tsx";
+import {CandidateList} from "../../components/candidtateList/CandidateList.tsx";
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
-    const {stats, getApplicantStats} = useApplicant();
+    const {stats, candidates, selectedCandidate, getApplicantStats, getCandidates} = useApplicant();
     const [isStatsLoad, setIsStatsLoad] = useState<boolean>(false);
-
+    const [isCandidatesLoad, setIsCandidatesLoad] = useState<boolean>(false);
+    const [filters, setFilters] = useState<CandidateFilters>(DEFAULT_FILTERS);
 
     useEffect(() => {
         (async () => {
             setIsStatsLoad(true);
+            setIsCandidatesLoad(true);
             // TODO: rimuovere il timeout, serve solo per visualizzare lo skeleton
             await new Promise(resolve => setTimeout(resolve, 2000));
             await getApplicantStats();
             setIsStatsLoad(false);
+            await getCandidates();
+            setIsCandidatesLoad(false);
         })();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    const departments = useMemo(() => extractDepartments(candidates), [candidates]);
+    const filteredCandidates = useMemo(() => filterCandidates(candidates, filters), [candidates, filters]);
+
+    const handleSelectCandidate = (_candidate: Candidate) => {
+        // TODO: dispatch selectCandidate e mostrare dettaglio nella colonna destra
+    };
+
     return (
-        <div className="space-y-8">
+        <div className="space-y-6">
             {/* Header */}
             <header>
                 <h1 className="text-2xl font-bold text-text-primary sm:text-3xl">
@@ -43,7 +60,7 @@ export const Dashboard = () => {
 
             {/* Stat Cards */}
             <section aria-label={t('dashboard.stats_section', 'Statistiche principali')}>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {isStatsLoad ? (
                         <StatCardSkeleton count={4}/>
                     ) : (
@@ -78,6 +95,28 @@ export const Dashboard = () => {
                             />
                         </>
                     )}
+                </div>
+            </section>
+
+            {/* Candidate List + Detail */}
+            <section aria-label={t('candidates.section_label', 'Gestione candidati')}>
+                <div className="grid grid-cols-1 gap-4 xl:grid-cols-12 items-start">
+                    <div className="md:max-w-md lg:max-w-lg xl:max-w-none xl:col-span-5 min-w-0 space-y-4">
+                        <FilterBar
+                            filters={filters}
+                            departments={departments}
+                            isLoading={isCandidatesLoad}
+                            onFiltersChange={setFilters}
+                        />
+                        <CandidateList
+                            candidates={filteredCandidates}
+                            selectedId={selectedCandidate?.id ?? null}
+                            isLoading={isCandidatesLoad}
+                            onSelect={handleSelectCandidate}
+                        />
+                    </div>
+
+                    {/* TODO: Colonna destra - Dettaglio candidato (xl:col-span-7) */}
                 </div>
             </section>
         </div>
