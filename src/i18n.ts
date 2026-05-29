@@ -9,7 +9,7 @@ i18n
         debug: false,
         lng: 'it',
         fallbackLng: 'it',
-        supportedLngs: ['it', 'en', 'ar'],
+        supportedLngs: ['it', 'en'],
         interpolation: {
             escapeValue: false,
         },

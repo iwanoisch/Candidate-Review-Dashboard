@@ -31,22 +31,23 @@
 
 @theme {
     /* ============================================================
-       PRIMARY - Colore Brand (Arancione Professionale)
+       PRIMARY - Colore Brand (Bento Indigo)
        ============================================================
-       Palette morbida, non aggressiva, adatta al lavoro quotidiano.
+       Palette indaco nobile, elegante e professionale.
+       Basata su Bento Indigo Design-System specs.
        Contrasto WCAG AA su sfondo bianco: ✓
     */
-    --color-primary-50:  #fff7ed;    /* Sfondo hover molto leggero */
-    --color-primary-75:  #fff2e1;    /* Sfondo hover leggero */
-    --color-primary-100: #ffedd5;    /* Sfondo badge, chip */
-    --color-primary-200: #fed7aa;    /* Bordi leggeri */
-    --color-primary-300: #fdba74;    /* Elementi decorativi */
-    --color-primary-400: #fb923c;    /* NON usare per bottoni (troppo chiaro) */
-    --color-primary-500: #f97316;    /* Bottoni principali */
-    --color-primary-600: #ea580c;    /* Hover bottoni, testo su bianco */
-    --color-primary-700: #c2410c;    /* Testo primario, link */
-    --color-primary-800: #9a3412;    /* Testo su sfondo chiaro */
-    --color-primary-900: #7c2d12;    /* Testo massimo contrasto */
+    --color-primary-50:  #eef2ff;    /* Sfondi card attive, badge leggeri */
+    --color-primary-75:  #e7ecff;    /* Sfondo hover leggero */
+    --color-primary-100: #e0e7ff;    /* Bordi evidenziati, focus rings */
+    --color-primary-200: #c7d2fe;    /* Bordi di selezione intermedia */
+    --color-primary-300: #a5b4fc;    /* Elementi decorativi */
+    --color-primary-400: #818cf8;    /* Accenti secondari */
+    --color-primary-500: #4f46e5;    /* CTA primarie, bottoni di conferma */
+    --color-primary-600: #4338ca;    /* Hover CTA primarie, icone attive */
+    --color-primary-700: #3730a3;    /* Accenti di branding scuro */
+    --color-primary-800: #312e81;    /* Testo su sfondo chiaro */
+    --color-primary-900: #1e1b4b;    /* Testo massimo contrasto */
 
     /* ============================================================
        SURFACE - Sfondi e Superfici
@@ -277,6 +278,21 @@
    Esempio: <html data-theme="green">
    ================================================================ */
 
+/* Tema Arancione - Caldo & Energetico */
+[data-theme="orange"] {
+    --color-primary-50:  #fff7ed;
+    --color-primary-75:  #fff2e1;
+    --color-primary-100: #ffedd5;
+    --color-primary-200: #fed7aa;
+    --color-primary-300: #fdba74;
+    --color-primary-400: #fb923c;
+    --color-primary-500: #f97316;
+    --color-primary-600: #ea580c;
+    --color-primary-700: #c2410c;
+    --color-primary-800: #9a3412;
+    --color-primary-900: #7c2d12;
+}
+
 /* Tema Verde - Natura & Sostenibilità */
 [data-theme="green"] {
     --color-primary-50:  #f0fdf4;
@@ -305,21 +321,6 @@
     --color-primary-700: #1d4ed8;
     --color-primary-800: #1e40af;
     --color-primary-900: #1e3a8a;
-}
-
-/* Tema Indaco - Elegante & Moderno */
-[data-theme="indigo"] {
-    --color-primary-50:  #eef2ff;
-    --color-primary-75:  #e7ecff;
-    --color-primary-100: #e0e7ff;
-    --color-primary-200: #c7d2fe;
-    --color-primary-300: #a5b4fc;
-    --color-primary-400: #818cf8;
-    --color-primary-500: #6366f1;
-    --color-primary-600: #4f46e5;
-    --color-primary-700: #4338ca;
-    --color-primary-800: #3730a3;
-    --color-primary-900: #312e81;
 }
 
 /* Tema Slate - Minimalista & Scuro */

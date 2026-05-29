@@ -42,10 +42,10 @@
     "go_home": "Torna alla Dashboard"
   },
   "themes": {
-    "default": { "name": "Arancione", "description": "Tema predefinito" },
+    "default": { "name": "Bento Indigo", "description": "Tema predefinito" },
+    "orange": { "name": "Arancione", "description": "Energetico" },
     "blue": { "name": "Blu", "description": "Professionale" },
     "green": { "name": "Verde", "description": "Natura" },
-    "indigo": { "name": "Indaco", "description": "Elegante" },
     "teal": { "name": "Teal", "description": "Fresco" },
     "rose": { "name": "Rosa", "description": "Caldo" },
     "slate": { "name": "Grigio", "description": "Minimalista" },

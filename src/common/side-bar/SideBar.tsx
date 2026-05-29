@@ -164,7 +164,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                             {/* Logo */}
                             <div
                                 onClick={() => navigate('/dashboard')}
-                                className={`relative flex shrink-0 items-center cursor-pointer transition-all duration-300 ease-out pt-8 pb-6 mb-8`}
+                                className={`relative flex shrink-0 items-center cursor-pointer transition-all duration-300 ease-out pt-8 pb-6 mb-8 ${isCollapsed ? 'justify-center' : ''}`}
                             >
                                 <div className="flex items-center gap-2">
                                     <div
@@ -194,7 +194,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                                     `${isActive
                                                                         ? 'bg-white/10 text-white shadow-lg backdrop-blur-sm'
                                                                         : 'text-white/80 hover:bg-white/5 hover:text-white'
-                                                                    } flex rounded-xl font-medium items-center transition-all duration-300 gap-3 px-4 py-3`
+                                                                    } flex rounded-xl font-medium items-center transition-all duration-300 py-3 ${isCollapsed ? 'justify-center px-2' : 'gap-3 px-4'}`
                                                                 }
                                                             >
                                                                 {({isActive}) => (
@@ -221,10 +221,10 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                         {/* User info + logout */}
                                         <li className="mt-auto pt-4">
                                             <div
-                                                className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-sm relative group overflow-hidden transition-all duration-300 ease-out p-4">
-                                                <div className="relative flex items-center justify-between">
+                                                className={`rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-sm relative group overflow-hidden transition-all duration-300 ease-out ${isCollapsed ? 'p-2' : 'p-4'}`}>
+                                                <div className={`relative flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
                                                     <div
-                                                        className={`min-w-0 transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0' : 'opacity-100 max-w-48'}`}>
+                                                        className={`min-w-0 transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0 hidden' : 'opacity-100 max-w-48'}`}>
                                                         <p className="text-[10px] uppercase tracking-wider text-white/60 mb-1 font-bold">
                                                             {user?.role === 'admin' ? 'Admin' : 'Viewer'}
                                                         </p>

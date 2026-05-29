@@ -1,4 +1,4 @@
-export type ThemeType = 'default' | 'green' | 'blue' | 'indigo' | 'slate' | 'rose' | 'teal';
+export type ThemeType = 'default' | 'orange' | 'green' | 'blue' | 'slate' | 'rose' | 'teal';
 export type BackgroundMode = 'themed' | 'neutral';
 
 export interface ThemeButtonProps {
