@@ -47,7 +47,7 @@ export const CandidateDetail = ({candidate}: CandidateDetailProps) => {
                                 type="button"
                                 onClick={copyEmail}
                                 className="flex items-center space-x-1.5 hover:text-primary-600 transition-colors cursor-pointer focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
-                                title={t('candidates.copy_email', 'Copia email')}
+                                title={t('candidates.copy_email')}
                                 aria-label={t('candidates.copy_email', 'Copia email')}
                             >
                                 <EnvelopeIcon className="size-3.5 shrink-0" aria-hidden="true"/>
@@ -66,7 +66,7 @@ export const CandidateDetail = ({candidate}: CandidateDetailProps) => {
                 {/* Right: Match score */}
                 <div className="bg-slate-50 border border-slate-100 p-3.5 rounded-2xl text-center self-start flex sm:flex-col items-center justify-center gap-2 sm:gap-0 select-none">
                     <span className="text-slate-400 text-[10px] uppercase font-bold tracking-wider block">
-                        {t('candidates.match_overall', 'Match Overall')}
+                        {t('candidates.match_overall')}
                     </span>
                     <div className="text-slate-800 font-mono font-bold text-2xl mt-0 sm:mt-0.5 leading-none">
                         {candidate.score}

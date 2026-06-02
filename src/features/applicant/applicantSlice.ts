@@ -13,8 +13,13 @@ export const applicantSlice = createSlice({
     name: 'applicant',
     initialState,
     reducers: {
-        loadCandidates: (state, action: PayloadAction<{ candidates: Candidate[]; pagination: IPagination | null }>) => {
+        loadCandidates: (state, action: PayloadAction<{ candidates: Candidate[]; pagination: IPagination }>) => {
             state.candidates = action.payload.candidates;
+            state.pagination = action.payload.pagination;
+        },
+
+        appendCandidates: (state, action: PayloadAction<{ candidates: Candidate[]; pagination: IPagination }>) => {
+            state.candidates = [...state.candidates, ...action.payload.candidates];
             state.pagination = action.payload.pagination;
         },
 
@@ -30,6 +35,7 @@ export const applicantSlice = createSlice({
 
 export const {
     loadCandidates,
+    appendCandidates,
     loadStats,
     selectCandidate,
 } = applicantSlice.actions;

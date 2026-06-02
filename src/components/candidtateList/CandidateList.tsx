@@ -1,34 +1,19 @@
 import {useTranslation} from 'react-i18next';
-import {useEffect, useState, useCallback, type UIEvent} from 'react';
+import {useCallback, type UIEvent} from 'react';
 import {CandidateListItem} from './CandidateListItem';
 import {CandidateListSkeleton} from './CandidateListSkeleton';
 import {CandidateListProps} from "./Candidate.type.ts";
 
-export const CandidateList = ({candidates, selectedId, isLoading = false, pageSize = 7, onSelect}: CandidateListProps) => {
+export const CandidateList = ({candidates, selectedId, totalCount, isLoading = false, isLoadingMore = false, hasMore = false, onSelect, onLoadMore}: CandidateListProps) => {
     const {t} = useTranslation();
-    const [visibleCount, setVisibleCount] = useState(pageSize);
-    const [isLoadingMore, setIsLoadingMore] = useState(false);
-
-    // Reset quando cambiano i candidati (filtri/search)
-    useEffect(() => {
-        setVisibleCount(pageSize);
-    }, [candidates, pageSize]);
-
-    const visibleCandidates = candidates.slice(0, visibleCount);
-    const hasMore = visibleCount < candidates.length;
 
     const handleScroll = useCallback((e: UIEvent<HTMLDivElement>) => {
         if (!hasMore || isLoadingMore) return;
         const {scrollTop, scrollHeight, clientHeight} = e.currentTarget;
         if (scrollHeight - scrollTop - clientHeight < 100) {
-            setIsLoadingMore(true);
-            // TODO: rimuovere il timeout, simula latenza backend
-            setTimeout(() => {
-                setVisibleCount(prev => Math.min(prev + pageSize, candidates.length));
-                setIsLoadingMore(false);
-            }, 800);
+            onLoadMore();
         }
-    }, [hasMore, isLoadingMore, pageSize, candidates.length]);
+    }, [hasMore, isLoadingMore, onLoadMore]);
 
     return (
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col overflow-hidden">
@@ -36,27 +21,22 @@ export const CandidateList = ({candidates, selectedId, isLoading = false, pageSi
             <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-slate-50/50">
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                     {isLoading
-                        ? t('candidates.list_loading', 'Caricamento...')
-                        : `${t('candidates.list_title', 'Candidati')} (${candidates.length})`
+                        ? t('candidates.list_loading')
+                        : `${t('candidates.list_title')} (${candidates.length}/${totalCount ?? candidates.length})`
                     }
                 </span>
-                {!isLoading && hasMore && (
-                    <span className="text-xs text-slate-400">
-                        {visibleCount}/{candidates.length}
-                    </span>
-                )}
             </div>
 
             {/* List */}
             <div className="p-3">
                 {isLoading ? (
                     <div className="space-y-2">
-                        <CandidateListSkeleton count={pageSize}/>
+                        <CandidateListSkeleton count={7}/>
                     </div>
                 ) : candidates.length === 0 ? (
                     <div className="py-12 text-center">
                         <p className="text-sm text-slate-400">
-                            {t('candidates.empty', 'Nessun candidato trovato')}
+                            {t('candidates.empty')}
                         </p>
                     </div>
                 ) : (
@@ -66,7 +46,7 @@ export const CandidateList = ({candidates, selectedId, isLoading = false, pageSi
                         role="list"
                         aria-label={t('candidates.list_aria', 'Lista candidati')}
                     >
-                        {visibleCandidates.map((candidate) => (
+                        {candidates.map((candidate) => (
                             <div key={candidate.id} role="listitem">
                                 <CandidateListItem
                                     candidate={candidate}

@@ -12,6 +12,7 @@ export interface IPagination {
     currentPage: number;
     pageSize: number;
     totalPages: number;
+    totalItems: number;
 }
 
 export interface IMeta {

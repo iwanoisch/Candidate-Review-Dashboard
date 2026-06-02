@@ -9,7 +9,10 @@ export interface CandidateListItemProps {
 export interface CandidateListProps {
     candidates: Candidate[];
     selectedId: string | null;
+    totalCount?: number;
     isLoading?: boolean;
-    pageSize?: number;
+    isLoadingMore?: boolean;
+    hasMore?: boolean;
     onSelect: (candidate: Candidate) => void;
+    onLoadMore: () => void;
 }

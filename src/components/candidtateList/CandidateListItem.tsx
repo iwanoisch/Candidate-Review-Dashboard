@@ -41,7 +41,7 @@ export const CandidateListItem = ({candidate, isSelected, onSelect}: CandidateLi
                         {scoreHighlight && (
                             <span
                                 className="absolute -top-1.5 -right-1.5 bg-amber-400 text-white rounded-full p-0.5 border border-white shadow-sm"
-                                title={t('candidates.top_score', 'Top score')}
+                                title={t('candidates.top_score')}
                                 aria-label={t('candidates.top_score', 'Top score')}
                             >
                                 <svg className="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -71,7 +71,7 @@ export const CandidateListItem = ({candidate, isSelected, onSelect}: CandidateLi
                             </span>
                             <span className="text-slate-200 text-xs" aria-hidden="true">&bull;</span>
                             <span className="text-xs text-slate-400 font-mono">
-                                {t('candidates.registered', 'Reg:')} {candidate.appliedDate}
+                                {t('candidates.registered')} {candidate.appliedDate}
                             </span>
                         </div>
                     </div>

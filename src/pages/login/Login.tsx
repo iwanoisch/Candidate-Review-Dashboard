@@ -27,7 +27,7 @@ export const Login = () => {
         if (success) {
             navigate(redirectPath || '/dashboard');
         } else {
-            setError(error || t('login.invalid_credentials', 'Credenziali non valide'));
+            setError(error || t('login.invalid_credentials'));
             showAlert({
                 title: 'Error',
                 type: "error",
@@ -45,10 +45,10 @@ export const Login = () => {
                         CRD
                     </div>
                     <h1 className="text-3xl font-bold tracking-tight text-text-primary">
-                        {t('login.title', 'Accedi a CRD')}
+                        {t('login.title')}
                     </h1>
                     <p className="mt-2 text-text-muted">
-                        {t('login.subtitle', 'Candidate Review Dashboard')}
+                        {t('login.subtitle')}
                     </p>
                 </div>
 
@@ -56,7 +56,7 @@ export const Login = () => {
                     {sessionExpiredMessage === 'session_expired' && (
                         <div className="mb-6 rounded-xl bg-error-light p-4">
                             <p className="text-sm text-error">
-                                {t('login.session_expired', 'La tua sessione è scaduta. Per favore, effettua nuovamente l\'accesso.')}
+                                {t('login.session_expired')}
                             </p>
                         </div>
                     )}
@@ -110,14 +110,14 @@ export const Login = () => {
                             disabled={isLoading || isAuthenticated}
                             className="btn btn-primary w-full py-3 text-lg font-bold"
                         >
-                            {isLoading ? t('login.loading', 'Accesso in corso...') : t('login.submit', 'Accedi')}
+                            {isLoading ? t('login.loading') : t('login.submit')}
                         </button>
                     </form>
 
                     {!isLoading && isAuthenticated && (
                         <div className="mt-6 text-center">
                             <p className="text-sm text-text-muted">
-                                {t('login.already_authenticated', 'Sei già autenticato nel sistema.')}{' '}
+                                {t('login.already_authenticated')}{' '}
                                 <a
                                     href="#"
                                     onClick={(e) => {
@@ -126,7 +126,7 @@ export const Login = () => {
                                     }}
                                     className="font-semibold text-primary-600 hover:underline"
                                 >
-                                    {t('login.go_to_dashboard', 'Vai alla Dashboard')} →
+                                    {t('login.go_to_dashboard')} →
                                 </a>
                             </p>
                         </div>

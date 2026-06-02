@@ -90,7 +90,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                                                             aria-hidden="true"
                                                                                         />
                                                                                     )}
-                                                                                    <span>{t(`sidebar.${route.menu!.id}`, route.menu!.name)}</span>
+                                                                                    <span>{t(`sidebar.${route.menu!.id}`)}</span>
                                                                                 </>
                                                                             );
                                                                         }}
@@ -115,7 +115,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                             </div>
                                                             <button
                                                                 className="p-2 text-slate-400 hover:text-primary-600 transition-colors shrink-0"
-                                                                title={t('sidebar.logout', 'Logout')}
+                                                                title={t('sidebar.logout')}
                                                                 onClick={handleLogout}
                                                             >
                                                                 <ArrowLeftStartOnRectangleIcon className="size-6"/>
@@ -131,8 +131,8 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                 <li className="pb-4">
                                                     <div
                                                         className="border-t border-slate-100 pt-3 p-2 text-xs text-slate-400">
-                                                        <p className="font-medium text-slate-500">{t('app.name', 'CRD')}</p>
-                                                        <p>{t('app.version', 'Versione')} {__APP_VERSION__}</p>
+                                                        <p className="font-medium text-slate-500">{t('app.name')}</p>
+                                                        <p>{t('app.version')} {__APP_VERSION__}</p>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -207,7 +207,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                                         )}
                                                                         <span
                                                                             className={`whitespace-nowrap transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0' : 'opacity-100 max-w-48'}`}>
-                                                                            {t(`sidebar.${route.menu!.id}`, route.menu!.name)}
+                                                                            {t(`sidebar.${route.menu!.id}`)}
                                                                         </span>
                                                                     </>
                                                                 )}
@@ -234,7 +234,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                     </div>
                                                     <button
                                                         className="p-2 text-slate-400 hover:text-primary-600 transition-colors shrink-0"
-                                                        title={t('sidebar.logout', 'Logout')}
+                                                        title={t('sidebar.logout')}
                                                         onClick={handleLogout}
                                                     >
                                                         <ArrowLeftStartOnRectangleIcon className="size-6"/>
@@ -261,8 +261,8 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                 </div>
                                                 <div
                                                     className={`transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-h-0' : 'opacity-100 max-h-20'}`}>
-                                                    <p className="font-medium text-slate-500">{t('app.name', 'CRD')}</p>
-                                                    <p>{t('app.version', 'Versione')} {__APP_VERSION__}</p>
+                                                    <p className="font-medium text-slate-500">{t('app.name')}</p>
+                                                    <p>{t('app.version')} {__APP_VERSION__}</p>
                                                 </div>
                                             </div>
                                         </li>

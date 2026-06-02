@@ -27,7 +27,7 @@ export const ThemeSelector = () => {
                 <div className="flex items-center gap-2 mb-4">
                     <SunIcon className="w-5 h-5 text-amber-500"/>
                     <h4 className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
-                        {t('settings.light_themes', 'Temi Chiari')}
+                        {t('settings.light_themes')}
                     </h4>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -47,10 +47,10 @@ export const ThemeSelector = () => {
                             <SwatchIcon className="w-5 h-5 text-slate-500"/>
                             <div>
                                 <p className="text-sm font-medium text-slate-700">
-                                    {t('settings.neutral_background', 'Sfondo neutro')}
+                                    {t('settings.neutral_background')}
                                 </p>
                                 <p className="text-xs text-slate-500">
-                                    {t('settings.neutral_background_desc', 'Usa uno sfondo grigio sobrio invece del colore del tema')}
+                                    {t('settings.neutral_background_desc')}
                                 </p>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ export const ThemeSelector = () => {
             </div>
 
             <p className="text-xs text-slate-500 text-center">
-                {t('settings.theme_info', 'Il tema selezionato verrà salvato per il tuo account')}
+                {t('settings.theme_info')}
             </p>
         </div>
     );

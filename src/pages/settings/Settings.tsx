@@ -47,9 +47,9 @@ export const Settings = () => {
         });
         if (result) {
             setProfileSnapshot(currentProfileValues);
-            showAlert({type: "success", message: t("settings.save_profile_success", "Dati salvati con successo"), duration: 3000});
+            showAlert({type: "success", message: t("settings.save_profile_success"), duration: 3000});
         } else {
-            showAlert({type: "error", message: t("settings.save_profile_error", "Errore nel salvataggio"), duration: 4000});
+            showAlert({type: "error", message: t("settings.save_profile_error"), duration: 4000});
         }
         setIsUpdateLoading(false);
     };
@@ -58,10 +58,10 @@ export const Settings = () => {
         <div className="flex flex-col gap-6">
             <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-text-primary">
-                    {t("settings.title", "Impostazioni")}
+                    {t("settings.title")}
                 </h1>
                 <p className="mt-1 text-sm text-text-muted">
-                    {t("settings.subtitle", "Personalizza la tua esperienza")}
+                    {t("settings.subtitle")}
                 </p>
             </div>
 
@@ -74,7 +74,7 @@ export const Settings = () => {
                         border-transparent text-text-muted"
                     >
                         <UserCircleIcon className="w-4 h-4"/>
-                        {t("settings.tab_account", "Account")}
+                        {t("settings.tab_account")}
                     </Tab>
                     <Tab className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium transition-colors
                         border-b-2 -mb-px outline-none cursor-pointer
@@ -83,7 +83,7 @@ export const Settings = () => {
                         border-transparent text-text-muted"
                     >
                         <SwatchIcon className="w-4 h-4"/>
-                        {t("settings.tab_theme", "Tema")}
+                        {t("settings.tab_theme")}
                     </Tab>
                 </TabList>
 
@@ -98,31 +98,31 @@ export const Settings = () => {
                                 <div className="flex flex-col gap-6">
                                     <div className="card">
                                         <h3 className="text-lg font-semibold text-text-primary mb-4">
-                                            {t("settings.personal_data", "Dati Personali")}
+                                            {t("settings.personal_data")}
                                         </h3>
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.first_name", "Nome")}
+                                                    {t("settings.first_name")}
                                                 </label>
                                                 <input
                                                     type="text"
                                                     value={profile.first_name || ''}
                                                     onChange={e => updateProfile('first_name', e.target.value)}
                                                     className="input"
-                                                    placeholder={t("settings.placeholder_first_name", "es. Mario")}
+                                                    placeholder={t("settings.placeholder_first_name")}
                                                 />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.last_name", "Cognome")}
+                                                    {t("settings.last_name")}
                                                 </label>
                                                 <input
                                                     type="text"
                                                     value={profile.last_name || ''}
                                                     onChange={e => updateProfile('last_name', e.target.value)}
                                                     className="input"
-                                                    placeholder={t("settings.placeholder_last_name", "es. Rossi")}
+                                                    placeholder={t("settings.placeholder_last_name")}
                                                 />
                                             </div>
                                             <div>
@@ -134,36 +134,36 @@ export const Settings = () => {
                                                     value={profile.email || ''}
                                                     onChange={e => updateProfile('email', e.target.value)}
                                                     className="input"
-                                                    placeholder={t("settings.placeholder_email", "mario.rossi@esempio.com")}
+                                                    placeholder={t("settings.placeholder_email")}
                                                 />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.display_name", "Nome visualizzato")}
+                                                    {t("settings.display_name")}
                                                 </label>
                                                 <input
                                                     type="text"
                                                     value={profile.name || ''}
                                                     onChange={e => updateProfile('name', e.target.value)}
                                                     className="input"
-                                                    placeholder={t("settings.placeholder_display_name", "es. Mario Rossi")}
+                                                    placeholder={t("settings.placeholder_display_name")}
                                                 />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.short_name", "Nome breve")}
+                                                    {t("settings.short_name")}
                                                 </label>
                                                 <input
                                                     type="text"
                                                     value={profile.short_name || ''}
                                                     onChange={e => updateProfile('short_name', e.target.value)}
                                                     className="input"
-                                                    placeholder={t("settings.placeholder_short_name", "es. MR")}
+                                                    placeholder={t("settings.placeholder_short_name")}
                                                 />
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.role", "Ruolo")}
+                                                    {t("settings.role")}
                                                 </label>
                                                 <input
                                                     type="text"
@@ -174,7 +174,7 @@ export const Settings = () => {
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.created_at", "Creato il")}
+                                                    {t("settings.created_at")}
                                                 </label>
                                                 <input
                                                     type="text"
@@ -185,7 +185,7 @@ export const Settings = () => {
                                             </div>
                                             <div>
                                                 <label className="block text-sm font-medium text-text-secondary mb-1">
-                                                    {t("settings.updated_at", "Aggiornato il")}
+                                                    {t("settings.updated_at")}
                                                 </label>
                                                 <input
                                                     type="text"
@@ -203,7 +203,7 @@ export const Settings = () => {
                                             disabled={!isProfileDirty || isUpdateLoading || isLoading}
                                             className="btn btn-primary"
                                         >
-                                            {t("settings.save_profile", "Salva Dati Personali")}
+                                            {t("settings.save_profile")}
                                         </button>
                                     </div>
                                 </div>
@@ -216,20 +216,20 @@ export const Settings = () => {
                         <div className="flex flex-col gap-6">
                             <div className="card">
                                 <h3 className="text-lg font-semibold text-text-primary mb-1">
-                                    {t("settings.theme_section", "Tema colore")}
+                                    {t("settings.theme_section")}
                                 </h3>
                                 <p className="text-sm text-text-muted mb-4">
-                                    {t("settings.theme_description", "Scegli il colore principale dell'interfaccia")}
+                                    {t("settings.theme_description")}
                                 </p>
                                 <ThemeSelector/>
                             </div>
 
                             <div className="card">
                                 <h3 className="text-lg font-semibold text-text-primary mb-1">
-                                    {t("settings.language_section", "Lingua")}
+                                    {t("settings.language_section")}
                                 </h3>
                                 <p className="text-sm text-text-muted mb-4">
-                                    {t("settings.language_description", "Seleziona la lingua dell'applicazione")}
+                                    {t("settings.language_description")}
                                 </p>
                                 <div className="max-w-xs">
                                     <LanguageSelector type="language-settings"/>

@@ -24,8 +24,8 @@ export const STATUS_OPTIONS: FilterOption[] = [
 ];
 
 export const SORT_OPTIONS: FilterOption[] = [
-    {value: 'score_desc', labelKey: 'candidates.sort_score', labelFallback: 'Score (In vetta)'},
-    {value: 'applied_desc', labelKey: 'candidates.sort_date', labelFallback: 'Data candidato (Recenti)'},
+    {value: 'score_desc', labelKey: 'candidates.sort_score', labelFallback: 'Score'},
+    {value: 'applied_desc', labelKey: 'candidates.sort_date', labelFallback: 'Data candidato'},
     {value: 'experience_desc', labelKey: 'candidates.sort_experience', labelFallback: 'Esperienza lavorativa'},
     {value: 'alpha_asc', labelKey: 'candidates.sort_alpha', labelFallback: 'Alfabetico (A-Z)'},
 ];
