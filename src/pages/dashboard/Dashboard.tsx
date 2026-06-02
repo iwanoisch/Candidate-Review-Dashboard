@@ -13,17 +13,19 @@ import {useEffect, useMemo, useState} from "react";
 import {filterCandidates, extractDepartments} from "../../utility/candidate-filter.utils.ts";
 import {DEFAULT_FILTERS} from "../../constants/filter.constant.ts";
 import type {Candidate} from "../../features/applicant/applicant.type.ts";
-import {CandidateFilters} from "../../common/filterBar/FilterBar.type.ts";
-import {FilterBar} from "../../common/filterBar/FilterBar.tsx";
+import {IFilterList} from "../../common/filterList/FilterList.type.ts";
+import {FilterList} from "../../common/filterList/FilterList.tsx";
 import {CandidateList} from "../../components/candidtateList/CandidateList.tsx";
+import {CandidateDetail} from "../../components/candidateDetail/CandidateDetail.tsx";
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
-    const {stats, candidates, selectedCandidate, getApplicantStats, getCandidates} = useApplicant();
+    const {stats, candidates, getApplicantStats, getCandidates} = useApplicant();
     const [isStatsLoad, setIsStatsLoad] = useState<boolean>(false);
     const [isCandidatesLoad, setIsCandidatesLoad] = useState<boolean>(false);
-    const [filters, setFilters] = useState<CandidateFilters>(DEFAULT_FILTERS);
+    const [filters, setFilters] = useState<IFilterList>(DEFAULT_FILTERS);
+    const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
 
     useEffect(() => {
         (async () => {
@@ -42,8 +44,17 @@ export const Dashboard = () => {
     const departments = useMemo(() => extractDepartments(candidates), [candidates]);
     const filteredCandidates = useMemo(() => filterCandidates(candidates, filters), [candidates, filters]);
 
-    const handleSelectCandidate = (_candidate: Candidate) => {
-        // TODO: dispatch selectCandidate e mostrare dettaglio nella colonna destra
+    // Seleziona il primo candidato filtrato di default dopo il caricamento
+    useEffect(() => {
+        if (filteredCandidates.length > 0 && !selectedCandidateId) {
+            setSelectedCandidateId(filteredCandidates[0].id);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [filteredCandidates]);
+    const selectedCandidate = useMemo(() => candidates.find(c => c.id === selectedCandidateId) ?? null, [candidates, selectedCandidateId]);
+
+    const handleSelectCandidate = (candidate: Candidate) => {
+        setSelectedCandidateId(candidate.id);
     };
 
     return (
@@ -102,7 +113,7 @@ export const Dashboard = () => {
             <section aria-label={t('candidates.section_label', 'Gestione candidati')}>
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-12 items-start">
                     <div className="md:max-w-md lg:max-w-lg xl:max-w-none xl:col-span-5 min-w-0 space-y-4">
-                        <FilterBar
+                        <FilterList
                             filters={filters}
                             departments={departments}
                             isLoading={isCandidatesLoad}
@@ -116,7 +127,12 @@ export const Dashboard = () => {
                         />
                     </div>
 
-                    {/* TODO: Colonna destra - Dettaglio candidato (xl:col-span-7) */}
+                    {/* Colonna destra - Dettaglio candidato */}
+                    <div className="xl:col-span-7 min-w-0">
+                        {selectedCandidate && (
+                            <CandidateDetail candidate={selectedCandidate}/>
+                        )}
+                    </div>
                 </div>
             </section>
         </div>

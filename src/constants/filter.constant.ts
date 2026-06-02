@@ -1,6 +1,6 @@
-import type {CandidateFilters} from '../common/filterBar/FilterBar.type';
+import type {IFilterList} from '../common/filterList/FilterList.type.ts';
 
-export const DEFAULT_FILTERS: CandidateFilters = {
+export const DEFAULT_FILTERS: IFilterList = {
     search: '',
     department: 'all',
     status: 'all',
@@ -15,12 +15,12 @@ export interface FilterOption {
 
 export const STATUS_OPTIONS: FilterOption[] = [
     {value: 'all', labelKey: 'candidates.filter_all_statuses', labelFallback: 'Qualsiasi stato'},
-    {value: 'Applied', labelKey: 'candidates.status_applied', labelFallback: 'Applied (Candidati)'},
-    {value: 'Screening', labelKey: 'candidates.status_screening', labelFallback: 'Screening (Qualifica)'},
-    {value: 'Interviewing', labelKey: 'candidates.status_interviewing', labelFallback: 'Interviewing (In Colloquio)'},
-    {value: 'Offered', labelKey: 'candidates.status_offered', labelFallback: 'Offered (Proposta Economica)'},
-    {value: 'Hired', labelKey: 'candidates.status_hired', labelFallback: 'Hired (Assunti)'},
-    {value: 'Rejected', labelKey: 'candidates.status_rejected', labelFallback: 'Rejected (Scartati)'},
+    {value: 'Applied', labelKey: 'candidates.status_applied', labelFallback: 'Candidati'},
+    {value: 'Screening', labelKey: 'candidates.status_screening', labelFallback: 'Qualifica'},
+    {value: 'Interviewing', labelKey: 'candidates.status_interviewing', labelFallback: 'In Colloquio'},
+    {value: 'Offered', labelKey: 'candidates.status_offered', labelFallback: 'Proposta Economica'},
+    {value: 'Hired', labelKey: 'candidates.status_hired', labelFallback: 'Assunti'},
+    {value: 'Rejected', labelKey: 'candidates.status_rejected', labelFallback: 'Scartati'},
 ];
 
 export const SORT_OPTIONS: FilterOption[] = [

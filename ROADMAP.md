@@ -77,7 +77,7 @@ La pagina Dashboard ha 3 sezioni verticali:
 
 ## Componenti da Creare
 
-1. `FilterBar` - ricerca + filtri
+1. `FilterList` - ricerca + filtri
 2. `CandidateList` - lista scrollabile
 3. `CandidateListItem` - singola card candidato
 4. `CandidateDetail` - wrapper dettaglio

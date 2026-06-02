@@ -10,7 +10,8 @@
     "delete": "Elimina",
     "edit": "Modifica",
     "confirm": "Conferma",
-    "loading": "Caricamento..."
+    "loading": "Caricamento...",
+    "reset_filters": "Resetta filtri"
   },
   "sidebar": {
     "dashboard": "Dashboard",
@@ -41,6 +42,11 @@
     "hired_desc": "Risorse inserite in organico",
     "avg_score": "Punteggio Medio",
     "avg_score_desc": "Valutazione media screening"
+  },
+  "candidates": {
+    "detail_section": "Dettaglio candidato",
+    "copy_email": "Copia email",
+    "match_overall": "Match Overall"
   },
   "not_found": {
     "message": "Pagina non trovata",

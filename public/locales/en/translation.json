@@ -10,7 +10,8 @@
     "delete": "Delete",
     "edit": "Edit",
     "confirm": "Confirm",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "reset_filters": "Reset filters"
   },
   "sidebar": {
     "dashboard": "Dashboard",
@@ -41,6 +42,11 @@
     "hired_desc": "Resources added to staff",
     "avg_score": "Average Score",
     "avg_score_desc": "Screening average rating"
+  },
+  "candidates": {
+    "detail_section": "Candidate detail",
+    "copy_email": "Copy email",
+    "match_overall": "Match Overall"
   },
   "not_found": {
     "message": "Page not found",

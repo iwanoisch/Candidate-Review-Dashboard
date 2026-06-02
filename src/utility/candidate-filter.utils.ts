@@ -1,7 +1,7 @@
 import type {Candidate} from '../features/applicant/applicant.type';
-import type {CandidateFilters} from '../common/filterBar/FilterBar.type';
+import type {IFilterList} from '../common/filterList/FilterList.type.ts';
 
-export function filterCandidates(candidates: Candidate[], filters: CandidateFilters): Candidate[] {
+export function filterCandidates(candidates: Candidate[], filters: IFilterList): Candidate[] {
     let result = [...candidates];
 
     if (filters.search) {

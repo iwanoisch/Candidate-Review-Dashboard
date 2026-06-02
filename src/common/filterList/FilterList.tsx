@@ -1,16 +1,25 @@
 import {useTranslation} from 'react-i18next';
-import {MagnifyingGlassIcon, ArrowsUpDownIcon} from '@heroicons/react/24/outline';
+import {MagnifyingGlassIcon, ArrowsUpDownIcon, XMarkIcon} from '@heroicons/react/24/outline';
 
-import {CandidateFilters, CandidateSearchBarProps} from "./FilterBar.type.ts";
-import {SORT_OPTIONS, STATUS_OPTIONS} from "../../constants/filter.constant.ts";
+import {IFilterList, FilterLIstProps} from "./FilterList.type.ts";
+import {DEFAULT_FILTERS, SORT_OPTIONS, STATUS_OPTIONS} from "../../constants/filter.constant.ts";
 import {CandidateStatus} from "../../features/applicant/applicant.type.ts";
 
 
-export const FilterBar = ({filters, departments, isLoading = false, onFiltersChange}: CandidateSearchBarProps) => {
+export const FilterList = ({filters, departments, isLoading = false, onFiltersChange}: FilterLIstProps) => {
     const {t} = useTranslation();
 
-    const updateFilter = (key: keyof CandidateFilters, value: string) => {
+    const updateFilter = (key: keyof IFilterList, value: string) => {
         onFiltersChange({...filters, [key]: value});
+    };
+
+    const isFiltered = filters.search !== DEFAULT_FILTERS.search
+        || filters.department !== DEFAULT_FILTERS.department
+        || filters.status !== DEFAULT_FILTERS.status
+        || filters.sortBy !== DEFAULT_FILTERS.sortBy;
+
+    const resetFilters = () => {
+        onFiltersChange({...DEFAULT_FILTERS});
     };
 
     if (isLoading) {
@@ -102,6 +111,17 @@ export const FilterBar = ({filters, departments, isLoading = false, onFiltersCha
                         ))}
                     </select>
                 </div>
+
+                {/* Reset filters */}
+                <button
+                    onClick={resetFilters}
+                    disabled={!isFiltered}
+                    className="flex items-center justify-center space-x-1.5 px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-white rounded-xl text-[11px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer sm:py-1.5"
+                    aria-label={t('common.reset_filters', 'Resetta filtri')}
+                >
+                    <XMarkIcon className="size-3 shrink-0" aria-hidden="true"/>
+                    <span>{t('common.reset_filters', 'Resetta filtri')}</span>
+                </button>
             </div>
         </div>
     );
