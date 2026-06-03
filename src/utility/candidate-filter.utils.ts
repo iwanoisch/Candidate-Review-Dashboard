@@ -9,8 +9,7 @@ export function filterCandidates(candidates: Candidate[], filters: IFilterList):
         result = result.filter(c =>
             c.name.toLowerCase().includes(query) ||
             c.email.toLowerCase().includes(query) ||
-            c.role.toLowerCase().includes(query) ||
-            c.notes.some(n => n.content.toLowerCase().includes(query))
+            c.role.toLowerCase().includes(query)
         );
     }
 

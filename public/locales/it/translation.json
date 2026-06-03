@@ -60,11 +60,11 @@
     "sort_experience": "Esperienza lavorativa",
     "sort_alpha": "Alfabetico (A-Z)",
     "status_applied": "Candidati",
-    "status_screening": "Qualifica",
+    "status_screening": "Screening",
     "status_interviewing": "In Colloquio",
-    "status_offered": "Proposta Economica",
-    "status_hired": "Assunti",
-    "status_rejected": "Scartati",
+    "status_offered": "Offerta",
+    "status_hired": "Assunto",
+    "status_rejected": "Scartato",
     "list_loading": "Caricamento...",
     "list_title": "Candidati",
     "empty": "Nessun candidato trovato",
@@ -72,6 +72,20 @@
     "top_score": "Top score",
     "registered": "Reg:",
     "section_label": "Gestione candidati"
+  },
+  "dossier": {
+    "section_label": "Dossier professionale",
+    "title": "Dossier Professionale",
+    "soft_skills": "Valutazione Qualificata Soft Skills",
+    "soft_skills_label": "Valutazione soft skills",
+    "recommendation_title": "Perché lo consigliamo:"
+  },
+  "pipeline": {
+    "section_label": "Pipeline recruitment",
+    "title": "Pipeline Recruitment",
+    "current_status": "Avanzamento Stato",
+    "current_label": "Stato Corrente",
+    "status_selection": "Selezione stato candidato"
   },
   "not_found": {
     "message": "Pagina non trovata",

@@ -18,18 +18,26 @@ import {FilterList} from "../../common/filterList/FilterList.tsx";
 import {CandidateList} from "../../components/candidtateList/CandidateList.tsx";
 import {CandidateDetail} from "../../components/candidateDetail/CandidateDetail.tsx";
 import {CandidateDetailSkeleton} from "../../components/candidateDetail/CandidateDetailSkeleton.tsx";
+import {ProfessionalDossier} from "../../components/professionalDossier/ProfessionalDossier.tsx";
+import {PipelineRecruitment} from "../../components/pipelineRecruitment/PipelineRecruitment.tsx";
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
-    const {stats, candidates, pagination, getApplicantStats, getCandidates} = useApplicant();
+    const {stats, candidates, selectedCandidate, pagination, getApplicantStats, getCandidates, getCandidateDetail, changeCandidateStatus} = useApplicant();
     const [isStatsLoad, setIsStatsLoad] = useState<boolean>(false);
     const [isCandidatesLoad, setIsCandidatesLoad] = useState<boolean>(false);
     const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
     const [filters, setFilters] = useState<IFilterList>(DEFAULT_FILTERS);
-    const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
     const [isDetailLoad, setIsDetailLoad] = useState<boolean>(false);
+
+    // Dipartimenti estratti da tutti i candidati mock (non filtrati)
+    const departments = useMemo(() => extractDepartments(APPLICANT_DATA_MOCK), []);
+    // Seleziona il primo candidato quando cambia la lista (filtri, caricamento iniziale)
+    const candidateIds = useMemo(() => candidates.map(c => c.id).join(','), [candidates]);
+    // Scroll → carica pagina successiva
+    const hasMore = pagination ? pagination.currentPage < pagination.totalPages : false;
 
     // Caricamento iniziale
     useEffect(() => {
@@ -51,9 +59,6 @@ export const Dashboard = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // Scroll → carica pagina successiva
-    const hasMore = pagination ? pagination.currentPage < pagination.totalPages : false;
-
     const handleLoadMore = useCallback(async () => {
         if (!pagination || isLoadingMore) return;
         setIsLoadingMore(true);
@@ -62,30 +67,21 @@ export const Dashboard = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pagination, isLoadingMore, filters]);
 
-    // Dipartimenti estratti da tutti i candidati mock (non filtrati)
-    const departments = useMemo(() => extractDepartments(APPLICANT_DATA_MOCK), []);
-
-    // Seleziona il primo candidato quando cambia la lista (filtri, caricamento iniziale)
     useEffect(() => {
         if (candidates.length > 0) {
-            setSelectedCandidateId(candidates[0].id);
+            loadCandidateDetail(candidates[0].id);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [candidates]);
+    }, [candidateIds]);
 
-    const selectedCandidate = useMemo(() => candidates.find(c => c.id === selectedCandidateId) ?? null, [candidates, selectedCandidateId]);
-
-    // Simula caricamento dettaglio quando cambia la selezione
-    useEffect(() => {
-        if (!selectedCandidateId) return;
+    const loadCandidateDetail = async (candidateId: string) => {
         setIsDetailLoad(true);
-        // TODO: sostituire con chiamata API reale per il dettaglio candidato
-        const timeout = setTimeout(() => setIsDetailLoad(false), 600);
-        return () => clearTimeout(timeout);
-    }, [selectedCandidateId]);
+        await getCandidateDetail(candidateId);
+        setIsDetailLoad(false);
+    };
 
     const handleSelectCandidate = (candidate: Candidate) => {
-        setSelectedCandidateId(candidate.id);
+        loadCandidateDetail(candidate.id);
     };
 
     return (
@@ -163,11 +159,29 @@ export const Dashboard = () => {
                     </div>
 
                     {/* Colonna destra - Dettaglio candidato */}
-                    <div className="xl:col-span-7 min-w-0">
+                    <div className="xl:col-span-7 min-w-0 space-y-6">
                         {isDetailLoad || isCandidatesLoad ? (
                             <CandidateDetailSkeleton/>
                         ) : selectedCandidate && (
-                            <CandidateDetail candidate={selectedCandidate}/>
+                            <>
+                                <CandidateDetail candidate={selectedCandidate}/>
+                                <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+                                    <div className="lg:col-span-7">
+                                        <ProfessionalDossier
+                                            summary={selectedCandidate.summary}
+                                            matchReason={selectedCandidate.matchReason}
+                                            softSkills={selectedCandidate.softSkills}
+                                        />
+                                    </div>
+                                    <div className="lg:col-span-5">
+                                        <PipelineRecruitment
+                                            currentStatus={selectedCandidate.status}
+                                            isAdmin={user?.role === 'admin'}
+                                            onStatusChange={changeCandidateStatus}
+                                        />
+                                    </div>
+                                </div>
+                            </>
                         )}
                     </div>
                 </div>

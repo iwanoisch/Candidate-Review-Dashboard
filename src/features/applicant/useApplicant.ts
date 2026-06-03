@@ -1,9 +1,10 @@
 import {useAppDispatch, useAppSelector} from "../../store/store.ts";
 import {loadCandidates, appendCandidates, loadStats, selectCandidate} from './applicantSlice.ts';
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
+import {APPLICANT_DETAIL_MOCK} from "../../data_mock/APPLICANT_DETAIL_MOCK.ts";
 import {APPLICANT_STATS_MOCK} from "../../data_mock/APPLICANT_STATS_MOCK.ts";
 import {filterCandidates} from "../../utility/candidate-filter.utils.ts";
-import type {ApplicantStats} from './applicant.type';
+import type {ApplicantStats, CandidateDetail, CandidateStatus} from './applicant.type';
 import type {IApiResponse} from "../../hooks/api/useApiClient.type.ts";
 import type {IFilterList} from "../../common/filterList/FilterList.type.ts";
 
@@ -61,6 +62,25 @@ export const useApplicant = () => {
         }
     };
 
+    const getCandidateDetail = async (candidateId: string): Promise<CandidateDetail | null> => {
+        try {
+            // TODO: sostituire con get<IApiResponse<CandidateDetail>>(`/candidates/${candidateId}`)
+            await new Promise(resolve => setTimeout(resolve, 600));
+            const detail = APPLICANT_DETAIL_MOCK[candidateId] ?? null;
+            dispatch(selectCandidate(detail));
+            return detail;
+        } catch {
+            return null;
+        }
+    };
+
+    const changeCandidateStatus = (status: CandidateStatus) => {
+        // TODO: sostituire con chiamata API put/patch
+        if (state.selectedCandidate) {
+            dispatch(selectCandidate({...state.selectedCandidate, status}));
+        }
+    };
+
     const clearSelection = () => {
         dispatch(selectCandidate(null));
     };
@@ -68,7 +88,9 @@ export const useApplicant = () => {
     return {
         ...state,
         getCandidates,
+        getCandidateDetail,
         getApplicantStats,
+        changeCandidateStatus,
         clearSelection,
     };
 };

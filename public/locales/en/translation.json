@@ -73,6 +73,20 @@
     "registered": "Reg:",
     "section_label": "Candidate management"
   },
+  "dossier": {
+    "section_label": "Professional dossier",
+    "title": "Professional Dossier",
+    "soft_skills": "Qualified Soft Skills Assessment",
+    "soft_skills_label": "Soft skills assessment",
+    "recommendation_title": "Why we recommend:"
+  },
+  "pipeline": {
+    "section_label": "Recruitment pipeline",
+    "title": "Pipeline Recruitment",
+    "current_status": "Status Progress",
+    "current_label": "Current Status",
+    "status_selection": "Candidate status selection"
+  },
   "not_found": {
     "message": "Page not found",
     "go_home": "Go to Dashboard"

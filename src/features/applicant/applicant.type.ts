@@ -30,6 +30,12 @@ export interface TimelineEvent {
     };
 }
 
+export interface SoftSkill {
+    name: string;
+    score: number;
+    maxScore: number;
+}
+
 export interface Candidate {
     id: string;
     name: string;
@@ -42,9 +48,13 @@ export interface Candidate {
     experienceYears: number;
     appliedDate: string;
     status: CandidateStatus;
+    tags: string[];
+}
+
+export interface CandidateDetail extends Candidate {
     summary: string;
     matchReason: string;
-    tags: string[];
+    softSkills: SoftSkill[];
     notes: CandidateNote[];
     timeline: TimelineEvent[];
 }
@@ -60,7 +70,7 @@ export interface ApplicantStats {
 
 export interface ApplicantState {
     candidates: Candidate[];
-    selectedCandidate: Candidate | null;
+    selectedCandidate: CandidateDetail | null;
     pagination: IPagination | null;
     stats: ApplicantStats | null;
 }

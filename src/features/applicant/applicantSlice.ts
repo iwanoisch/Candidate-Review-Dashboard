@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import type {ApplicantState, ApplicantStats, Candidate} from './applicant.type';
+import type {ApplicantState, ApplicantStats, Candidate, CandidateDetail} from './applicant.type';
 import type {IPagination} from '../../hooks/api/useApiClient.type';
 
 const initialState: ApplicantState = {
@@ -27,7 +27,7 @@ export const applicantSlice = createSlice({
             state.stats = action.payload;
         },
 
-        selectCandidate: (state, action: PayloadAction<Candidate | null>) => {
+        selectCandidate: (state, action: PayloadAction<CandidateDetail | null>) => {
             state.selectedCandidate = action.payload;
         },
     },

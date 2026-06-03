@@ -13,73 +13,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 8,
         "appliedDate": "2026-05-15",
         "status": "Interviewing",
-        "summary": "Developer esperto e versatile, con forte competenza in React, Node.js e architetture Cloud (AWS). Ha guidato con successo la migrazione di piattaforme monolitiche legacy verso soluzioni a micro-frontend in contesti aziendali complessi.",
-        "matchReason": "Perfetto fit tecnico. Ha superato brillantemente la nostra prova di Live System Design dimostrando padronanza di pattern di caching, scalabilità e database Relazionali/NoSQL.",
-        "tags": ["React", "NodeJS", "System Design", "AWS"],
-        "notes": [
-            {
-                "id": "note-1-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-16",
-                "content": "Ottimo screening iniziale. Motivato, risponde perfettamente alle aspettative salariali e ha un preavviso di sole 2 settimane. Procediamo subito con il colloquio tecnico."
-            },
-            {
-                "id": "note-1-2",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin",
-                "date": "2026-05-22",
-                "content": "La prova tecnica è andata egregiamente. Ha spiegato molto bene la gestione dello stato in ambienti concorrenti. Ha espresso forte preferenza per Redux Toolkit!"
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-1-1",
-                "date": "2026-05-15",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura registrata per il ruolo di Senior Full Stack Developer.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-1-2",
-                "date": "2026-05-16",
-                "type": "status_change",
-                "title": "Avanzamento a Screening",
-                "description": "Stato modificato da Applied a Screening.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Screening" }
-            },
-            {
-                "id": "tl-1-3",
-                "date": "2026-05-16",
-                "type": "note_added",
-                "title": "Nota di HR Inserita",
-                "description": "\"Ottimo screening iniziale...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-1-4",
-                "date": "2026-05-20",
-                "type": "status_change",
-                "title": "Avanzamento a In Colloquio",
-                "description": "Stato modificato da Screening a Interviewing per colloquio tecnico.",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Screening", "newStatus": "Interviewing" }
-            },
-            {
-                "id": "tl-1-5",
-                "date": "2026-05-22",
-                "type": "note_added",
-                "title": "Nota Tecnica Aggiunta",
-                "description": "\"La prova tecnica è andata egregiamente...\"",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin"
-            }
+        "tags": [
+            "React",
+            "NodeJS",
+            "System Design",
+            "AWS"
         ]
     },
     {
@@ -94,83 +32,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 10,
         "appliedDate": "2026-05-20",
         "status": "Offered",
-        "summary": "Product Leader specializzata nello sviluppo di prodotti SaaS B2B. Altamente orientata alle metriche di adozione del prodotto, user research approfondita ed allineamento strategico tra team commerciali ed ingegneristici.",
-        "matchReason": "Leadership comunicativa eccezionale. Ha gestito roadmap complesse portando un incremento del 40% di MRR nel suo ultimo incarico.",
-        "tags": ["B2B SaaS", "Roadmapping", "Agile", "Product Analytics"],
-        "notes": [
-            {
-                "id": "note-2-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-21",
-                "content": "Forte intesa immediata sul piano culturale. Ha descritto casi reali in cui ha detto \"no\" a feature complesse per mantenere focalizzata la strategia."
-            },
-            {
-                "id": "note-2-2",
-                "author": "Marco D. (CPO)",
-                "authorRole": "admin",
-                "date": "2026-05-25",
-                "content": "Presentazione del product case fantastica. Chiara, concisa e supportata da dati numerici. Mandiamo l’offerta economica oggi stesso."
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-2-1",
-                "date": "2026-05-20",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura spontanea registrata.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-2-2",
-                "date": "2026-05-21",
-                "type": "status_change",
-                "title": "Spostata in Screening",
-                "description": "Stato modificato da Applied a Screening.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Screening" }
-            },
-            {
-                "id": "tl-2-3",
-                "date": "2026-05-21",
-                "type": "note_added",
-                "title": "Feedback HR",
-                "description": "\"Forte intesa immediata...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-2-4",
-                "date": "2026-05-23",
-                "type": "status_change",
-                "title": "In Colloquio",
-                "description": "Stato modificato da Screening a Interviewing.",
-                "author": "Marco D. (CPO)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Screening", "newStatus": "Interviewing" }
-            },
-            {
-                "id": "tl-2-5",
-                "date": "2026-05-25",
-                "type": "note_added",
-                "title": "Feedback Progetto CPO",
-                "description": "\"Presentazione del product case fantastica...\"",
-                "author": "Marco D. (CPO)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-2-6",
-                "date": "2026-05-26",
-                "type": "status_change",
-                "title": "Offerta Inviata",
-                "description": "Contratto per Senior Product Manager proposto formalmente.",
-                "author": "Marco D. (CPO)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Interviewing", "newStatus": "Offered" }
-            }
+        "tags": [
+            "B2B SaaS",
+            "Roadmapping",
+            "Agile",
+            "Product Analytics"
         ]
     },
     {
@@ -185,47 +51,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "summary": "Designer focalizzato su web ed interfacce mobile. Esperto in creazione e manutenzione di Figma Design Systems evoluti, micro-interazioni coinvolgenti ed attento sostenitore degli standard di accessibilità WCAG.",
-        "matchReason": "Portfolio di eccellente fattura, pulito e documentato molto approfonditamente. Dimostra orientamento sia estetico che funzionale.",
-        "tags": ["Figma", "Design Systems", "Micro-interazioni", "WCAG"],
-        "notes": [
-            {
-                "id": "note-3-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-23",
-                "content": "Fatto primo touchpoint. Dimostra ottime capacità espositive e dedizione ai dettagli. In attesa del portfoli review con il Lead Designer."
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-3-1",
-                "date": "2026-05-22",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura ricevuta via LinkedIn Referral.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-3-2",
-                "date": "2026-05-23",
-                "type": "status_change",
-                "title": "Passato a Screening",
-                "description": "Spostato in Screening iniziale.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Screening" }
-            },
-            {
-                "id": "tl-3-3",
-                "date": "2026-05-23",
-                "type": "note_added",
-                "title": "Nota Touchpoint HR",
-                "description": "\"Fatto primo touchpoint...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            }
+        "tags": [
+            "Figma",
+            "Design Systems",
+            "Micro-interazioni",
+            "WCAG"
         ]
     },
     {
@@ -240,20 +70,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-23",
         "status": "Applied",
-        "summary": "Esperta di marketing a performance con focus su acquisizione utenti B2C. Esperta nell’approccio scientifico tramite test A/B rigorosi, scalabilità di campagne Paid Search/Social, e automazione di campagne email newsletter.",
-        "matchReason": "Solido approccio analitico ai funnel di conversione. Perfetto per espandere il canale di traffico organico e a pagamento.",
-        "tags": ["SEO", "Google Ads", "A/B Testing", "Growth Funnel"],
-        "notes": [],
-        "timeline": [
-            {
-                "id": "tl-4-1",
-                "date": "2026-05-23",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura spontanea registrata sul sito web aziendale.",
-                "author": "System",
-                "authorRole": "viewer"
-            }
+        "tags": [
+            "SEO",
+            "Google Ads",
+            "A/B Testing",
+            "Growth Funnel"
         ]
     },
     {
@@ -268,93 +89,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 12,
         "appliedDate": "2026-05-10",
         "status": "Hired",
-        "summary": "Ingegnere e architetto software specializzato in infrastrutture distribuite, sistemi a tolleranza di errore ed elaborazione flussi dati real-time. Forte contributore a progetti Software Open Source correlati al Cloud Native computing.",
-        "matchReason": "Talento eccezionale a livello globale. Ha superato brillantemente ogni sessione di intervista con unanimità assoluta del comitato di valutazione.",
-        "tags": ["Kubernetes", "Scala", "Distributed Systems", "Go"],
-        "notes": [
-            {
-                "id": "note-5-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-11",
-                "content": "Ottimo background. Richiede rilocazione, approvata dal budget."
-            },
-            {
-                "id": "note-5-2",
-                "author": "Fabio T. (VP of Eng)",
-                "authorRole": "admin",
-                "date": "2026-05-18",
-                "content": "Uno dei migliori candidati mai visti. Proposta contrattuale accettata ufficialmente ieri! Assunto!"
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-5-1",
-                "date": "2026-05-10",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura registrata.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-5-2",
-                "date": "2026-05-11",
-                "type": "status_change",
-                "title": "Passato in Screening",
-                "description": "Stato modificato da Applied a Screening.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Screening" }
-            },
-            {
-                "id": "tl-5-3",
-                "date": "2026-05-11",
-                "type": "note_added",
-                "title": "Verifica Budget Rilocazione",
-                "description": "\"Ottimo background...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-5-4",
-                "date": "2026-05-14",
-                "type": "status_change",
-                "title": "Spostato in Colloqui",
-                "description": "Interviste programmate con VP",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Screening", "newStatus": "Interviewing" }
-            },
-            {
-                "id": "tl-5-5",
-                "date": "2026-05-16",
-                "type": "status_change",
-                "title": "Offerta Proposta",
-                "description": "Inviato pacchetto offerta.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Interviewing", "newStatus": "Offered" }
-            },
-            {
-                "id": "tl-5-6",
-                "date": "2026-05-18",
-                "type": "status_change",
-                "title": "Assunto!",
-                "description": "Offerta firmata. Data inizio fissata per Lunedì 1 Luglio 2026.",
-                "author": "Fabio T. (VP of Eng)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Offered", "newStatus": "Hired" }
-            },
-            {
-                "id": "tl-5-7",
-                "date": "2026-05-18",
-                "type": "note_added",
-                "title": "Contratto Firmato",
-                "description": "\"Uno dei migliori candidati...\"",
-                "author": "Fabio T. (VP of Eng)",
-                "authorRole": "admin"
-            }
+        "tags": [
+            "Kubernetes",
+            "Scala",
+            "Distributed Systems",
+            "Go"
         ]
     },
     {
@@ -369,47 +108,10 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 1,
         "appliedDate": "2026-05-18",
         "status": "Rejected",
-        "summary": "Sviluppatrice motivata che compie i primi solidi passi con React e CSS. Laureata triennale in Informatica, ha dimostrato notevole passione nei suoi progetti personali su Github.",
-        "matchReason": "Profilo Junior promettente, ma non adatto alla nostra attuale posizione Senior aperta, che necessita di autonomia immediata su architetture a microservizi.",
-        "tags": ["Eager to Learn", "React Basics", "HTML & CSS"],
-        "notes": [
-            {
-                "id": "note-6-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-19",
-                "content": "Sofia ha ottima energia, ma ammette di avere zero competenze con database o backend. Rifiutiamo con garbo suggerendole di candidarsi nuovamente tra un anno."
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-6-1",
-                "date": "2026-05-18",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Sofia ha inviato la sua candidatura.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-6-2",
-                "date": "2026-05-19",
-                "type": "note_added",
-                "title": "Feedback Screening HR",
-                "description": "\"Sofia ha ottima energia...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-6-3",
-                "date": "2026-05-19",
-                "type": "status_change",
-                "title": "Esito Scartato",
-                "description": "Stato modificato da Applied a Rejected con email di feedback costruttivo inviata.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Rejected" }
-            }
+        "tags": [
+            "Eager to Learn",
+            "React Basics",
+            "HTML & CSS"
         ]
     },
     {
@@ -424,57 +126,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 7,
         "appliedDate": "2026-05-12",
         "status": "Interviewing",
-        "summary": "Professionista delle vendite orientato ai risultati, con solida esperienza commerciale in mercati SaaS Enterprise ad alto valore di transazione (ACV > €100k). Eccellente con negoziazioni multilivello.",
-        "matchReason": "Notevole sicurezza sul palco e durante le presentazioni di vendita. Ha gestito lead di grandi istituti finanziari in Italia.",
-        "tags": ["Sales Prospecting", "SaaS Licensing", "Negotiation", "CRM"],
-        "notes": [
-            {
-                "id": "note-7-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-13",
-                "content": "Ha gestito transazioni molto rilevanti. Motivazione alta. Programmiamo intervista con il VP di Sales."
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-7-1",
-                "date": "2026-05-12",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Ricevuto profilo da agenzia di headhunting.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-7-2",
-                "date": "2026-05-13",
-                "type": "status_change",
-                "title": "Screening Completato",
-                "description": "Spostato in Screening iniziale.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Applied", "newStatus": "Screening" }
-            },
-            {
-                "id": "tl-7-3",
-                "date": "2026-05-13",
-                "type": "note_added",
-                "title": "Nota Screening Commerciale",
-                "description": "\"Ha gestito transazioni molto rilevanti...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-7-4",
-                "date": "2026-05-15",
-                "type": "status_change",
-                "title": "Spostato in Interviewing",
-                "description": "Organizzato colloquio conoscitivo commerciale.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": { "oldStatus": "Screening", "newStatus": "Interviewing" }
-            }
+        "tags": [
+            "Sales Prospecting",
+            "SaaS Licensing",
+            "Negotiation",
+            "CRM"
         ]
     },
     {
@@ -489,11 +145,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "summary": "Specialista DevOps con forte esperienza in CI/CD, Terraform e ambienti multi-cloud. Ha automatizzato pipeline di deploy riducendo i tempi di rilascio del 70%.",
-        "matchReason": "Ottima padronanza di infrastrutture cloud ibride. Perfetta per il nostro progetto di migrazione AWS/GCP.",
-        "tags": ["Docker", "Kubernetes", "Terraform", "CI/CD"],
-        "notes": [{"id": "note-8-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-25", "content": "Profilo tecnico molto solido. Programmiamo colloquio con il team infrastruttura."}],
-        "timeline": [{"id": "tl-8-1", "date": "2026-05-24", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-8-2", "date": "2026-05-25", "type": "status_change", "title": "Passata in Screening", "description": "Stato modificato da Applied a Screening.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "CI/CD"
+        ]
     },
     {
         "id": "cand-9",
@@ -507,11 +164,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "summary": "Sviluppatore backend specializzato in architetture a microservizi con Java e Spring Boot. Esperienza significativa con sistemi event-driven e message broker.",
-        "matchReason": "Competenze solide su Kafka e architetture distribuite. Buon fit per il team backend.",
-        "tags": ["Java", "Spring Boot", "Kafka", "Microservices"],
-        "notes": [{"id": "note-9-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-23", "content": "Buon colloquio tecnico. Conosce bene i pattern CQRS e Event Sourcing."}],
-        "timeline": [{"id": "tl-9-1", "date": "2026-05-21", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-9-2", "date": "2026-05-22", "type": "status_change", "title": "In Screening", "description": "Stato modificato da Applied a Screening.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-9-3", "date": "2026-05-23", "type": "status_change", "title": "In Colloquio", "description": "Stato modificato da Screening a Interviewing.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "Java",
+            "Spring Boot",
+            "Kafka",
+            "Microservices"
+        ]
     },
     {
         "id": "cand-10",
@@ -525,11 +183,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "summary": "Data analyst con esperienza in Python, SQL e strumenti di business intelligence. Capacita di trasformare dati grezzi in insight azionabili per il business.",
-        "matchReason": "Buon profilo analitico. Da valutare competenze su strumenti di data visualization avanzati.",
-        "tags": ["Python", "SQL", "Tableau", "Data Visualization"],
-        "notes": [],
-        "timeline": [{"id": "tl-10-1", "date": "2026-05-25", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "Python",
+            "SQL",
+            "Tableau",
+            "Data Visualization"
+        ]
     },
     {
         "id": "cand-11",
@@ -543,11 +202,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 7,
         "appliedDate": "2026-05-19",
         "status": "Offered",
-        "summary": "Sviluppatore mobile esperto in React Native e Swift. Ha pubblicato app con milioni di download su App Store e Play Store.",
-        "matchReason": "Portfolio eccezionale. La sua esperienza con app ad alto traffico e' esattamente cio che cerchiamo.",
-        "tags": ["React Native", "Swift", "TypeScript", "Mobile UX"],
-        "notes": [{"id": "note-11-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-20", "content": "Colloquio andato benissimo. Mandiamo offerta."}, {"id": "note-11-2", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "date": "2026-05-24", "content": "Offerta inviata. In attesa di risposta."}],
-        "timeline": [{"id": "tl-11-1", "date": "2026-05-19", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-11-2", "date": "2026-05-20", "type": "status_change", "title": "Screening completato", "description": "Passato direttamente a colloquio.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Interviewing"}}, {"id": "tl-11-3", "date": "2026-05-24", "type": "status_change", "title": "Offerta inviata", "description": "Proposta contrattuale inviata.", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "meta": {"oldStatus": "Interviewing", "newStatus": "Offered"}}]
+        "tags": [
+            "React Native",
+            "Swift",
+            "TypeScript",
+            "Mobile UX"
+        ]
     },
     {
         "id": "cand-12",
@@ -561,11 +221,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 9,
         "appliedDate": "2026-05-17",
         "status": "Hired",
-        "summary": "Product designer senior con focus su design system enterprise. Ha costruito e mantenuto design system utilizzati da oltre 200 sviluppatori.",
-        "matchReason": "Esperienza rara nella costruzione di design system scalabili. Perfetta per guidare il nostro team design.",
-        "tags": ["Figma", "Design Systems", "User Research", "Accessibility"],
-        "notes": [{"id": "note-12-1", "author": "Marco D. (CPO)", "authorRole": "admin", "date": "2026-05-20", "content": "Presentazione portfolio straordinaria. Assumiamo subito."}],
-        "timeline": [{"id": "tl-12-1", "date": "2026-05-17", "type": "created", "title": "Candidatura Ricevuta", "description": "Referral interno.", "author": "System", "authorRole": "viewer"}, {"id": "tl-12-2", "date": "2026-05-20", "type": "status_change", "title": "Assunta", "description": "Offerta accettata immediatamente.", "author": "Marco D. (CPO)", "authorRole": "admin", "meta": {"oldStatus": "Interviewing", "newStatus": "Hired"}}]
+        "tags": [
+            "Figma",
+            "Design Systems",
+            "User Research",
+            "Accessibility"
+        ]
     },
     {
         "id": "cand-13",
@@ -579,11 +240,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "summary": "Ingegnere della sicurezza con certificazioni CISSP e CEH. Esperienza in penetration testing, audit di sicurezza e compliance GDPR.",
-        "matchReason": "Competenze di sicurezza molto richieste. Profilo ideale per rafforzare il team security.",
-        "tags": ["CISSP", "Penetration Testing", "GDPR", "Cloud Security"],
-        "notes": [{"id": "note-13-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-23", "content": "Certificazioni verificate. Procediamo con screening tecnico."}],
-        "timeline": [{"id": "tl-13-1", "date": "2026-05-22", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura via LinkedIn.", "author": "System", "authorRole": "viewer"}, {"id": "tl-13-2", "date": "2026-05-23", "type": "status_change", "title": "In Screening", "description": "Stato modificato da Applied a Screening.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "CISSP",
+            "Penetration Testing",
+            "GDPR",
+            "Cloud Security"
+        ]
     },
     {
         "id": "cand-14",
@@ -597,11 +259,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-26",
         "status": "Applied",
-        "summary": "Content strategist con esperienza in SEO copywriting, content marketing B2B e gestione editoriale multi-canale.",
-        "matchReason": "Buone competenze di scrittura tecnica. Da verificare esperienza su contenuti SaaS.",
-        "tags": ["SEO", "Content Marketing", "Copywriting", "B2B"],
-        "notes": [],
-        "timeline": [{"id": "tl-14-1", "date": "2026-05-26", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea via sito.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "SEO",
+            "Content Marketing",
+            "Copywriting",
+            "B2B"
+        ]
     },
     {
         "id": "cand-15",
@@ -615,11 +278,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 8,
         "appliedDate": "2026-05-14",
         "status": "Interviewing",
-        "summary": "ML Engineer con PhD in Computer Science. Pubblicazioni su NeurIPS e ICML. Esperienza in produzione di modelli NLP e computer vision.",
-        "matchReason": "Profilo accademico e industriale eccezionale. Ideale per guidare le iniziative AI dell'azienda.",
-        "tags": ["PyTorch", "NLP", "Computer Vision", "MLOps"],
-        "notes": [{"id": "note-15-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-16", "content": "Colloquio tecnico brillante. Conoscenza profonda di transformer architectures."}, {"id": "note-15-2", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "date": "2026-05-20", "content": "Secondo colloquio eccellente. Prepariamo offerta competitiva."}],
-        "timeline": [{"id": "tl-15-1", "date": "2026-05-14", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-15-2", "date": "2026-05-15", "type": "status_change", "title": "In Screening", "description": "Passato in screening.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-15-3", "date": "2026-05-16", "type": "status_change", "title": "In Colloquio", "description": "Colloquio tecnico programmato.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "PyTorch",
+            "NLP",
+            "Computer Vision",
+            "MLOps"
+        ]
     },
     {
         "id": "cand-16",
@@ -633,11 +297,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 7,
         "appliedDate": "2026-05-23",
         "status": "Screening",
-        "summary": "HR Business Partner con esperienza in aziende tech scale-up. Specializzata in employer branding, talent acquisition e people analytics.",
-        "matchReason": "Esperienza rilevante in contesti tech ad alta crescita. Buon fit culturale.",
-        "tags": ["Talent Acquisition", "Employer Branding", "People Analytics", "OKR"],
-        "notes": [{"id": "note-16-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-24", "content": "Primo screening positivo. Conosce bene le dinamiche di team engineering."}],
-        "timeline": [{"id": "tl-16-1", "date": "2026-05-23", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-16-2", "date": "2026-05-24", "type": "status_change", "title": "In Screening", "description": "Stato modificato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "Talent Acquisition",
+            "Employer Branding",
+            "People Analytics",
+            "OKR"
+        ]
     },
     {
         "id": "cand-17",
@@ -651,11 +316,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-20",
         "status": "Rejected",
-        "summary": "Frontend developer con esperienza in Vue.js e Angular. Buona conoscenza di CSS avanzato e animazioni web.",
-        "matchReason": "Competenze frontend solide ma manca esperienza React, nostro stack principale.",
-        "tags": ["Vue.js", "Angular", "CSS", "Web Animations"],
-        "notes": [{"id": "note-17-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-22", "content": "Buon profilo ma non ha esperienza React. Suggerito di ripresentarsi dopo formazione."}],
-        "timeline": [{"id": "tl-17-1", "date": "2026-05-20", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-17-2", "date": "2026-05-22", "type": "status_change", "title": "Scartato", "description": "Manca esperienza React.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Rejected"}}]
+        "tags": [
+            "Vue.js",
+            "Angular",
+            "CSS",
+            "Web Animations"
+        ]
     },
     {
         "id": "cand-18",
@@ -669,11 +335,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-18",
         "status": "Interviewing",
-        "summary": "QA Engineer con esperienza in test automation, Cypress, Playwright e testing di API REST. Forte orientamento alla quality culture.",
-        "matchReason": "Ottima esperienza con Cypress e Playwright. Perfetta per il nostro processo di CI/CD.",
-        "tags": ["Cypress", "Playwright", "API Testing", "Test Automation"],
-        "notes": [{"id": "note-18-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-20", "content": "Colloquio tecnico andato bene. Sa impostare strategie di test end-to-end."}],
-        "timeline": [{"id": "tl-18-1", "date": "2026-05-18", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-18-2", "date": "2026-05-19", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-18-3", "date": "2026-05-20", "type": "status_change", "title": "In Colloquio", "description": "Colloquio tecnico.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "Cypress",
+            "Playwright",
+            "API Testing",
+            "Test Automation"
+        ]
     },
     {
         "id": "cand-19",
@@ -687,11 +354,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 2,
         "appliedDate": "2026-05-27",
         "status": "Applied",
-        "summary": "SDR motivato con esperienza in outbound prospecting B2B. Conosce bene Salesforce e strumenti di sales engagement.",
-        "matchReason": "Giovane ma determinato. Buoni numeri nel ruolo precedente. Da valutare in screening.",
-        "tags": ["Salesforce", "Outbound", "Cold Calling", "LinkedIn Sales"],
-        "notes": [],
-        "timeline": [{"id": "tl-19-1", "date": "2026-05-27", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "Salesforce",
+            "Outbound",
+            "Cold Calling",
+            "LinkedIn Sales"
+        ]
     },
     {
         "id": "cand-20",
@@ -705,11 +373,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "summary": "Motion designer creativa con esperienza in After Effects, Lottie e micro-interazioni per prodotti digitali.",
-        "matchReason": "Portfolio visivamente impressionante. Le sue animazioni Lottie sono molto fluide.",
-        "tags": ["After Effects", "Lottie", "Micro-interactions", "Framer Motion"],
-        "notes": [{"id": "note-20-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-25", "content": "Portfolio molto interessante. Programmiamo review con il design lead."}],
-        "timeline": [{"id": "tl-20-1", "date": "2026-05-24", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-20-2", "date": "2026-05-25", "type": "status_change", "title": "In Screening", "description": "Passata in screening.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "After Effects",
+            "Lottie",
+            "Micro-interactions",
+            "Framer Motion"
+        ]
     },
     {
         "id": "cand-21",
@@ -723,11 +392,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 7,
         "appliedDate": "2026-05-16",
         "status": "Offered",
-        "summary": "SRE con esperienza in sistemi ad alta disponibilita. Expert in observability, incident management e chaos engineering.",
-        "matchReason": "Profilo SRE raro e molto richiesto. Esperienza diretta con sistemi 99.99% uptime.",
-        "tags": ["SRE", "Prometheus", "Grafana", "Chaos Engineering"],
-        "notes": [{"id": "note-21-1", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "date": "2026-05-22", "content": "Candidato eccellente. Offerta inviata."}],
-        "timeline": [{"id": "tl-21-1", "date": "2026-05-16", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-21-2", "date": "2026-05-18", "type": "status_change", "title": "In Colloquio", "description": "Colloquio diretto con VP.", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Interviewing"}}, {"id": "tl-21-3", "date": "2026-05-22", "type": "status_change", "title": "Offerta", "description": "Proposta inviata.", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "meta": {"oldStatus": "Interviewing", "newStatus": "Offered"}}]
+        "tags": [
+            "SRE",
+            "Prometheus",
+            "Grafana",
+            "Chaos Engineering"
+        ]
     },
     {
         "id": "cand-22",
@@ -741,11 +411,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "summary": "Product Owner certificata CSPO con forte esperienza in metodologie agili. Ha gestito prodotti SaaS B2B con oltre 50k utenti attivi.",
-        "matchReason": "Ottima combinazione di competenze tecniche e business. Forte nel definire user stories.",
-        "tags": ["Scrum", "User Stories", "Jira", "Product Discovery"],
-        "notes": [{"id": "note-22-1", "author": "Marco D. (CPO)", "authorRole": "admin", "date": "2026-05-24", "content": "Colloquio molto positivo. Sa bilanciare bene esigenze tecniche e di business."}],
-        "timeline": [{"id": "tl-22-1", "date": "2026-05-21", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-22-2", "date": "2026-05-22", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-22-3", "date": "2026-05-24", "type": "status_change", "title": "In Colloquio", "description": "Colloquio con CPO.", "author": "Marco D. (CPO)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "Scrum",
+            "User Stories",
+            "Jira",
+            "Product Discovery"
+        ]
     },
     {
         "id": "cand-23",
@@ -759,11 +430,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-26",
         "status": "Applied",
-        "summary": "Sviluppatore full stack con esperienza in React, Node.js e PostgreSQL. Appassionato di clean code e testing.",
-        "matchReason": "Profilo junior-mid promettente. Da valutare la profondita delle competenze architetturali.",
-        "tags": ["React", "Node.js", "PostgreSQL", "TypeScript"],
-        "notes": [],
-        "timeline": [{"id": "tl-23-1", "date": "2026-05-26", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "TypeScript"
+        ]
     },
     {
         "id": "cand-24",
@@ -777,11 +449,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-19",
         "status": "Rejected",
-        "summary": "Brand manager con esperienza in rebranding aziendale e comunicazione corporate. Forte background in PR e media relations.",
-        "matchReason": "Profilo interessante ma il ruolo richiede competenze digitali piu avanzate.",
-        "tags": ["Branding", "PR", "Corporate Communication", "Media Relations"],
-        "notes": [{"id": "note-24-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-21", "content": "Buon profilo ma non allineata con le nostre esigenze di digital marketing."}],
-        "timeline": [{"id": "tl-24-1", "date": "2026-05-19", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-24-2", "date": "2026-05-21", "type": "status_change", "title": "Scartata", "description": "Profilo non allineato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Rejected"}}]
+        "tags": [
+            "Branding",
+            "PR",
+            "Corporate Communication",
+            "Media Relations"
+        ]
     },
     {
         "id": "cand-25",
@@ -795,11 +468,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 11,
         "appliedDate": "2026-05-13",
         "status": "Hired",
-        "summary": "Technical Lead con esperienza nella guida di team distribuiti. Expert in architetture serverless e event-driven su AWS.",
-        "matchReason": "Leadership tecnica eccezionale. Ha gestito team di 15+ developer in contesti enterprise.",
-        "tags": ["AWS Lambda", "Architecture", "Team Leadership", "Serverless"],
-        "notes": [{"id": "note-25-1", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "date": "2026-05-18", "content": "Uno dei migliori Tech Lead che abbiamo mai intervistato. Contratto firmato!"}],
-        "timeline": [{"id": "tl-25-1", "date": "2026-05-13", "type": "created", "title": "Candidatura Ricevuta", "description": "Referral da headhunter.", "author": "System", "authorRole": "viewer"}, {"id": "tl-25-2", "date": "2026-05-15", "type": "status_change", "title": "In Colloquio", "description": "Colloqui accelerati.", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Interviewing"}}, {"id": "tl-25-3", "date": "2026-05-18", "type": "status_change", "title": "Assunto", "description": "Contratto firmato.", "author": "Fabio T. (VP of Eng)", "authorRole": "admin", "meta": {"oldStatus": "Offered", "newStatus": "Hired"}}]
+        "tags": [
+            "AWS Lambda",
+            "Architecture",
+            "Team Leadership",
+            "Serverless"
+        ]
     },
     {
         "id": "cand-26",
@@ -813,11 +487,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-28",
         "status": "Applied",
-        "summary": "Business analyst con competenze in analisi dei requisiti, process mapping e documentazione tecnica.",
-        "matchReason": "Profilo promettente. Da valutare esperienza con stakeholder tecnici.",
-        "tags": ["Requirements Analysis", "Process Mapping", "BPMN", "Confluence"],
-        "notes": [],
-        "timeline": [{"id": "tl-26-1", "date": "2026-05-28", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "Requirements Analysis",
+            "Process Mapping",
+            "BPMN",
+            "Confluence"
+        ]
     },
     {
         "id": "cand-27",
@@ -831,11 +506,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-20",
         "status": "Interviewing",
-        "summary": "Platform engineer con esperienza in Internal Developer Platforms. Competenze in Backstage, ArgoCD e self-service infra.",
-        "matchReason": "Profilo raro e molto ricercato. Conosce bene le esigenze dei team di sviluppo interni.",
-        "tags": ["Backstage", "ArgoCD", "Platform Engineering", "Golden Paths"],
-        "notes": [{"id": "note-27-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-23", "content": "Colloquio molto interessante. Ha costruito un IDP da zero nel ruolo precedente."}],
-        "timeline": [{"id": "tl-27-1", "date": "2026-05-20", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-27-2", "date": "2026-05-21", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-27-3", "date": "2026-05-23", "type": "status_change", "title": "In Colloquio", "description": "Colloquio tecnico.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "Backstage",
+            "ArgoCD",
+            "Platform Engineering",
+            "Golden Paths"
+        ]
     },
     {
         "id": "cand-28",
@@ -849,11 +525,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "summary": "UX Researcher qualitativa e quantitativa. Esperta in user interviews, usability testing e analisi comportamentale.",
-        "matchReason": "Forte approccio metodologico alla ricerca. Portfolio di case study molto dettagliato.",
-        "tags": ["User Research", "Usability Testing", "A/B Testing", "Hotjar"],
-        "notes": [{"id": "note-28-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-23", "content": "Screening iniziale molto positivo. Ha esperienza con team product-led."}],
-        "timeline": [{"id": "tl-28-1", "date": "2026-05-22", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-28-2", "date": "2026-05-23", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "User Research",
+            "Usability Testing",
+            "A/B Testing",
+            "Hotjar"
+        ]
     },
     {
         "id": "cand-29",
@@ -867,11 +544,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "summary": "CSM con esperienza in onboarding clienti enterprise e gestione portafoglio. Buone capacita di upselling.",
-        "matchReason": "Esperienza CS solida. Da verificare competenze su tool di customer success automation.",
-        "tags": ["Customer Success", "Onboarding", "Churn Prevention", "Gainsight"],
-        "notes": [],
-        "timeline": [{"id": "tl-29-1", "date": "2026-05-25", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "Customer Success",
+            "Onboarding",
+            "Churn Prevention",
+            "Gainsight"
+        ]
     },
     {
         "id": "cand-30",
@@ -885,11 +563,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-27",
         "status": "Screening",
-        "summary": "Technical writer con esperienza in documentazione API, guide utente e knowledge base. Competenze in Markdown e docs-as-code.",
-        "matchReason": "Scrive documentazione chiara e strutturata. Esperienza con OpenAPI/Swagger.",
-        "tags": ["API Documentation", "Markdown", "Swagger", "Docs-as-Code"],
-        "notes": [{"id": "note-30-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-28", "content": "Primo contatto positivo. Esempi di documentazione molto chiari."}],
-        "timeline": [{"id": "tl-30-1", "date": "2026-05-27", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-30-2", "date": "2026-05-28", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "API Documentation",
+            "Markdown",
+            "Swagger",
+            "Docs-as-Code"
+        ]
     },
     {
         "id": "cand-31",
@@ -903,11 +582,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 8,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "summary": "DBA senior con esperienza in PostgreSQL, MongoDB e Redis. Specializzato in ottimizzazione query e database sharding.",
-        "matchReason": "Competenze DBA molto solide. Ha gestito database con miliardi di record.",
-        "tags": ["PostgreSQL", "MongoDB", "Redis", "Query Optimization"],
-        "notes": [{"id": "note-31-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-24", "content": "Colloquio tecnico eccellente su ottimizzazione e scaling."}],
-        "timeline": [{"id": "tl-31-1", "date": "2026-05-21", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-31-2", "date": "2026-05-22", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-31-3", "date": "2026-05-24", "type": "status_change", "title": "In Colloquio", "description": "Colloquio tecnico.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Screening", "newStatus": "Interviewing"}}]
+        "tags": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Query Optimization"
+        ]
     },
     {
         "id": "cand-32",
@@ -921,11 +601,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-18",
         "status": "Offered",
-        "summary": "Performance marketer con track record in Google Ads, Meta Ads e programmatic advertising. ROI medio 4.5x sulle campagne gestite.",
-        "matchReason": "Numeri eccellenti sulle campagne precedenti. Ottimo approccio data-driven.",
-        "tags": ["Google Ads", "Meta Ads", "Programmatic", "Attribution"],
-        "notes": [{"id": "note-32-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-22", "content": "Colloquio andato benissimo. Offerta in preparazione."}],
-        "timeline": [{"id": "tl-32-1", "date": "2026-05-18", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-32-2", "date": "2026-05-19", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}, {"id": "tl-32-3", "date": "2026-05-22", "type": "status_change", "title": "Offerta", "description": "Proposta economica inviata.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Interviewing", "newStatus": "Offered"}}]
+        "tags": [
+            "Google Ads",
+            "Meta Ads",
+            "Programmatic",
+            "Attribution"
+        ]
     },
     {
         "id": "cand-33",
@@ -939,11 +620,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 4,
         "appliedDate": "2026-05-26",
         "status": "Rejected",
-        "summary": "Scrum Master certificato PSM II con esperienza in team di sviluppo software. Buone capacita di facilitazione.",
-        "matchReason": "Buon profilo ma cerchiamo qualcuno con esperienza in contesti di scaling (SAFe/LeSS).",
-        "tags": ["Scrum", "Kanban", "Facilitation", "Retrospectives"],
-        "notes": [{"id": "note-33-1", "author": "Marco D. (CPO)", "authorRole": "admin", "date": "2026-05-28", "content": "Buon candidato ma manca esperienza di scaling agile. Rifiutiamo con feedback costruttivo."}],
-        "timeline": [{"id": "tl-33-1", "date": "2026-05-26", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-33-2", "date": "2026-05-28", "type": "status_change", "title": "Scartato", "description": "Manca esperienza scaling.", "author": "Marco D. (CPO)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Rejected"}}]
+        "tags": [
+            "Scrum",
+            "Kanban",
+            "Facilitation",
+            "Retrospectives"
+        ]
     },
     {
         "id": "cand-34",
@@ -957,11 +639,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 3,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "summary": "Visual designer con forte sensibilita estetica. Competenze in illustrazione digitale, branding e design di interfacce.",
-        "matchReason": "Stile visivo molto allineato alla nostra brand identity. Da valutare competenze UX.",
-        "tags": ["Illustration", "Branding", "Figma", "Adobe Suite"],
-        "notes": [],
-        "timeline": [{"id": "tl-34-1", "date": "2026-05-25", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura spontanea con portfolio.", "author": "System", "authorRole": "viewer"}]
+        "tags": [
+            "Illustration",
+            "Branding",
+            "Figma",
+            "Adobe Suite"
+        ]
     },
     {
         "id": "cand-35",
@@ -975,11 +658,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-23",
         "status": "Rejected",
-        "summary": "Ingegnere embedded con esperienza in C/C++ e sistemi RTOS. Competenze in firmware development e protocolli IoT.",
-        "matchReason": "Competenze tecniche ottime ma il ruolo non esiste nel nostro stack attuale (solo web/cloud).",
-        "tags": ["C/C++", "RTOS", "IoT", "Firmware"],
-        "notes": [{"id": "note-35-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-24", "content": "Profilo fuori scope per le nostre posizioni attuali. Rifiuto con suggerimento di ricandidarsi se apriamo ruoli IoT."}],
-        "timeline": [{"id": "tl-35-1", "date": "2026-05-23", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-35-2", "date": "2026-05-24", "type": "status_change", "title": "Scartato", "description": "Ruolo non disponibile.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Rejected"}}]
+        "tags": [
+            "C/C++",
+            "RTOS",
+            "IoT",
+            "Firmware"
+        ]
     },
     {
         "id": "cand-36",
@@ -993,11 +677,12 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 6,
         "appliedDate": "2026-05-20",
         "status": "Screening",
-        "summary": "Partnership manager con rete di contatti estesa nel settore SaaS europeo. Ha chiuso deal di co-marketing da oltre 500k euro.",
-        "matchReason": "Rete di contatti molto interessante per il nostro programma partner.",
-        "tags": ["Partnerships", "B2B", "Co-marketing", "Channel Sales"],
-        "notes": [{"id": "note-36-1", "author": "Sandro P. (HR)", "authorRole": "admin", "date": "2026-05-22", "content": "Rete di contatti verificata. Molto interessante per la nostra espansione."}],
-        "timeline": [{"id": "tl-36-1", "date": "2026-05-20", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-36-2", "date": "2026-05-22", "type": "status_change", "title": "In Screening", "description": "Screening avviato.", "author": "Sandro P. (HR)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "Partnerships",
+            "B2B",
+            "Co-marketing",
+            "Channel Sales"
+        ]
     },
     {
         "id": "cand-37",
@@ -1011,10 +696,11 @@ export const APPLICANT_DATA_MOCK: Candidate[] = [
         "experienceYears": 5,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "summary": "API Engineer specializzato in design RESTful e GraphQL. Esperienza in API gateway, rate limiting e versioning strategies.",
-        "matchReason": "Competenze API design molto solide. Perfetto per il nostro progetto di API pubblica.",
-        "tags": ["REST", "GraphQL", "API Gateway", "OpenAPI"],
-        "notes": [{"id": "note-37-1", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "date": "2026-05-26", "content": "Screening tecnico positivo. Conosce bene i pattern di API design."}],
-        "timeline": [{"id": "tl-37-1", "date": "2026-05-24", "type": "created", "title": "Candidatura Ricevuta", "description": "Candidatura registrata.", "author": "System", "authorRole": "viewer"}, {"id": "tl-37-2", "date": "2026-05-26", "type": "status_change", "title": "In Screening", "description": "Screening tecnico.", "author": "Chiara L. (Lead Tech)", "authorRole": "admin", "meta": {"oldStatus": "Applied", "newStatus": "Screening"}}]
+        "tags": [
+            "REST",
+            "GraphQL",
+            "API Gateway",
+            "OpenAPI"
+        ]
     }
-]
+];
