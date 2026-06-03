@@ -82,10 +82,23 @@
   },
   "pipeline": {
     "section_label": "Pipeline recruitment",
-    "title": "Pipeline Recruitment",
+    "title": "Stato Assunzione",
     "current_status": "Avanzamento Stato",
     "current_label": "Stato Corrente",
     "status_selection": "Selezione stato candidato"
+  },
+  "application_date": {
+    "section_label": "Data candidatura",
+    "label": "Data Candidatura"
+  },
+  "notes": {
+    "section_label": "Note e feedback",
+    "title": "Note & Feedback",
+    "placeholder": "Scrivi qui un feedback o commento per il team di selezione...",
+    "submit": "Rilascia Nota",
+    "list_label": "Lista note",
+    "empty": "Nessuna nota presente",
+    "delete": "Elimina nota"
   },
   "not_found": {
     "message": "Pagina non trovata",

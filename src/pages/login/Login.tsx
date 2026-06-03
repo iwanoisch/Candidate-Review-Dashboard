@@ -1,4 +1,4 @@
-import {FormEvent, useState} from "react";
+import {SubmitEventHandler, useState} from "react";
 import {useLocation, useNavigate, useSearchParams} from 'react-router-dom';
 import {useAuth} from "../../features/auth/useAuth.ts";
 import {useAlert} from "../../common/alert/useAlert.ts";
@@ -18,7 +18,7 @@ export const Login = () => {
     const redirectPath = searchParams.get('from');
     const sessionExpiredMessage = location.state?.message;
 
-    const handleSubmit = async (e: FormEvent) => {
+    const handleSubmit: SubmitEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault();
         setError('');
 

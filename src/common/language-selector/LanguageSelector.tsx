@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import {ChangeEventHandler, FC} from "react";
 import {ChevronDownIcon} from "@heroicons/react/24/solid";
 import {LanguageSelectorProps} from "./LanguageSelector.type.ts";
 import {useSelector} from 'react-redux';
@@ -11,7 +11,7 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({id, type}) => {
     const {currentLanguage, setLanguage} = useLanguage();
     const userId = useSelector((state: RootState) => state.auth.user?.id);
 
-    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleChange: ChangeEventHandler<HTMLSelectElement> = (e) => {
         setLanguage(e.target.value as LanguageType, userId);
     };
 

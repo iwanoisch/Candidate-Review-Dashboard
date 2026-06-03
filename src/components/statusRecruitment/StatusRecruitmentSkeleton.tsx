@@ -1,6 +1,6 @@
 import {useTranslation} from 'react-i18next';
 
-export const PipelineRecruitmentSkeleton = () => {
+export const StatusRecruitmentSkeleton = () => {
     const {t} = useTranslation();
 
     return (

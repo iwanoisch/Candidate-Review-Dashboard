@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {KeyboardEventHandler, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import {MagnifyingGlassIcon, ArrowsUpDownIcon, XMarkIcon} from '@heroicons/react/24/outline';
 
@@ -19,7 +19,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
         onFiltersChange({...filters, search: searchValue});
     };
 
-    const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const handleSearchKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
         if (e.key === 'Enter') {
             handleSearch();
         }

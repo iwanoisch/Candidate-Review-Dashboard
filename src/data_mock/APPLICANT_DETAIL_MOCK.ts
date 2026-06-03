@@ -38,77 +38,8 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "maxScore": 5
             }
         ],
-        "notes": [
-            {
-                "id": "note-1-1",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "date": "2026-05-16",
-                "content": "Ottimo screening iniziale. Motivato, risponde perfettamente alle aspettative salariali e ha un preavviso di sole 2 settimane. Procediamo subito con il colloquio tecnico."
-            },
-            {
-                "id": "note-1-2",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin",
-                "date": "2026-05-22",
-                "content": "La prova tecnica è andata egregiamente. Ha spiegato molto bene la gestione dello stato in ambienti concorrenti. Ha espresso forte preferenza per Redux Toolkit!"
-            }
-        ],
-        "timeline": [
-            {
-                "id": "tl-1-1",
-                "date": "2026-05-15",
-                "type": "created",
-                "title": "Candidatura Ricevuta",
-                "description": "Candidatura registrata per il ruolo di Senior Full Stack Developer.",
-                "author": "System",
-                "authorRole": "viewer"
-            },
-            {
-                "id": "tl-1-2",
-                "date": "2026-05-16",
-                "type": "status_change",
-                "title": "Avanzamento a Screening",
-                "description": "Stato modificato da Applied a Screening.",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin",
-                "meta": {
-                    "oldStatus": "Applied",
-                    "newStatus": "Screening"
-                }
-            },
-            {
-                "id": "tl-1-3",
-                "date": "2026-05-16",
-                "type": "note_added",
-                "title": "Nota di HR Inserita",
-                "description": "\"Ottimo screening iniziale...\"",
-                "author": "Sandro P. (HR)",
-                "authorRole": "admin"
-            },
-            {
-                "id": "tl-1-4",
-                "date": "2026-05-20",
-                "type": "status_change",
-                "title": "Avanzamento a In Colloquio",
-                "description": "Stato modificato da Screening a Interviewing per colloquio tecnico.",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin",
-                "meta": {
-                    "oldStatus": "Screening",
-                    "newStatus": "Interviewing"
-                }
-            },
-            {
-                "id": "tl-1-5",
-                "date": "2026-05-22",
-                "type": "note_added",
-                "title": "Nota Tecnica Aggiunta",
-                "description": "\"La prova tecnica è andata egregiamente...\"",
-                "author": "Chiara L. (Lead Tech)",
-                "authorRole": "admin"
-            }
-        ]
+        "notes": null,
+        "timeline": null
     },
     "cand-2": {
         "id": "cand-2",

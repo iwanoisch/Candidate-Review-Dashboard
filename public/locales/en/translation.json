@@ -87,6 +87,19 @@
     "current_label": "Current Status",
     "status_selection": "Candidate status selection"
   },
+  "application_date": {
+    "section_label": "Application date",
+    "label": "Application Date"
+  },
+  "notes": {
+    "section_label": "Notes and feedback",
+    "title": "Notes & Feedback",
+    "placeholder": "Write a feedback or comment for the selection team...",
+    "submit": "Submit Note",
+    "list_label": "Notes list",
+    "empty": "No notes yet",
+    "delete": "Delete note"
+  },
   "not_found": {
     "message": "Page not found",
     "go_home": "Go to Dashboard"

@@ -55,8 +55,8 @@ export interface CandidateDetail extends Candidate {
     summary: string;
     matchReason: string;
     softSkills: SoftSkill[];
-    notes: CandidateNote[];
-    timeline: TimelineEvent[];
+    notes: CandidateNote[] | null;
+    timeline: TimelineEvent[] | null;
 }
 
 import type {IPagination} from '../../hooks/api/useApiClient.type';

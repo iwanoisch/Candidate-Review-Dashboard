@@ -1,12 +1,12 @@
 import {useTranslation} from 'react-i18next';
 import {BoltIcon} from '@heroicons/react/24/outline';
-import type {PipelineRecruitmentProps} from './PipelineRecruitment.type';
-import {PIPELINE_STEPS} from "../../constants/filter.constant.ts";
+import type {StatusRecruitmentProps} from './StatusRecruitment.type.ts';
+import {STATUS_STEPS} from "../../constants/filter.constant.ts";
 
-export const PipelineRecruitment = ({currentStatus, isAdmin, onStatusChange}: PipelineRecruitmentProps) => {
+export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: StatusRecruitmentProps) => {
     const {t} = useTranslation();
 
-    const currentLabel = PIPELINE_STEPS.find(s => s.status === currentStatus);
+    const currentLabel = STATUS_STEPS.find(s => s.status === currentStatus);
 
     return (
         <article
@@ -35,7 +35,7 @@ export const PipelineRecruitment = ({currentStatus, isAdmin, onStatusChange}: Pi
                     role="radiogroup"
                     aria-label={t('pipeline.status_selection', 'Selezione stato candidato')}
                 >
-                    {PIPELINE_STEPS.map((step) => {
+                    {STATUS_STEPS.map((step) => {
                         const isActive = step.status === currentStatus;
                         return (
                             <button

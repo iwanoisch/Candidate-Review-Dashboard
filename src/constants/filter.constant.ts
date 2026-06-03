@@ -1,5 +1,5 @@
 import type {IFilterList} from '../common/filterList/FilterList.type.ts';
-import { PipelineStep } from '../components/pipelineRecruitment/PipelineRecruitment.type.ts';
+import { StatusStep } from '../components/statusRecruitment/StatusRecruitment.type.ts';
 
 export const DEFAULT_FILTERS: IFilterList = {
     search: '',
@@ -31,7 +31,7 @@ export const SORT_OPTIONS: FilterOption[] = [
     {value: 'alpha_asc', labelKey: 'candidates.sort_alpha', labelFallback: 'Alfabetico (A-Z)'},
 ];
 
-export const PIPELINE_STEPS: PipelineStep[] = [
+export const STATUS_STEPS: StatusStep[] = [
     {status: 'Applied', labelKey: 'candidates.status_applied', labelFallback: 'Candidato'},
     {status: 'Screening', labelKey: 'candidates.status_screening', labelFallback: 'Screening'},
     {status: 'Interviewing', labelKey: 'candidates.status_interviewing', labelFallback: 'Colloquio'},

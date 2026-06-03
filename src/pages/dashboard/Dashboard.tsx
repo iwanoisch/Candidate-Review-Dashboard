@@ -20,14 +20,16 @@ import {CandidateDetail} from "../../components/candidateDetail/CandidateDetail.
 import {CandidateDetailSkeleton} from "../../components/candidateDetail/CandidateDetailSkeleton.tsx";
 import {ProfessionalDossier} from "../../components/professionalDossier/ProfessionalDossier.tsx";
 import {ProfessionalDossierSkeleton} from "../../components/professionalDossier/ProfessionalDossierSkeleton.tsx";
-import {PipelineRecruitment} from "../../components/pipelineRecruitment/PipelineRecruitment.tsx";
-import {PipelineRecruitmentSkeleton} from "../../components/pipelineRecruitment/PipelineRecruitmentSkeleton.tsx";
+import {StatusRecruitment} from "../../components/statusRecruitment/StatusRecruitment.tsx";
+import {StatusRecruitmentSkeleton} from "../../components/statusRecruitment/StatusRecruitmentSkeleton.tsx";
+import {ApplicationDate} from "../../components/applicationDate/ApplicationDate.tsx";
+import {Notes} from "../../components/notes/Notes.tsx";
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
-    const {stats, candidates, selectedCandidate, pagination, getApplicantStats, getCandidates, getCandidateDetail, changeCandidateStatus} = useApplicant();
+    const {stats, candidates, selectedCandidate, pagination, getApplicantStats, getCandidates, getCandidateDetail, changeCandidateStatus, addNote, deleteNote} = useApplicant();
     const [isStatsLoad, setIsStatsLoad] = useState<boolean>(false);
     const [isCandidatesLoad, setIsCandidatesLoad] = useState<boolean>(false);
     const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
@@ -84,6 +86,11 @@ export const Dashboard = () => {
 
     const handleSelectCandidate = (candidate: Candidate) => {
         loadCandidateDetail(candidate.id);
+    };
+
+    const handleAddNote = (content: string) => {
+        const authorName = `${user?.first_name ?? ''} ${user?.last_name ?? ''}`.trim();
+        addNote(content, authorName, user?.role as 'admin' | 'viewer');
     };
 
     return (
@@ -170,7 +177,7 @@ export const Dashboard = () => {
                                         <ProfessionalDossierSkeleton/>
                                     </div>
                                     <div className="lg:col-span-5">
-                                        <PipelineRecruitmentSkeleton/>
+                                        <StatusRecruitmentSkeleton/>
                                     </div>
                                 </div>
                             </>
@@ -178,19 +185,27 @@ export const Dashboard = () => {
                             <>
                                 <CandidateDetail candidate={selectedCandidate}/>
                                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-                                    <div className="lg:col-span-7">
+                                    <div className="lg:col-span-7 space-y-6">
                                         <ProfessionalDossier
                                             summary={selectedCandidate.summary}
                                             matchReason={selectedCandidate.matchReason}
                                             softSkills={selectedCandidate.softSkills}
                                         />
+                                        <Notes
+                                            notes={selectedCandidate.notes ?? []}
+                                            isAdmin={user?.role === 'admin'}
+                                            currentUserName={`${user?.first_name ?? ''} ${user?.last_name ?? ''}`.trim()}
+                                            onAddNote={handleAddNote}
+                                            onDeleteNote={deleteNote}
+                                        />
                                     </div>
-                                    <div className="lg:col-span-5">
-                                        <PipelineRecruitment
+                                    <div className="lg:col-span-5 space-y-6">
+                                        <StatusRecruitment
                                             currentStatus={selectedCandidate.status}
                                             isAdmin={user?.role === 'admin'}
                                             onStatusChange={changeCandidateStatus}
                                         />
+                                        <ApplicationDate date={selectedCandidate.appliedDate}/>
                                     </div>
                                 </div>
                             </>

@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {useCallback, type UIEvent} from 'react';
+import {UIEventHandler, useCallback} from 'react';
 import {CandidateListItem} from './CandidateListItem';
 import {CandidateListSkeleton} from './CandidateListSkeleton';
 import {CandidateListProps} from "./Candidate.type.ts";
@@ -7,7 +7,7 @@ import {CandidateListProps} from "./Candidate.type.ts";
 export const CandidateList = ({candidates, selectedId, totalCount, isLoading = false, isLoadingMore = false, hasMore = false, onSelect, onLoadMore}: CandidateListProps) => {
     const {t} = useTranslation();
 
-    const handleScroll = useCallback((e: UIEvent<HTMLDivElement>) => {
+    const handleScroll: UIEventHandler<HTMLDivElement> = useCallback((e) => {
         if (!hasMore || isLoadingMore) return;
         const {scrollTop, scrollHeight, clientHeight} = e.currentTarget;
         if (scrollHeight - scrollTop - clientHeight < 100) {

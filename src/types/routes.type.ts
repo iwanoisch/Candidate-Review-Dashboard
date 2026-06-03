@@ -5,7 +5,7 @@ export type MenuIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
 export interface RouteConfig {
     path: string;
-    component: React.ComponentType;
+    component: ComponentType;
     access: 'public' | 'protected';
     allowedRoles?: UserRole[];
     menu?: {
