@@ -19,7 +19,9 @@ import {CandidateList} from "../../components/candidtateList/CandidateList.tsx";
 import {CandidateDetail} from "../../components/candidateDetail/CandidateDetail.tsx";
 import {CandidateDetailSkeleton} from "../../components/candidateDetail/CandidateDetailSkeleton.tsx";
 import {ProfessionalDossier} from "../../components/professionalDossier/ProfessionalDossier.tsx";
+import {ProfessionalDossierSkeleton} from "../../components/professionalDossier/ProfessionalDossierSkeleton.tsx";
 import {PipelineRecruitment} from "../../components/pipelineRecruitment/PipelineRecruitment.tsx";
+import {PipelineRecruitmentSkeleton} from "../../components/pipelineRecruitment/PipelineRecruitmentSkeleton.tsx";
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 
 export const Dashboard = () => {
@@ -161,7 +163,17 @@ export const Dashboard = () => {
                     {/* Colonna destra - Dettaglio candidato */}
                     <div className="xl:col-span-7 min-w-0 space-y-6">
                         {isDetailLoad || isCandidatesLoad ? (
-                            <CandidateDetailSkeleton/>
+                            <>
+                                <CandidateDetailSkeleton/>
+                                <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+                                    <div className="lg:col-span-7">
+                                        <ProfessionalDossierSkeleton/>
+                                    </div>
+                                    <div className="lg:col-span-5">
+                                        <PipelineRecruitmentSkeleton/>
+                                    </div>
+                                </div>
+                            </>
                         ) : selectedCandidate && (
                             <>
                                 <CandidateDetail candidate={selectedCandidate}/>
