@@ -51,7 +51,14 @@ export interface Candidate {
     tags: string[];
 }
 
+export interface JobPosition {
+    description: string;
+    responsibilities: string[];
+    requirements: string[];
+}
+
 export interface CandidateDetail extends Candidate {
+    jobPosition: JobPosition | null;
     summary: string;
     matchReason: string;
     softSkills: SoftSkill[];

@@ -39,7 +39,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
             }
         ],
         "notes": null,
-        "timeline": null
+        "timeline": null,
+        "jobPosition": {
+            "description": "Responsabile dell'evoluzione delle nostre piattaforme web, ottimizzando le performance client-side e gestendo flussi API robusti su infrastruttura Cloud.",
+            "responsibilities": [
+                "Ingegnerizzare moduli web flessibili e riutilizzabili con React e TypeScript.",
+                "Progettare e connettere RESTful API e database integrando logiche di caching avanzate.",
+                "Guidare la transizione ad architetture scalabili per carichi di lavoro ad alta concorrenza."
+            ],
+            "requirements": [
+                "5+ anni di esperienza avanzata su ecosistema React, Node.js e database relazionali.",
+                "Padronanza avanzata di metodologie CI/CD e caching strutturato (Redis/Memcached).",
+                "Spiccate capacità di System Design e refactoring di codice legacy."
+            ]
+        }
     },
     "cand-2": {
         "id": "cand-2",
@@ -161,7 +174,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Offered"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Guida strategica del ciclo di vita del prodotto SaaS B2B, dall'ideazione al lancio.",
+            "responsibilities": [
+                "Definire e prioritizzare la roadmap prodotto basandosi su dati e feedback utenti.",
+                "Collaborare con Engineering e Design per deliverare feature ad alto impatto.",
+                "Monitorare metriche di adozione, retention e MRR."
+            ],
+            "requirements": [
+                "7+ anni di esperienza in product management su prodotti SaaS B2B.",
+                "Esperienza in user research, product analytics e metodologie Agile.",
+                "Capacità di gestire stakeholder multipli e decisioni data-driven."
+            ]
+        }
     },
     "cand-3": {
         "id": "cand-3",
@@ -241,7 +267,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "Sandro P. (HR)",
                 "authorRole": "admin"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Progettazione di interfacce digitali accessibili e coinvolgenti, con focus su design system scalabili.",
+            "responsibilities": [
+                "Creare e mantenere un Design System Figma evoluto e documentato.",
+                "Condurre user research e usability testing.",
+                "Garantire conformità WCAG 2.1 AA su tutte le interfacce."
+            ],
+            "requirements": [
+                "3+ anni di esperienza in UI/UX design.",
+                "Padronanza di Figma e prototyping.",
+                "Conoscenza degli standard di accessibilità WCAG."
+            ]
+        }
     },
     "cand-4": {
         "id": "cand-4",
@@ -291,7 +330,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione e ottimizzazione delle campagne di acquisizione utenti B2C con approccio data-driven.",
+            "responsibilities": [
+                "Pianificare e ottimizzare campagne Paid Search e Social Ads.",
+                "Implementare test A/B su landing page e funnel.",
+                "Automatizzare flussi di email marketing."
+            ],
+            "requirements": [
+                "3+ anni di esperienza in growth/performance marketing.",
+                "Competenze in Google Ads, Meta Ads e analytics.",
+                "Approccio analitico ai dati di conversione."
+            ]
+        }
     },
     "cand-5": {
         "id": "cand-5",
@@ -426,7 +478,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "Fabio T. (VP of Eng)",
                 "authorRole": "admin"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Progettazione di infrastrutture cloud distribuite ad alta disponibilità per sistemi mission-critical.",
+            "responsibilities": [
+                "Architettare soluzioni cloud-native scalabili su AWS/GCP.",
+                "Definire standard di sicurezza e disaster recovery.",
+                "Mentoring del team engineering."
+            ],
+            "requirements": [
+                "10+ anni di esperienza in architetture distribuite e cloud.",
+                "Certificazioni AWS/GCP e Kubernetes in produzione.",
+                "Contributi a progetti open source cloud-native."
+            ]
+        }
     },
     "cand-6": {
         "id": "cand-6",
@@ -505,7 +570,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Rejected"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Supporto allo sviluppo frontend con opportunità di crescita in un team senior.",
+            "responsibilities": [
+                "Sviluppare componenti UI con React.",
+                "Scrivere codice HTML/CSS semantico e accessibile.",
+                "Partecipare a code review e pair programming."
+            ],
+            "requirements": [
+                "Laurea in Informatica o equivalente.",
+                "Conoscenza base di React, HTML5 e CSS3.",
+                "Motivazione ad apprendere in contesto enterprise."
+            ]
+        }
     },
     "cand-7": {
         "id": "cand-7",
@@ -598,7 +676,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione del ciclo di vendita enterprise per clienti ad alto valore nel mercato SaaS.",
+            "responsibilities": [
+                "Gestire pipeline enterprise con ACV > 100k euro.",
+                "Condurre presentazioni e negoziazioni C-level.",
+                "Coordinare con pre-sales e customer success."
+            ],
+            "requirements": [
+                "5+ anni di esperienza in vendite enterprise SaaS B2B.",
+                "Track record di target raggiunti.",
+                "Eccellenti capacità di negoziazione."
+            ]
+        }
     },
     "cand-8": {
         "id": "cand-8",
@@ -669,7 +760,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Automazione delle pipeline CI/CD e gestione infrastrutture multi-cloud.",
+            "responsibilities": [
+                "Progettare pipeline CI/CD automatizzate.",
+                "Gestire infrastrutture con Terraform e Docker/Kubernetes.",
+                "Implementare monitoring e incident response."
+            ],
+            "requirements": [
+                "5+ anni di esperienza in DevOps.",
+                "Competenze in Docker, Kubernetes e Terraform.",
+                "Esperienza multi-cloud AWS/GCP."
+            ]
+        }
     },
     "cand-9": {
         "id": "cand-9",
@@ -753,7 +857,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo di microservizi backend con Java e Spring Boot in architetture event-driven.",
+            "responsibilities": [
+                "Implementare microservizi con Spring Boot e Kafka.",
+                "Ottimizzare gestione dati su database relazionali e NoSQL.",
+                "Implementare pattern CQRS e Event Sourcing."
+            ],
+            "requirements": [
+                "4+ anni con Java e Spring Boot.",
+                "Conoscenza di microservizi e message broker.",
+                "Esperienza con PostgreSQL e MongoDB."
+            ]
+        }
     },
     "cand-10": {
         "id": "cand-10",
@@ -803,7 +920,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Trasformazione di dati grezzi in insight azionabili per decisioni strategiche.",
+            "responsibilities": [
+                "Analizzare dataset complessi e produrre report.",
+                "Creare dashboard interattive con strumenti BI.",
+                "Definire metriche di successo con product e engineering."
+            ],
+            "requirements": [
+                "2+ anni in data analysis.",
+                "Python, SQL e data visualization.",
+                "Comunicare insight complessi in modo chiaro."
+            ]
+        }
     },
     "cand-11": {
         "id": "cand-11",
@@ -894,7 +1024,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Offered"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo di app mobile cross-platform ad alto traffico con focus su performance e UX nativa.",
+            "responsibilities": [
+                "Sviluppare app React Native per iOS e Android.",
+                "Ottimizzare performance e gestione memoria.",
+                "Implementare offline-first e sync dati."
+            ],
+            "requirements": [
+                "5+ anni in sviluppo mobile.",
+                "App pubblicate con alto numero di download.",
+                "CI/CD mobile e distribuzione enterprise."
+            ]
+        }
     },
     "cand-12": {
         "id": "cand-12",
@@ -965,7 +1108,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Hired"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Guida del team design nella costruzione di un design system enterprise scalabile.",
+            "responsibilities": [
+                "Costruire e evolvere il design system aziendale.",
+                "Condurre user research e definire pattern.",
+                "Collaborare con engineering per implementazione pixel-perfect."
+            ],
+            "requirements": [
+                "7+ anni in product design.",
+                "Design system scalabili.",
+                "Figma, user research e accessibilità."
+            ]
+        }
     },
     "cand-13": {
         "id": "cand-13",
@@ -1036,7 +1192,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Protezione di infrastrutture e applicazioni tramite penetration testing e audit di sicurezza.",
+            "responsibilities": [
+                "Condurre penetration testing regolari.",
+                "Implementare policy GDPR-compliant.",
+                "Gestire incident response e vulnerability management."
+            ],
+            "requirements": [
+                "5+ anni in cybersecurity.",
+                "Certificazioni CISSP e/o CEH.",
+                "Cloud security e compliance GDPR."
+            ]
+        }
     },
     "cand-14": {
         "id": "cand-14",
@@ -1086,7 +1255,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Strategia di content marketing B2B con focus su SEO e generazione di lead qualificati.",
+            "responsibilities": [
+                "Pianificare calendario editoriale multi-canale.",
+                "Scrivere contenuti tecnici ottimizzati SEO.",
+                "Analizzare performance dei contenuti."
+            ],
+            "requirements": [
+                "3+ anni in content marketing B2B.",
+                "SEO copywriting e content strategy.",
+                "Gestione editoriale multi-canale."
+            ]
+        }
     },
     "cand-15": {
         "id": "cand-15",
@@ -1177,7 +1359,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo e deployment di modelli ML/NLP per le iniziative AI aziendali.",
+            "responsibilities": [
+                "Sviluppare modelli NLP e computer vision.",
+                "Implementare pipeline MLOps.",
+                "Integrare AI nelle feature di prodotto."
+            ],
+            "requirements": [
+                "6+ anni in ML engineering.",
+                "PhD o pubblicazioni top-tier.",
+                "PyTorch e deployment modelli in produzione."
+            ]
+        }
     },
     "cand-16": {
         "id": "cand-16",
@@ -1248,7 +1443,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Supporto strategico ai team tech in crescita con talent acquisition e people analytics.",
+            "responsibilities": [
+                "Strategie di talent acquisition per ruoli tech.",
+                "Employer branding e employee engagement.",
+                "People analytics e OKR HR."
+            ],
+            "requirements": [
+                "5+ anni come HRBP in aziende tech.",
+                "Contesti scale-up ad alta crescita.",
+                "People analytics e strumenti HR digitali."
+            ]
+        }
     },
     "cand-17": {
         "id": "cand-17",
@@ -1319,7 +1527,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Rejected"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo di interfacce web moderne con focus su componenti riutilizzabili e animazioni.",
+            "responsibilities": [
+                "Sviluppare componenti con framework JS moderni.",
+                "CSS avanzato e animazioni web.",
+                "Cross-browser compatibility e responsive design."
+            ],
+            "requirements": [
+                "3+ anni in sviluppo frontend.",
+                "React (nostro stack principale).",
+                "CSS avanzato e web animations."
+            ]
+        }
     },
     "cand-18": {
         "id": "cand-18",
@@ -1403,7 +1624,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Garanzia della qualità attraverso automazione test e integrazione CI/CD.",
+            "responsibilities": [
+                "Strategie di test automation.",
+                "Test E2E con Cypress e Playwright.",
+                "Integrazione test nella pipeline CI/CD."
+            ],
+            "requirements": [
+                "4+ anni in QA e test automation.",
+                "Cypress, Playwright e API testing.",
+                "Strategie test E2E e BDD."
+            ]
+        }
     },
     "cand-19": {
         "id": "cand-19",
@@ -1453,7 +1687,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Generazione di opportunità di vendita qualificate attraverso outbound prospecting B2B.",
+            "responsibilities": [
+                "Outbound prospecting via email e LinkedIn.",
+                "Qualificare lead e schedulare demo.",
+                "Gestire e aggiornare il CRM."
+            ],
+            "requirements": [
+                "1+ anno in ruoli SDR/BDR.",
+                "Conoscenza Salesforce e sales engagement.",
+                "Capacità comunicative e resilienza."
+            ]
+        }
     },
     "cand-20": {
         "id": "cand-20",
@@ -1524,7 +1771,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Creazione di animazioni e micro-interazioni per prodotti digitali.",
+            "responsibilities": [
+                "Animazioni UI e micro-interazioni.",
+                "Asset Lottie ottimizzati.",
+                "Collaborare con frontend per implementazione."
+            ],
+            "requirements": [
+                "3+ anni in motion design digitale.",
+                "After Effects e Lottie.",
+                "Framer Motion o librerie animazione web."
+            ]
+        }
     },
     "cand-21": {
         "id": "cand-21",
@@ -1608,7 +1868,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Offered"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Affidabilità e disponibilità dei sistemi in produzione con observability e chaos engineering.",
+            "responsibilities": [
+                "Mantenere uptime 99.99%.",
+                "Monitoring con Prometheus e Grafana.",
+                "Chaos engineering experiments."
+            ],
+            "requirements": [
+                "6+ anni in SRE/DevOps.",
+                "Sistemi ad alta disponibilità.",
+                "Observability stack (Prometheus, Grafana)."
+            ]
+        }
     },
     "cand-22": {
         "id": "cand-22",
@@ -1692,7 +1965,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione del backlog e prioritizzazione per il team di sviluppo.",
+            "responsibilities": [
+                "Definire e prioritizzare user stories.",
+                "Facilitare sprint planning e review.",
+                "Allineare stakeholder su roadmap."
+            ],
+            "requirements": [
+                "5+ anni come PO certificato.",
+                "Prodotti SaaS B2B e Agile/Scrum.",
+                "Bilanciare esigenze tecniche e business."
+            ]
+        }
     },
     "cand-23": {
         "id": "cand-23",
@@ -1742,7 +2028,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo feature end-to-end sulla piattaforma SaaS con React e Node.js.",
+            "responsibilities": [
+                "Feature full stack React + Node.js.",
+                "Database PostgreSQL e query.",
+                "Test unitari e di integrazione."
+            ],
+            "requirements": [
+                "2+ anni full stack.",
+                "PostgreSQL e TypeScript.",
+                "Clean code e testing."
+            ]
+        }
     },
     "cand-24": {
         "id": "cand-24",
@@ -1813,7 +2112,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Rejected"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione identità di brand e comunicazione corporate nel mercato tech.",
+            "responsibilities": [
+                "Linee guida del brand.",
+                "Campagne PR e media relations.",
+                "Comunicazione corporate multi-canale."
+            ],
+            "requirements": [
+                "5+ anni in brand management.",
+                "Digital marketing e PR.",
+                "Rebranding e comunicazione corporate."
+            ]
+        }
     },
     "cand-25": {
         "id": "cand-25",
@@ -1897,7 +2209,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Hired"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Guida tecnica di team 15+ developer in architetture serverless su AWS.",
+            "responsibilities": [
+                "Scelte architetturali del team.",
+                "Mentoring e crescita tecnica.",
+                "Standard codice e code review."
+            ],
+            "requirements": [
+                "8+ anni, di cui 3+ in leadership tecnica.",
+                "Architetture serverless e event-driven AWS.",
+                "Gestione team distribuiti."
+            ]
+        }
     },
     "cand-26": {
         "id": "cand-26",
@@ -1947,7 +2272,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Analisi requisiti di business e traduzione in specifiche tecniche.",
+            "responsibilities": [
+                "Raccogliere requisiti di business.",
+                "Process mapping e diagrammi BPMN.",
+                "Workshop con stakeholder."
+            ],
+            "requirements": [
+                "2+ anni come Business Analyst.",
+                "Analisi requisiti e process mapping.",
+                "Confluence e BPMN."
+            ]
+        }
     },
     "cand-27": {
         "id": "cand-27",
@@ -2031,7 +2369,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Costruzione dell'Internal Developer Platform con self-service infra e golden paths.",
+            "responsibilities": [
+                "IDP con Backstage.",
+                "Golden paths e self-service infrastructure.",
+                "Developer experience e onboarding."
+            ],
+            "requirements": [
+                "5+ anni in platform engineering.",
+                "Backstage, ArgoCD e Kubernetes.",
+                "Developer experience e internal tooling."
+            ]
+        }
     },
     "cand-28": {
         "id": "cand-28",
@@ -2102,7 +2453,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Ricerche qualitative e quantitative per informare le decisioni di design e prodotto.",
+            "responsibilities": [
+                "User interviews e usability testing.",
+                "Analisi dati comportamentali.",
+                "Sintetizzare insight e raccomandazioni."
+            ],
+            "requirements": [
+                "4+ anni in UX research.",
+                "Metodi qualitativi e quantitativi.",
+                "Hotjar, Maze, UserTesting."
+            ]
+        }
     },
     "cand-29": {
         "id": "cand-29",
@@ -2152,7 +2516,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione portafoglio clienti enterprise con focus su onboarding e prevenzione churn.",
+            "responsibilities": [
+                "Onboarding e training enterprise.",
+                "Health score e rischi churn.",
+                "Upselling e cross-selling."
+            ],
+            "requirements": [
+                "3+ anni in customer success B2B SaaS.",
+                "Gestione portafoglio e customer lifecycle.",
+                "Gainsight o ChurnZero."
+            ]
+        }
     },
     "cand-30": {
         "id": "cand-30",
@@ -2223,7 +2600,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Documentazione tecnica per API, guide utente e knowledge base con approccio docs-as-code.",
+            "responsibilities": [
+                "Documentazione API con OpenAPI/Swagger.",
+                "Guide utente e knowledge base.",
+                "Workflow docs-as-code con Git."
+            ],
+            "requirements": [
+                "2+ anni in technical writing.",
+                "Documentazione API e Markdown.",
+                "Docs-as-code e Git."
+            ]
+        }
     },
     "cand-31": {
         "id": "cand-31",
@@ -2307,7 +2697,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Interviewing"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Gestione e scaling dei database aziendali per dataset con miliardi di record.",
+            "responsibilities": [
+                "Ottimizzare query e indici.",
+                "Sharding e replicazione.",
+                "Backup e disaster recovery."
+            ],
+            "requirements": [
+                "6+ anni come DBA.",
+                "PostgreSQL, MongoDB e Redis.",
+                "Database sharding per grandi volumi."
+            ]
+        }
     },
     "cand-32": {
         "id": "cand-32",
@@ -2391,7 +2794,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Offered"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Campagne performance marketing su Google e Meta con approccio data-driven.",
+            "responsibilities": [
+                "Budget advertising Google e Meta.",
+                "Ottimizzare ROI con A/B testing.",
+                "Reportare performance al management."
+            ],
+            "requirements": [
+                "4+ anni in performance marketing.",
+                "ROI 3x+ sulle campagne.",
+                "Google Ads, Meta Ads e programmatic."
+            ]
+        }
     },
     "cand-33": {
         "id": "cand-33",
@@ -2462,7 +2878,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Rejected"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Facilitazione processi Agile per team di sviluppo software.",
+            "responsibilities": [
+                "Facilitare cerimonie Scrum.",
+                "Rimuovere impedimenti.",
+                "Continuous improvement e retrospective."
+            ],
+            "requirements": [
+                "3+ anni come Scrum Master certificato.",
+                "Scaling Agile (SAFe o LeSS).",
+                "Facilitazione e coaching team."
+            ]
+        }
     },
     "cand-34": {
         "id": "cand-34",
@@ -2512,7 +2941,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                 "author": "System",
                 "authorRole": "viewer"
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Asset visivi e interfacce grafiche allineate all'identità di brand.",
+            "responsibilities": [
+                "Interfacce coerenti col brand.",
+                "Illustrazioni digitali e asset grafici.",
+                "Collaborazione col team UX."
+            ],
+            "requirements": [
+                "2+ anni in visual design.",
+                "Portfolio con sensibilità estetica.",
+                "Figma e Adobe Suite."
+            ]
+        }
     },
     "cand-35": {
         "id": "cand-35",
@@ -2583,7 +3025,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Rejected"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Sviluppo firmware per dispositivi IoT con sistemi real-time.",
+            "responsibilities": [
+                "Firmware C/C++ per RTOS.",
+                "Protocolli IoT low-power.",
+                "Hardware/software integration testing."
+            ],
+            "requirements": [
+                "4+ anni in embedded systems.",
+                "C/C++ e sistemi RTOS.",
+                "Protocolli IoT (MQTT, CoAP, BLE)."
+            ]
+        }
     },
     "cand-36": {
         "id": "cand-36",
@@ -2654,7 +3109,20 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "Partnership strategiche nel settore SaaS europeo con co-marketing e channel sales.",
+            "responsibilities": [
+                "Negoziare partnership B2B.",
+                "Programmi co-marketing e referral.",
+                "Channel sales e partner enablement."
+            ],
+            "requirements": [
+                "5+ anni in partnership management.",
+                "Rete contatti SaaS europeo.",
+                "Co-marketing e channel sales."
+            ]
+        }
     },
     "cand-37": {
         "id": "cand-37",
@@ -2725,6 +3193,19 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
                     "newStatus": "Screening"
                 }
             }
-        ]
+        ],
+        "jobPosition": {
+            "description": "API pubbliche robuste e ben documentate con focus su developer experience e scalabilità.",
+            "responsibilities": [
+                "API RESTful e GraphQL.",
+                "Rate limiting, versioning e API gateway.",
+                "Documentazione OpenAPI e SDK."
+            ],
+            "requirements": [
+                "4+ anni in API design.",
+                "REST, GraphQL e OpenAPI.",
+                "API gateway e versioning strategies."
+            ]
+        }
     }
 };

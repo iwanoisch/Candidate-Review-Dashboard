@@ -100,6 +100,23 @@
     "empty": "No notes yet",
     "delete": "Delete note"
   },
+  "timeline": {
+    "section_label": "History timeline",
+    "title": "History Timeline",
+    "list_label": "Events list",
+    "empty": "No events recorded",
+    "performed_by": "Performed by"
+  },
+  "job_position": {
+    "section_label": "Open position profile",
+    "title": "Open Position Profile",
+    "role_section": "Role and department",
+    "role_label": "Role & Department",
+    "responsibilities": "Key Responsibilities",
+    "responsibilities_label": "Key responsibilities",
+    "requirements": "Requirements",
+    "requirements_label": "Required qualifications"
+  },
   "not_found": {
     "message": "Page not found",
     "go_home": "Go to Dashboard"

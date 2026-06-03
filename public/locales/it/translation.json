@@ -100,6 +100,23 @@
     "empty": "Nessuna nota presente",
     "delete": "Elimina nota"
   },
+  "timeline": {
+    "section_label": "Timeline storico",
+    "title": "Timeline Storico",
+    "list_label": "Lista eventi",
+    "empty": "Nessun evento registrato",
+    "performed_by": "Eseguito da"
+  },
+  "job_position": {
+    "section_label": "Profilo posizione aperta",
+    "title": "Profilo Posizione Aperta",
+    "role_section": "Ruolo e dipartimento",
+    "role_label": "Ruolo e Dipartimento",
+    "responsibilities": "Responsabilità Chiave",
+    "responsibilities_label": "Responsabilità chiave",
+    "requirements": "Requisiti Richiesti",
+    "requirements_label": "Requisiti richiesti"
+  },
   "not_found": {
     "message": "Pagina non trovata",
     "go_home": "Torna alla Dashboard"

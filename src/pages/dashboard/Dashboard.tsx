@@ -12,7 +12,7 @@ import {useApplicant} from "../../features/applicant/useApplicant.ts";
 import {useEffect, useMemo, useState, useCallback} from "react";
 import {extractDepartments} from "../../utility/candidate-filter.utils.ts";
 import {DEFAULT_FILTERS} from "../../constants/filter.constant.ts";
-import type {Candidate} from "../../features/applicant/applicant.type.ts";
+import type {Candidate, CandidateStatus} from "../../features/applicant/applicant.type.ts";
 import {IFilterList} from "../../common/filterList/FilterList.type.ts";
 import {FilterList} from "../../common/filterList/FilterList.tsx";
 import {CandidateList} from "../../components/candidtateList/CandidateList.tsx";
@@ -24,6 +24,12 @@ import {StatusRecruitment} from "../../components/statusRecruitment/StatusRecrui
 import {StatusRecruitmentSkeleton} from "../../components/statusRecruitment/StatusRecruitmentSkeleton.tsx";
 import {ApplicationDate} from "../../components/applicationDate/ApplicationDate.tsx";
 import {Notes} from "../../components/notes/Notes.tsx";
+import {Timeline} from "../../components/timeline/Timeline.tsx";
+import {JobPositionCard} from "../../components/jobPosition/JobPositionCard.tsx";
+import {JobPositionCardSkeleton} from "../../components/jobPosition/JobPositionCardSkeleton.tsx";
+import {NotesSkeleton} from "../../components/notes/NotesSkeleton.tsx";
+import {ApplicationDateSkeleton} from "../../components/applicationDate/ApplicationDateSkeleton.tsx";
+import {TimelineSkeleton} from "../../components/timeline/TimelineSkeleton.tsx";
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 
 export const Dashboard = () => {
@@ -88,9 +94,15 @@ export const Dashboard = () => {
         loadCandidateDetail(candidate.id);
     };
 
+    const authorName = `${user?.first_name ?? ''} ${user?.last_name ?? ''}`.trim();
+    const userRole = user?.role as 'admin' | 'viewer';
+
     const handleAddNote = (content: string) => {
-        const authorName = `${user?.first_name ?? ''} ${user?.last_name ?? ''}`.trim();
-        addNote(content, authorName, user?.role as 'admin' | 'viewer');
+        addNote(content, authorName, userRole);
+    };
+
+    const handleStatusChange = (status: CandidateStatus) => {
+        changeCandidateStatus(status, authorName, userRole);
     };
 
     return (
@@ -172,18 +184,29 @@ export const Dashboard = () => {
                         {isDetailLoad || isCandidatesLoad ? (
                             <>
                                 <CandidateDetailSkeleton/>
+                                <JobPositionCardSkeleton/>
                                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-                                    <div className="lg:col-span-7">
+                                    <div className="lg:col-span-7 space-y-6">
                                         <ProfessionalDossierSkeleton/>
+                                        <NotesSkeleton/>
                                     </div>
-                                    <div className="lg:col-span-5">
+                                    <div className="lg:col-span-5 space-y-6">
                                         <StatusRecruitmentSkeleton/>
+                                        <ApplicationDateSkeleton/>
+                                        <TimelineSkeleton/>
                                     </div>
                                 </div>
                             </>
                         ) : selectedCandidate && (
                             <>
                                 <CandidateDetail candidate={selectedCandidate}/>
+                                {selectedCandidate.jobPosition && (
+                                    <JobPositionCard
+                                        role={selectedCandidate.role}
+                                        department={selectedCandidate.department}
+                                        jobPosition={selectedCandidate.jobPosition}
+                                    />
+                                )}
                                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
                                     <div className="lg:col-span-7 space-y-6">
                                         <ProfessionalDossier
@@ -203,9 +226,10 @@ export const Dashboard = () => {
                                         <StatusRecruitment
                                             currentStatus={selectedCandidate.status}
                                             isAdmin={user?.role === 'admin'}
-                                            onStatusChange={changeCandidateStatus}
+                                            onStatusChange={handleStatusChange}
                                         />
                                         <ApplicationDate date={selectedCandidate.appliedDate}/>
+                                        <Timeline events={selectedCandidate.timeline ?? []}/>
                                     </div>
                                 </div>
                             </>

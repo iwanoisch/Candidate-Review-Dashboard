@@ -4,7 +4,7 @@ import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 import {APPLICANT_DETAIL_MOCK} from "../../data_mock/APPLICANT_DETAIL_MOCK.ts";
 import {APPLICANT_STATS_MOCK} from "../../data_mock/APPLICANT_STATS_MOCK.ts";
 import {filterCandidates} from "../../utility/candidate-filter.utils.ts";
-import type {ApplicantStats, CandidateDetail, CandidateNote, CandidateStatus} from './applicant.type';
+import type {ApplicantStats, CandidateDetail, CandidateNote, CandidateStatus, TimelineEvent} from './applicant.type';
 import type {IApiResponse} from "../../hooks/api/useApiClient.type.ts";
 import type {IFilterList} from "../../common/filterList/FilterList.type.ts";
 
@@ -74,10 +74,25 @@ export const useApplicant = () => {
         }
     };
 
-    const changeCandidateStatus = (status: CandidateStatus) => {
+    const changeCandidateStatus = (status: CandidateStatus, author: string, authorRole: 'admin' | 'viewer') => {
         // TODO: sostituire con chiamata API put/patch
         if (!state.selectedCandidate || !state.pagination) return;
-        dispatch(selectCandidate({...state.selectedCandidate, status}));
+        const today = new Date().toISOString().split('T')[0];
+        const timelineEvent: TimelineEvent = {
+            id: `tl-${Date.now()}`,
+            date: today,
+            type: 'status_change',
+            title: `Stato Aggiornato: ${status}`,
+            description: `Il candidato è stato spostato da "${state.selectedCandidate.status}" a "${status}" da ${author}.`,
+            author,
+            authorRole,
+            meta: {oldStatus: state.selectedCandidate.status, newStatus: status},
+        };
+        dispatch(selectCandidate({
+            ...state.selectedCandidate,
+            status,
+            timeline: [timelineEvent, ...(state.selectedCandidate.timeline ?? [])],
+        }));
         const updatedCandidates = state.candidates.map(c =>
             c.id === state.selectedCandidate!.id ? {...c, status} : c
         );
@@ -87,25 +102,39 @@ export const useApplicant = () => {
     const addNote = (content: string, author: string, authorRole: 'admin' | 'viewer') => {
         if (!state.selectedCandidate) return;
         // TODO: sostituire con chiamata API post
+        const today = new Date().toISOString().split('T')[0];
+        const noteId = Date.now();
         const newNote: CandidateNote = {
-            id: `note-${Date.now()}`,
+            id: `note-${noteId}`,
             author,
             authorRole,
-            date: new Date().toISOString().split('T')[0],
+            date: today,
             content,
+        };
+        const timelineEvent: TimelineEvent = {
+            id: `tl-note-${noteId}`,
+            date: today,
+            type: 'note_added',
+            title: 'Nuovo Feedback Inserito',
+            description: `Nota aggiunta da ${author}: "${content.length > 50 ? content.substring(0, 50) + '...' : content}"`,
+            author,
+            authorRole,
         };
         dispatch(selectCandidate({
             ...state.selectedCandidate,
             notes: [newNote, ...(state.selectedCandidate.notes ?? [])],
+            timeline: [timelineEvent, ...(state.selectedCandidate.timeline ?? [])],
         }));
     };
 
     const deleteNote = (noteId: string) => {
         if (!state.selectedCandidate) return;
         // TODO: sostituire con chiamata API delete
+        const timelineId = noteId.replace('note-', 'tl-note-');
         dispatch(selectCandidate({
             ...state.selectedCandidate,
             notes: (state.selectedCandidate.notes ?? []).filter(n => n.id !== noteId),
+            timeline: (state.selectedCandidate.timeline ?? []).filter(t => t.id !== timelineId),
         }));
     };
 
