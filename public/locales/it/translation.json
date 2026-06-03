@@ -46,6 +46,7 @@
   "candidates": {
     "detail_section": "Dettaglio candidato",
     "copy_email": "Copia email",
+    "copied": "Copiato!",
     "match_overall": "Match Overall",
     "search_placeholder": "Cerca per nome, email, ruolo...",
     "search_button": "Cerca",

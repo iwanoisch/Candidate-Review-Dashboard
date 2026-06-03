@@ -8,6 +8,8 @@ export const ThemeButton = ({theme, isSelected, onClick}: ThemeButtonProps) => {
     return (
         <button
             onClick={onClick}
+            aria-label={t(`themes.${theme.id}.name`, theme.name)}
+            aria-pressed={isSelected}
             className={`
                 relative flex flex-col items-center p-4 rounded-xl border-2 transition-all duration-200
                 ${isSelected
@@ -28,7 +30,7 @@ export const ThemeButton = ({theme, isSelected, onClick}: ThemeButtonProps) => {
             </span>
             {isSelected && (
                 <div className="absolute top-2 right-2 w-5 h-5 bg-primary-500 rounded-full flex items-center justify-center">
-                    <CheckIcon className="w-3 h-3 text-white"/>
+                    <CheckIcon className="size-3.5 text-white" aria-hidden="true"/>
                 </div>
             )}
         </button>

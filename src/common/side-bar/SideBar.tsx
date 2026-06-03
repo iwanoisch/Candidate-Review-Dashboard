@@ -106,7 +106,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                         className="rounded-xl bg-slate-50 border border-slate-200 p-4">
                                                         <div className="flex items-center justify-between">
                                                             <div className="min-w-0">
-                                                                <p className="text-[10px] uppercase tracking-wider text-slate-400 mb-1 font-bold">
+                                                                <p className="text-xs uppercase tracking-wider text-slate-400 mb-1 font-bold">
                                                                     {user?.role === 'admin' ? 'Admin' : 'Viewer'}
                                                                 </p>
                                                                 <p className="font-bold text-sm text-slate-700 truncate">
@@ -225,7 +225,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                 <div className={`relative flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
                                                     <div
                                                         className={`min-w-0 transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-0 max-w-0 hidden' : 'opacity-100 max-w-48'}`}>
-                                                        <p className="text-[10px] uppercase tracking-wider text-slate-400 mb-1 font-bold">
+                                                        <p className="text-xs uppercase tracking-wider text-slate-400 mb-1 font-bold">
                                                             {user?.role === 'admin' ? 'Admin' : 'Viewer'}
                                                         </p>
                                                         <p className="font-bold text-sm text-slate-700 truncate">
@@ -255,7 +255,7 @@ export const SideBar = ({showFullSidebar = true, isCollapsed, onToggle}: SideBar
                                                 <div
                                                     className={`flex justify-center transition-all duration-300 ease-out overflow-hidden ${isCollapsed ? 'opacity-100 max-h-10' : 'opacity-0 max-h-0'}`}>
                                                     <span title={`Versione ${__APP_VERSION__}`}
-                                                          className="text-[10px] font-bold text-slate-400">
+                                                          className="text-xs font-bold text-slate-400">
                                                         V{__APP_VERSION__}
                                                     </span>
                                                 </div>

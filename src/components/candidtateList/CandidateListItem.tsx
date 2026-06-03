@@ -65,7 +65,7 @@ export const CandidateListItem = ({candidate, isSelected, onSelect}: CandidateLi
                         <p className="text-slate-500 text-xs mt-0.5 font-medium truncate">
                             {candidate.role}
                         </p>
-                        <div className="hidden items-center gap-2 mt-1.5 sm:flex">
+                        <div className="hidden flex-wrap items-center gap-x-2 gap-y-0.5 mt-1.5 sm:flex">
                             <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
                                 {candidate.department}
                             </span>

@@ -141,7 +141,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                 <button
                     onClick={resetFilters}
                     disabled={!isFiltered}
-                    className="flex items-center justify-center space-x-1.5 px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-white rounded-xl text-[11px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer sm:py-1.5"
+                    className="flex items-center justify-center space-x-1.5 px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-white rounded-xl text-xs font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer sm:py-1.5"
                     aria-label={t('common.reset_filters', 'Resetta filtri')}
                 >
                     <XMarkIcon className="size-3 shrink-0" aria-hidden="true"/>

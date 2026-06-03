@@ -52,7 +52,7 @@ export const Alert: FC<AlertOptions & { onClose: () => void }> = ({
                     <div className="ml-auto pl-3">
                         <button
                             onClick={onClose}
-                            className={`rounded-md ${config.bgColor} inline-flex ${config.textColor} hover:opacity-80 focus:outline-none`}
+                            className={`rounded-md ${config.bgColor} inline-flex p-1 ${config.textColor} hover:opacity-80 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none`}
                         >
                             <span className="sr-only">Close</span>
                             <svg className="size-5" fill="currentColor" viewBox="0 0 20 20">
