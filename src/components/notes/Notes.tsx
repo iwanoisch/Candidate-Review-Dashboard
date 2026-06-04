@@ -19,13 +19,13 @@ export const Notes = ({notes, isAdmin, currentUserName, onAddNote, onDeleteNote}
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4"
-            aria-label={t('notes.section_label', 'Note e feedback')}
+            aria-label={t('notes.section_label')}
         >
             {/* Header */}
             <div className="flex items-center space-x-2 text-slate-800">
                 <ChatBubbleLeftIcon className="size-5 shrink-0 text-amber-500" aria-hidden="true"/>
                 <h3 className="font-bold text-xs uppercase tracking-widest">
-                    {t('notes.title', 'Note & Feedback')} ({notes.length})
+                    {t('notes.title')} ({notes.length})
                 </h3>
             </div>
 
@@ -34,13 +34,13 @@ export const Notes = ({notes, isAdmin, currentUserName, onAddNote, onDeleteNote}
                 <div className="border-b border-slate-100 pb-4">
                     <form className="space-y-3" onSubmit={handleSubmit}>
                         <label htmlFor="note-input" className="sr-only">
-                            {t('notes.placeholder', 'Scrivi un feedback...')}
+                            {t('notes.placeholder')}
                         </label>
                         <textarea
                             id="note-input"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            placeholder={t('notes.placeholder', 'Scrivi qui un feedback o commento per il team di selezione...')}
+                            placeholder={t('notes.placeholder')}
                             rows={3}
                             required
                             className="w-full bg-slate-50 border border-slate-200 focus:border-primary-500 hover:border-slate-300 focus:bg-white rounded-xl p-3 text-xs outline-none transition-all duration-150 resize-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
@@ -50,10 +50,10 @@ export const Notes = ({notes, isAdmin, currentUserName, onAddNote, onDeleteNote}
                                 type="submit"
                                 disabled={!content.trim()}
                                 className="flex items-center gap-1.5 px-4 py-2 bg-slate-800 hover:bg-slate-900 focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 text-white rounded-xl text-xs font-semibold transition-colors duration-150 disabled:opacity-40"
-                                aria-label={t('notes.submit', 'Rilascia Nota')}
+                                aria-label={t('notes.submit')}
                             >
                                 <PaperAirplaneIcon className="size-3.5" aria-hidden="true"/>
-                                <span>{t('notes.submit', 'Rilascia Nota')}</span>
+                                <span>{t('notes.submit')}</span>
                             </button>
                         </div>
                     </form>
@@ -65,7 +65,7 @@ export const Notes = ({notes, isAdmin, currentUserName, onAddNote, onDeleteNote}
                 <div
                     className="space-y-3 max-h-56 overflow-y-auto pr-1"
                     role="list"
-                    aria-label={t('notes.list_label', 'Lista note')}
+                    aria-label={t('notes.list_label')}
                 >
                     {notes.map((note) => (
                         <div key={note.id} role="listitem">
@@ -79,7 +79,7 @@ export const Notes = ({notes, isAdmin, currentUserName, onAddNote, onDeleteNote}
                 </div>
             ) : (
                 <p className="text-xs text-slate-400 text-center py-4">
-                    {t('notes.empty', 'Nessuna nota presente')}
+                    {t('notes.empty')}
                 </p>
             )}
         </article>

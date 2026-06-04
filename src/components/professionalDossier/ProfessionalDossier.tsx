@@ -9,13 +9,13 @@ export const ProfessionalDossier = ({summary, matchReason, softSkills}: Professi
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4"
-            aria-label={t('dossier.section_label', 'Dossier professionale')}
+            aria-label={t('dossier.section_label')}
         >
             {/* Header */}
             <div className="flex items-center space-x-2 text-slate-800">
                 <BookOpenIcon className="size-5 shrink-0 text-primary-600" aria-hidden="true"/>
                 <h3 className="font-bold text-xs uppercase tracking-widest">
-                    {t('dossier.title', 'Dossier Professionale')}
+                    {t('dossier.title')}
                 </h3>
             </div>
 
@@ -28,9 +28,9 @@ export const ProfessionalDossier = ({summary, matchReason, softSkills}: Professi
 
             {/* Soft Skills */}
             {softSkills.length > 0 && (
-                <section aria-label={t('dossier.soft_skills_label', 'Valutazione soft skills')}>
+                <section aria-label={t('dossier.soft_skills_label')}>
                     <h4 className="text-slate-400 text-xs uppercase font-bold tracking-wider mb-2.5">
-                        {t('dossier.soft_skills', 'Valutazione Qualificata Soft Skills')}
+                        {t('dossier.soft_skills')}
                     </h4>
                     <div className="flex flex-col gap-2">
                         {softSkills.map((skill) => (
@@ -49,7 +49,7 @@ export const ProfessionalDossier = ({summary, matchReason, softSkills}: Professi
                     <TrophyIcon className="size-4 text-emerald-600 mt-0.5 shrink-0" aria-hidden="true"/>
                     <div>
                         <span className="text-emerald-900 font-semibold text-xs tracking-tight block">
-                            {t('dossier.recommendation_title', 'Perché lo consigliamo:')}
+                            {t('dossier.recommendation_title')}
                         </span>
                         <p className="text-emerald-800 text-xs leading-relaxed mt-1">
                             {matchReason}

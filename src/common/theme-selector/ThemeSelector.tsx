@@ -63,7 +63,7 @@ export const ThemeSelector = () => {
                                     ${backgroundMode === 'neutral' ? 'bg-primary-500' : 'bg-slate-300'}
                                 `}
                         >
-                            <span className="sr-only">{t('settings.neutral_background', 'Sfondo neutro')}</span>
+                            <span className="sr-only">{t('settings.neutral_background')}</span>
                             <span
                                 className={`
                                         inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform

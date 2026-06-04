@@ -40,7 +40,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
             <div
                 className="bg-white border border-slate-200 rounded-2xl p-3 shadow-sm space-y-3 sm:p-4 sm:space-y-4 animate-pulse"
                 role="status"
-                aria-label={t('common.loading', 'Caricamento...')}
+                aria-label={t('common.loading')}
             >
                 <div className="h-9 w-full rounded-full bg-slate-200"/>
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -68,14 +68,14 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                         onKeyDown={handleSearchKeyDown}
                         placeholder={t('candidates.search_placeholder')}
                         className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-primary-500 focus:bg-white rounded-full py-2 pl-10 pr-3 text-xs outline-none transition-all"
-                        aria-label={t('candidates.search_label', 'Cerca candidati')}
+                        aria-label={t('candidates.search_label')}
                     />
                 </div>
                 <button
                     type="button"
                     onClick={handleSearch}
                     className="flex items-center space-x-1.5 px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-white rounded-full text-xs font-semibold transition-colors cursor-pointer shrink-0"
-                    aria-label={t('candidates.search_button_aria', 'Cerca candidati')}
+                    aria-label={t('candidates.search_button_aria')}
                 >
                     <MagnifyingGlassIcon className="size-3.5" aria-hidden="true"/>
                     <span className="hidden sm:inline">{t('candidates.search_button')}</span>
@@ -93,7 +93,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                         value={filters.department}
                         onChange={(e) => updateFilter('department', e.target.value)}
                         className="bg-transparent text-slate-700 text-xs font-semibold outline-none border-none cursor-pointer w-full min-w-0"
-                        aria-label={t('candidates.filter_dept_label', 'Filtra per dipartimento')}
+                        aria-label={t('candidates.filter_dept_label')}
                     >
                         <option value="all">{t('candidates.filter_all_depts')}</option>
                         {departments.map((dept) => (
@@ -111,7 +111,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                         value={filters.status}
                         onChange={(e) => updateFilter('status', e.target.value as CandidateStatus | 'all')}
                         className="bg-transparent text-slate-700 text-xs font-semibold outline-none border-none cursor-pointer w-full min-w-0"
-                        aria-label={t('candidates.filter_status_label', 'Filtra per stato')}
+                        aria-label={t('candidates.filter_status_label')}
                     >
                         {STATUS_OPTIONS.map((s) => (
                             <option key={s.value} value={s.value}>{t(s.labelKey)}</option>
@@ -129,7 +129,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                         value={filters.sortBy}
                         onChange={(e) => updateFilter('sortBy', e.target.value)}
                         className="bg-transparent text-slate-700 text-xs font-semibold outline-none border-none cursor-pointer w-full min-w-0"
-                        aria-label={t('candidates.sort_aria_label', 'Ordina candidati')}
+                        aria-label={t('candidates.sort_aria_label')}
                     >
                         {SORT_OPTIONS.map((opt) => (
                             <option key={opt.value} value={opt.value}>{t(opt.labelKey)}</option>
@@ -142,7 +142,7 @@ export const FilterList = ({filters, departments, isLoading = false, onFiltersCh
                     onClick={resetFilters}
                     disabled={!isFiltered}
                     className="flex items-center justify-center space-x-1.5 px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-white rounded-xl text-xs font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer sm:py-1.5"
-                    aria-label={t('common.reset_filters', 'Resetta filtri')}
+                    aria-label={t('common.reset_filters')}
                 >
                     <XMarkIcon className="size-3 shrink-0" aria-hidden="true"/>
                     <span>{t('common.reset_filters')}</span>

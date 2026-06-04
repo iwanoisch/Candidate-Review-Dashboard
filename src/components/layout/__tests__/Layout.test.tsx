@@ -7,7 +7,7 @@ import type {AuthState} from '../../../features/auth/auth.type';
 // Mock i18next
 vi.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: (key: string, fallback?: string) => fallback ?? key,
+        t: (key: string) => key,
     }),
 }));
 

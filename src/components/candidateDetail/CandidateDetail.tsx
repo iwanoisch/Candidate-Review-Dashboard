@@ -17,7 +17,7 @@ export const CandidateDetail = ({candidate}: CandidateDetailProps) => {
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm sm:p-6"
-            aria-label={t('candidates.detail_section', 'Dettaglio candidato')}
+            aria-label={t('candidates.detail_section')}
         >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 {/* Left: Avatar + Info */}
@@ -50,7 +50,7 @@ export const CandidateDetail = ({candidate}: CandidateDetailProps) => {
                                 type="button"
                                 onClick={copyEmail}
                                 className="group/copy relative flex items-center gap-1.5 px-2 py-1 rounded-lg hover:bg-primary-50 hover:text-primary-600 transition-all duration-150 cursor-pointer focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-                                aria-label={t('candidates.copy_email', 'Copia email')}
+                                aria-label={t('candidates.copy_email')}
                                 onMouseEnter={() => copied && setCopied(false)}
                             >
                                 <EnvelopeIcon className="size-4 shrink-0" aria-hidden="true"/>
@@ -68,7 +68,7 @@ export const CandidateDetail = ({candidate}: CandidateDetailProps) => {
                                         role="status"
                                         onAnimationEnd={() => setCopied(false)}
                                     >
-                                        {t('candidates.copied', 'Copiato!')}
+                                        {t('candidates.copied')}
                                     </span>
                                 )}
                             </button>

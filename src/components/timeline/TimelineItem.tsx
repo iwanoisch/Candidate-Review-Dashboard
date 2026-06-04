@@ -34,7 +34,7 @@ const TimelineItem = ({event}: { event: TimelineEvent }) => {
                     {event.description}
                 </p>
                 <div className="flex items-center gap-1.5 mt-1 text-xs text-slate-400 font-medium">
-                    <span>{t('timeline.performed_by', 'Eseguito da')}: {event.author}</span>
+                    <span>{t('timeline.performed_by')}: {event.author}</span>
                     <span className="text-slate-300" aria-hidden="true">&bull;</span>
                     <span className="font-mono uppercase bg-slate-50 border border-slate-200 rounded px-1 text-xs">
                         {event.authorRole}

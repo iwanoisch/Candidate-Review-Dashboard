@@ -8,20 +8,20 @@ export const JobPositionCard = ({role, department, jobPosition}: JobPositionCard
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4"
-            aria-label={t('job_position.section_label', 'Profilo posizione aperta')}
+            aria-label={t('job_position.section_label')}
         >
             {/* Header */}
             <div className="flex items-center space-x-2 text-slate-800">
                 <BriefcaseIcon className="size-5 shrink-0 text-primary-600" aria-hidden="true"/>
                 <h3 className="font-bold text-xs uppercase tracking-widest">
-                    {t('job_position.title', 'Profilo Posizione Aperta')}
+                    {t('job_position.title')}
                 </h3>
             </div>
 
             {/* Role & Department */}
-            <section aria-label={t('job_position.role_section', 'Ruolo e dipartimento')}>
+            <section aria-label={t('job_position.role_section')}>
                 <span className="text-xs uppercase font-bold text-slate-400 tracking-wider">
-                    {t('job_position.role_label', 'Ruolo e Dipartimento')}
+                    {t('job_position.role_label')}
                 </span>
                 <h4 className="text-slate-800 font-bold text-sm mt-0.5">
                     {role}
@@ -36,9 +36,9 @@ export const JobPositionCard = ({role, department, jobPosition}: JobPositionCard
             {/* Responsibilities & Requirements */}
             <div className="space-y-4">
                 {jobPosition.responsibilities.length > 0 && (
-                    <section aria-label={t('job_position.responsibilities_label', 'Responsabilità chiave')}>
+                    <section aria-label={t('job_position.responsibilities_label')}>
                         <span className="text-xs uppercase font-bold text-slate-400 tracking-wider block mb-1.5">
-                            {t('job_position.responsibilities', 'Responsabilità Chiave')}
+                            {t('job_position.responsibilities')}
                         </span>
                         <ul className="space-y-1 text-slate-600 text-xs list-disc pl-4 leading-relaxed">
                             {jobPosition.responsibilities.map((item, i) => (
@@ -51,10 +51,10 @@ export const JobPositionCard = ({role, department, jobPosition}: JobPositionCard
                 {jobPosition.requirements.length > 0 && (
                     <section
                         className="pt-3 border-t border-slate-100"
-                        aria-label={t('job_position.requirements_label', 'Requisiti richiesti')}
+                        aria-label={t('job_position.requirements_label')}
                     >
                         <span className="text-xs uppercase font-bold text-slate-400 tracking-wider block mb-1.5">
-                            {t('job_position.requirements', 'Requisiti Richiesti')}
+                            {t('job_position.requirements')}
                         </span>
                         <ul className="space-y-1 text-slate-600 text-xs list-disc pl-4 leading-relaxed">
                             {jobPosition.requirements.map((item, i) => (

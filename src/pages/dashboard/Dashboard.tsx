@@ -134,10 +134,10 @@ export const Dashboard = () => {
                                 ? 'bg-amber-100 text-amber-700'
                                 : 'text-slate-500 hover:bg-slate-50'
                         }`}
-                        aria-label={t('dashboard.simulate_latency', 'Simula Latenza')}
+                        aria-label={t('dashboard.simulate_latency')}
                     >
                         <BoltIcon className="size-4" aria-hidden="true"/>
-                        {t('dashboard.simulate_latency', 'Simula Latenza')}
+                        {t('dashboard.simulate_latency')}
                     </button>
                     <button
                         type="button"
@@ -147,16 +147,16 @@ export const Dashboard = () => {
                                 ? 'bg-red-100 text-red-700'
                                 : 'text-slate-500 hover:bg-slate-50'
                         }`}
-                        aria-label={t('dashboard.simulate_error', 'Simula Errore API')}
+                        aria-label={t('dashboard.simulate_error')}
                     >
                         <ExclamationTriangleIcon className="size-4" aria-hidden="true"/>
-                        {t('dashboard.simulate_error', 'Simula Errore API')}
+                        {t('dashboard.simulate_error')}
                     </button>
                 </div>
             </header>
 
             {/* Stat Cards */}
-            <section aria-label={t('dashboard.stats_section', 'Statistiche principali')}>
+            <section aria-label={t('dashboard.stats_section')}>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {isStatsLoad ? (
                         <StatCardSkeleton count={4}/>
@@ -196,7 +196,7 @@ export const Dashboard = () => {
             </section>
 
             {/* Candidate List + Detail */}
-            <section aria-label={t('candidates.section_label', 'Gestione candidati')}>
+            <section aria-label={t('candidates.section_label')}>
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-12 items-start">
                     <div className="xl:col-span-5 min-w-0 space-y-4">
                         <FilterList
@@ -275,10 +275,10 @@ export const Dashboard = () => {
                             <article className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center justify-center py-24 px-6 text-center">
                                 <BookOpenIcon className="size-14 text-slate-300 mb-4" aria-hidden="true"/>
                                 <h2 className="text-lg font-semibold text-slate-700">
-                                    {t('candidates.no_selection_title', 'Nessun candidato selezionato')}
+                                    {t('candidates.no_selection_title')}
                                 </h2>
                                 <p className="mt-2 text-sm text-slate-400 max-w-sm">
-                                    {t('candidates.no_selection_desc', 'Seleziona un candidato dall\'elenco per visualizzare il suo dossier completo, lo storico e i dettagli delle valutazioni.')}
+                                    {t('candidates.no_selection_desc')}
                                 </p>
                             </article>
                         )}

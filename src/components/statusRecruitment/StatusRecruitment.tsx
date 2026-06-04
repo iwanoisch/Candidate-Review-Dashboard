@@ -17,13 +17,13 @@ export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: Stat
 
         const modalId = showModalDialog({
             type: 'info',
-            title: t('pipeline.confirm_change_title', 'Conferma cambio stato'),
-            message: t('pipeline.confirm_change', `Vuoi cambiare lo stato del candidato a "${statusName}"?`),
+            title: t('pipeline.confirm_change_title'),
+            message: t('pipeline.confirm_change', {statusName}),
             focusBlocked: true,
             duration: 0,
             links: [
                 {
-                    text: t('common.confirm', 'Conferma'),
+                    text: t('common.confirm'),
                     variant: 'primary',
                     onClick: () => {
                         onStatusChange(newStatus);
@@ -31,7 +31,7 @@ export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: Stat
                     },
                 },
                 {
-                    text: t('common.cancel', 'Annulla'),
+                    text: t('common.cancel'),
                     variant: 'cancel',
                     onClick: () => {
                         hideModalDialog(modalId);
@@ -46,29 +46,29 @@ export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: Stat
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4"
-            aria-label={t('pipeline.section_label', 'Pipeline recruitment')}
+            aria-label={t('pipeline.section_label')}
         >
             {/* Header */}
             <div className="flex items-center space-x-2 text-slate-800">
                 <BoltIcon className="size-5 shrink-0 text-violet-500" aria-hidden="true"/>
                 <h3 className="font-bold text-xs uppercase tracking-widest">
-                    {t('pipeline.title', 'Pipeline Recruitment')}
+                    {t('pipeline.title')}
                 </h3>
             </div>
 
             {/* Status info */}
             <div className="space-y-2">
                 <p className="text-slate-400 text-xs leading-relaxed uppercase tracking-wider font-semibold">
-                    {t('pipeline.current_status', 'Avanzamento Stato')}
+                    {t('pipeline.current_status')}
                     {' '}
-                    ({t('pipeline.current_label', 'Stato Corrente')}: {currentLabel ? t(currentLabel.labelKey, currentLabel.labelFallback) : currentStatus})
+                    ({t('pipeline.current_label')}: {currentLabel ? t(currentLabel.labelKey, currentLabel.labelFallback) : currentStatus})
                 </p>
 
                 {/* Pipeline Steps */}
                 <div
                     className="grid grid-cols-2 gap-1.5"
                     role="radiogroup"
-                    aria-label={t('pipeline.status_selection', 'Selezione stato candidato')}
+                    aria-label={t('pipeline.status_selection')}
                 >
                     {STATUS_STEPS.map((step) => {
                         const isActive = step.status === currentStatus;

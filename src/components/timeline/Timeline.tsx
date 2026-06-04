@@ -10,13 +10,13 @@ export const Timeline = ({events}: TimelineProps) => {
     return (
         <article
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4"
-            aria-label={t('timeline.section_label', 'Timeline storico')}
+            aria-label={t('timeline.section_label')}
         >
             {/* Header */}
             <div className="flex items-center space-x-2 text-slate-800">
                 <ClockIcon className="size-5 shrink-0 text-slate-500" aria-hidden="true"/>
                 <h3 className="font-bold text-xs uppercase tracking-widest">
-                    {t('timeline.title', 'Timeline Storico')} ({events.length})
+                    {t('timeline.title')} ({events.length})
                 </h3>
             </div>
 
@@ -25,7 +25,7 @@ export const Timeline = ({events}: TimelineProps) => {
                 <div
                     className="relative pl-6 space-y-5 border-l-2 border-slate-100 ml-2.5 max-h-[32rem] overflow-y-auto pr-1"
                     role="list"
-                    aria-label={t('timeline.list_label', 'Lista eventi')}
+                    aria-label={t('timeline.list_label')}
                 >
                     {events.map((event) => (
                         <div key={event.id} role="listitem">
@@ -35,7 +35,7 @@ export const Timeline = ({events}: TimelineProps) => {
                 </div>
             ) : (
                 <p className="text-xs text-slate-400 text-center py-4">
-                    {t('timeline.empty', 'Nessun evento registrato')}
+                    {t('timeline.empty')}
                 </p>
             )}
         </article>

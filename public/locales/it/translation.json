@@ -91,7 +91,7 @@
     "current_label": "Stato Corrente",
     "status_selection": "Selezione stato candidato",
     "confirm_change_title": "Conferma cambio stato",
-    "confirm_change": "Vuoi cambiare lo stato del candidato?"
+    "confirm_change": "Vuoi cambiare lo stato del candidato a \"{{statusName}}\"?"
   },
   "application_date": {
     "section_label": "Data candidatura",

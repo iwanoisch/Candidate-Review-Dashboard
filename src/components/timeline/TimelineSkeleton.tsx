@@ -7,7 +7,7 @@ export const TimelineSkeleton = () => {
         <div
             className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4 animate-pulse"
             role="status"
-            aria-label={t('common.loading', 'Caricamento...')}
+            aria-label={t('common.loading')}
         >
             <div className="flex items-center space-x-2">
                 <div className="size-5 rounded bg-slate-200"/>

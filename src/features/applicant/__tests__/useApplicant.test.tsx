@@ -9,7 +9,7 @@ import {ApiSimulationContext} from '../../../common/api-simulation/ApiSimulation
 import {DEFAULT_FILTERS} from '../../../constants/filter.constant';
 
 vi.mock('react-i18next', () => ({
-    useTranslation: () => ({t: (key: string, fallback?: string) => fallback ?? key}),
+    useTranslation: () => ({t: (key: string) => key}),
 }));
 
 // Elimina i delay dei mock per velocizzare i test

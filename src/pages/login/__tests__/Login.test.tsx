@@ -5,7 +5,7 @@ import {renderWithProviders, setupUser} from '../../../test/test-utils';
 // Mock i18next — ritorna il fallback se presente, altrimenti la chiave
 vi.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: (key: string, fallback?: string) => fallback ?? key,
+        t: (key: string) => key,
     }),
 }));
 

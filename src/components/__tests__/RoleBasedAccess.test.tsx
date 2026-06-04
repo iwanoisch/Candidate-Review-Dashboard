@@ -8,7 +8,7 @@ import type {CandidateNote} from '../../features/applicant/applicant.type';
 import type {CandidateStatus} from '../../features/applicant/applicant.type';
 
 vi.mock('react-i18next', () => ({
-    useTranslation: () => ({t: (key: string, fallback?: string) => fallback ?? key}),
+    useTranslation: () => ({t: (key: string) => key}),
 }));
 
 const mockModalDialogContext = {
@@ -63,7 +63,7 @@ describe('Role-based access', () => {
                 <Notes {...defaultProps} isAdmin={true}/>
             );
 
-            expect(screen.getByRole('button', {name: 'Rilascia Nota'})).toBeInTheDocument();
+            expect(screen.getByRole('button', {name: 'notes.submit'})).toBeInTheDocument();
         });
 
         it('admin sees delete button on own notes', () => {
@@ -71,7 +71,7 @@ describe('Role-based access', () => {
                 <Notes {...defaultProps} isAdmin={true}/>
             );
 
-            const deleteButtons = screen.getAllByRole('button', {name: 'Elimina nota'});
+            const deleteButtons = screen.getAllByRole('button', {name: 'notes.delete'});
             expect(deleteButtons.length).toBe(1);
         });
 
@@ -84,7 +84,7 @@ describe('Role-based access', () => {
                 />
             );
 
-            expect(screen.queryByRole('button', {name: 'Elimina nota'})).not.toBeInTheDocument();
+            expect(screen.queryByRole('button', {name: 'notes.delete'})).not.toBeInTheDocument();
         });
 
         it('viewer does NOT see textarea', () => {
@@ -100,7 +100,7 @@ describe('Role-based access', () => {
                 <Notes {...defaultProps} isAdmin={false}/>
             );
 
-            expect(screen.queryByRole('button', {name: 'Rilascia Nota'})).not.toBeInTheDocument();
+            expect(screen.queryByRole('button', {name: 'notes.submit'})).not.toBeInTheDocument();
         });
 
         it('viewer does NOT see delete button', () => {
@@ -108,7 +108,7 @@ describe('Role-based access', () => {
                 <Notes {...defaultProps} isAdmin={false}/>
             );
 
-            expect(screen.queryByRole('button', {name: 'Elimina nota'})).not.toBeInTheDocument();
+            expect(screen.queryByRole('button', {name: 'notes.delete'})).not.toBeInTheDocument();
         });
     });
 
@@ -151,7 +151,7 @@ describe('Role-based access', () => {
                 <StatusRecruitment {...defaultProps} isAdmin={true}/>
             );
 
-            const offeredButton = screen.getByRole('radio', {name: 'Offerta'});
+            const offeredButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
             await user.click(offeredButton);
 
             expect(defaultProps.onStatusChange).not.toHaveBeenCalled();
@@ -165,7 +165,7 @@ describe('Role-based access', () => {
                 <StatusRecruitment {...defaultProps} isAdmin={false}/>
             );
 
-            const offeredButton = screen.getByRole('radio', {name: 'Offerta'});
+            const offeredButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
             await user.click(offeredButton);
 
             expect(defaultProps.onStatusChange).not.toHaveBeenCalled();

@@ -8,7 +8,7 @@ import {StatusRecruitment} from '../statusRecruitment/StatusRecruitment';
 import type {CandidateNote} from '../../features/applicant/applicant.type';
 
 vi.mock('react-i18next', () => ({
-    useTranslation: () => ({t: (key: string, fallback?: string) => fallback ?? key}),
+    useTranslation: () => ({t: (key: string) => key}),
 }));
 
 let lastModalOptions: ModalDialogOptions | null = null;
@@ -51,7 +51,7 @@ describe('NoteItem — delete confirmation modal', () => {
         const user = userEvent.setup();
         renderNoteItem(true);
 
-        const deleteButton = screen.getByRole('button', {name: 'Elimina nota'});
+        const deleteButton = screen.getByRole('button', {name: 'notes.delete'});
         await user.click(deleteButton);
 
         expect(mockShowModalDialog).toHaveBeenCalledTimes(1);
@@ -64,14 +64,14 @@ describe('NoteItem — delete confirmation modal', () => {
         const user = userEvent.setup();
         renderNoteItem(true);
 
-        const deleteButton = screen.getByRole('button', {name: 'Elimina nota'});
+        const deleteButton = screen.getByRole('button', {name: 'notes.delete'});
         await user.click(deleteButton);
 
         expect(lastModalOptions).not.toBeNull();
         expect(lastModalOptions!.links).toHaveLength(2);
-        expect(lastModalOptions!.links![0].text).toBe('Elimina');
+        expect(lastModalOptions!.links![0].text).toBe('common.delete');
         expect(lastModalOptions!.links![0].variant).toBe('danger');
-        expect(lastModalOptions!.links![1].text).toBe('Annulla');
+        expect(lastModalOptions!.links![1].text).toBe('common.cancel');
         expect(lastModalOptions!.links![1].variant).toBe('cancel');
     });
 
@@ -80,7 +80,7 @@ describe('NoteItem — delete confirmation modal', () => {
         const onDelete = vi.fn();
         renderNoteItem(true, onDelete);
 
-        const deleteButton = screen.getByRole('button', {name: 'Elimina nota'});
+        const deleteButton = screen.getByRole('button', {name: 'notes.delete'});
         await user.click(deleteButton);
 
         // Simulate clicking 'Elimina' (confirm)
@@ -96,7 +96,7 @@ describe('NoteItem — delete confirmation modal', () => {
         const onDelete = vi.fn();
         renderNoteItem(true, onDelete);
 
-        const deleteButton = screen.getByRole('button', {name: 'Elimina nota'});
+        const deleteButton = screen.getByRole('button', {name: 'notes.delete'});
         await user.click(deleteButton);
 
         // Simulate clicking 'Annulla' (cancel)
@@ -109,7 +109,7 @@ describe('NoteItem — delete confirmation modal', () => {
     it('should not render delete button when canDelete is false', () => {
         renderNoteItem(false);
 
-        const deleteButton = screen.queryByRole('button', {name: 'Elimina nota'});
+        const deleteButton = screen.queryByRole('button', {name: 'notes.delete'});
         expect(deleteButton).not.toBeInTheDocument();
     });
 });
@@ -137,7 +137,7 @@ describe('StatusRecruitment — status change confirmation modal', () => {
         renderStatusRecruitment('Screening');
 
         // Click a status that is NOT the current one
-        const offerButton = screen.getByRole('radio', {name: 'Offerta'});
+        const offerButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
         await user.click(offerButton);
 
         expect(mockShowModalDialog).toHaveBeenCalledTimes(1);
@@ -150,7 +150,7 @@ describe('StatusRecruitment — status change confirmation modal', () => {
         const user = userEvent.setup();
         renderStatusRecruitment('Screening');
 
-        const screeningButton = screen.getByRole('radio', {name: 'Screening'});
+        const screeningButton = screen.getByRole('radio', {name: 'candidates.status_screening'});
         await user.click(screeningButton);
 
         expect(mockShowModalDialog).not.toHaveBeenCalled();
@@ -161,7 +161,7 @@ describe('StatusRecruitment — status change confirmation modal', () => {
         const onStatusChange = vi.fn();
         renderStatusRecruitment('Screening', true, onStatusChange);
 
-        const offerButton = screen.getByRole('radio', {name: 'Offerta'});
+        const offerButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
         await user.click(offerButton);
 
         // Simulate clicking 'Conferma' (confirm)
@@ -177,7 +177,7 @@ describe('StatusRecruitment — status change confirmation modal', () => {
         const onStatusChange = vi.fn();
         renderStatusRecruitment('Screening', true, onStatusChange);
 
-        const offerButton = screen.getByRole('radio', {name: 'Offerta'});
+        const offerButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
         await user.click(offerButton);
 
         // Simulate clicking 'Annulla' (cancel)
@@ -191,14 +191,14 @@ describe('StatusRecruitment — status change confirmation modal', () => {
         const user = userEvent.setup();
         renderStatusRecruitment('Screening');
 
-        const offerButton = screen.getByRole('radio', {name: 'Offerta'});
+        const offerButton = screen.getByRole('radio', {name: 'candidates.status_offered'});
         await user.click(offerButton);
 
         expect(lastModalOptions).not.toBeNull();
         expect(lastModalOptions!.links).toHaveLength(2);
-        expect(lastModalOptions!.links![0].text).toBe('Conferma');
+        expect(lastModalOptions!.links![0].text).toBe('common.confirm');
         expect(lastModalOptions!.links![0].variant).toBe('primary');
-        expect(lastModalOptions!.links![1].text).toBe('Annulla');
+        expect(lastModalOptions!.links![1].text).toBe('common.cancel');
         expect(lastModalOptions!.links![1].variant).toBe('cancel');
     });
 });

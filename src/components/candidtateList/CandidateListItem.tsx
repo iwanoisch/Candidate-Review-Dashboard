@@ -12,7 +12,7 @@ export const CandidateListItem = ({candidate, isSelected, onSelect}: CandidateLi
         <button
             type="button"
             onClick={() => onSelect(candidate)}
-            aria-label={`${t('candidates.select', 'Seleziona')} ${candidate.name}`}
+            aria-label={`${t('candidates.select')} ${candidate.name}`}
             aria-pressed={isSelected}
             className={`w-full border rounded-2xl p-3 cursor-pointer transition-all duration-200 relative overflow-hidden group text-left sm:p-4 ${
                 isSelected
@@ -42,7 +42,7 @@ export const CandidateListItem = ({candidate, isSelected, onSelect}: CandidateLi
                             <span
                                 className="absolute -top-1.5 -right-1.5 bg-amber-400 text-white rounded-full p-0.5 border border-white shadow-sm"
                                 title={t('candidates.top_score')}
-                                aria-label={t('candidates.top_score', 'Top score')}
+                                aria-label={t('candidates.top_score')}
                             >
                                 <svg className="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

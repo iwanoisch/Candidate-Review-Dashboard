@@ -10,13 +10,13 @@ const NoteItem = ({note, canDelete, onDelete}: NoteItemProps) => {
     const handleDelete = () => {
         const modalId = showModalDialog({
             type: 'warning',
-            title: t('notes.confirm_delete_title', 'Elimina nota'),
-            message: t('notes.confirm_delete', 'Sei sicuro di voler eliminare questa nota? L\'azione non può essere annullata.'),
+            title: t('notes.confirm_delete_title'),
+            message: t('notes.confirm_delete'),
             focusBlocked: true,
             duration: 0,
             links: [
                 {
-                    text: t('common.delete', 'Elimina'),
+                    text: t('common.delete'),
                     variant: 'danger',
                     onClick: () => {
                         onDelete(note.id);
@@ -24,7 +24,7 @@ const NoteItem = ({note, canDelete, onDelete}: NoteItemProps) => {
                     },
                 },
                 {
-                    text: t('common.cancel', 'Annulla'),
+                    text: t('common.cancel'),
                     variant: 'cancel',
                     onClick: () => {
                         hideModalDialog(modalId);
@@ -53,7 +53,7 @@ const NoteItem = ({note, canDelete, onDelete}: NoteItemProps) => {
                             type="button"
                             onClick={handleDelete}
                             className="text-slate-400 hover:text-red-500 transition-colors duration-150 p-0.5 rounded focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none"
-                            aria-label={t('notes.delete', 'Elimina nota')}
+                            aria-label={t('notes.delete')}
                         >
                             <TrashIcon className="size-3.5" aria-hidden="true"/>
                         </button>

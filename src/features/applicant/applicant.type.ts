@@ -48,7 +48,6 @@ export interface Candidate {
     experienceYears: number;
     appliedDate: string;
     status: CandidateStatus;
-    tags: string[];
 }
 
 export interface JobPosition {

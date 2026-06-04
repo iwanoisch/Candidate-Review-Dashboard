@@ -13,12 +13,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 8,
         "appliedDate": "2026-05-15",
         "status": "Interviewing",
-        "tags": [
-            "React",
-            "NodeJS",
-            "System Design",
-            "AWS"
-        ],
         "summary": "Developer esperto e versatile, con forte competenza in React, Node.js e architetture Cloud (AWS). Ha guidato con successo la migrazione di piattaforme monolitiche legacy verso soluzioni a micro-frontend in contesti aziendali complessi.",
         "matchReason": "Perfetto fit tecnico. Ha superato brillantemente la nostra prova di Live System Design dimostrando padronanza di pattern di caching, scalabilità e database Relazionali/NoSQL.",
         "softSkills": [
@@ -66,12 +60,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 10,
         "appliedDate": "2026-05-20",
         "status": "Offered",
-        "tags": [
-            "B2B SaaS",
-            "Roadmapping",
-            "Agile",
-            "Product Analytics"
-        ],
         "summary": "Product Leader specializzata nello sviluppo di prodotti SaaS B2B. Altamente orientata alle metriche di adozione del prodotto, user research approfondita ed allineamento strategico tra team commerciali ed ingegneristici.",
         "matchReason": "Leadership comunicativa eccezionale. Ha gestito roadmap complesse portando un incremento del 40% di MRR nel suo ultimo incarico.",
         "softSkills": [
@@ -201,12 +189,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "tags": [
-            "Figma",
-            "Design Systems",
-            "Micro-interazioni",
-            "WCAG"
-        ],
         "summary": "Designer focalizzato su web ed interfacce mobile. Esperto in creazione e manutenzione di Figma Design Systems evoluti, micro-interazioni coinvolgenti ed attento sostenitore degli standard di accessibilità WCAG.",
         "matchReason": "Portfolio di eccellente fattura, pulito e documentato molto approfonditamente. Dimostra orientamento sia estetico che funzionale.",
         "softSkills": [
@@ -294,12 +276,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-23",
         "status": "Applied",
-        "tags": [
-            "SEO",
-            "Google Ads",
-            "A/B Testing",
-            "Growth Funnel"
-        ],
         "summary": "Esperta di marketing a performance con focus su acquisizione utenti B2C. Esperta nell’approccio scientifico tramite test A/B rigorosi, scalabilità di campagne Paid Search/Social, e automazione di campagne email newsletter.",
         "matchReason": "Solido approccio analitico ai funnel di conversione. Perfetto per espandere il canale di traffico organico e a pagamento.",
         "softSkills": [
@@ -357,12 +333,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 12,
         "appliedDate": "2026-05-10",
         "status": "Hired",
-        "tags": [
-            "Kubernetes",
-            "Scala",
-            "Distributed Systems",
-            "Go"
-        ],
         "summary": "Ingegnere e architetto software specializzato in infrastrutture distribuite, sistemi a tolleranza di errore ed elaborazione flussi dati real-time. Forte contributore a progetti Software Open Source correlati al Cloud Native computing.",
         "matchReason": "Talento eccezionale a livello globale. Ha superato brillantemente ogni sessione di intervista con unanimità assoluta del comitato di valutazione.",
         "softSkills": [
@@ -505,11 +475,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 1,
         "appliedDate": "2026-05-18",
         "status": "Rejected",
-        "tags": [
-            "Eager to Learn",
-            "React Basics",
-            "HTML & CSS"
-        ],
         "summary": "Sviluppatrice motivata che compie i primi solidi passi con React e CSS. Laureata triennale in Informatica, ha dimostrato notevole passione nei suoi progetti personali su Github.",
         "matchReason": "Profilo Junior promettente, ma non adatto alla nostra attuale posizione Senior aperta, che necessita di autonomia immediata su architetture a microservizi.",
         "softSkills": [
@@ -597,12 +562,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 7,
         "appliedDate": "2026-05-12",
         "status": "Interviewing",
-        "tags": [
-            "Sales Prospecting",
-            "SaaS Licensing",
-            "Negotiation",
-            "CRM"
-        ],
         "summary": "Professionista delle vendite orientato ai risultati, con solida esperienza commerciale in mercati SaaS Enterprise ad alto valore di transazione (ACV > €100k). Eccellente con negoziazioni multilivello.",
         "matchReason": "Notevole sicurezza sul palco e durante le presentazioni di vendita. Ha gestito lead di grandi istituti finanziari in Italia.",
         "softSkills": [
@@ -703,12 +662,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "tags": [
-            "Docker",
-            "Kubernetes",
-            "Terraform",
-            "CI/CD"
-        ],
         "summary": "Specialista DevOps con forte esperienza in CI/CD, Terraform e ambienti multi-cloud. Ha automatizzato pipeline di deploy riducendo i tempi di rilascio del 70%.",
         "matchReason": "Ottima padronanza di infrastrutture cloud ibride. Perfetta per il nostro progetto di migrazione AWS/GCP.",
         "softSkills": [
@@ -787,12 +740,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "tags": [
-            "Java",
-            "Spring Boot",
-            "Kafka",
-            "Microservices"
-        ],
         "summary": "Sviluppatore backend specializzato in architetture a microservizi con Java e Spring Boot. Esperienza significativa con sistemi event-driven e message broker.",
         "matchReason": "Competenze solide su Kafka e architetture distribuite. Buon fit per il team backend.",
         "softSkills": [
@@ -884,12 +831,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "tags": [
-            "Python",
-            "SQL",
-            "Tableau",
-            "Data Visualization"
-        ],
         "summary": "Data analyst con esperienza in Python, SQL e strumenti di business intelligence. Capacita di trasformare dati grezzi in insight azionabili per il business.",
         "matchReason": "Buon profilo analitico. Da valutare competenze su strumenti di data visualization avanzati.",
         "softSkills": [
@@ -947,12 +888,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 7,
         "appliedDate": "2026-05-19",
         "status": "Offered",
-        "tags": [
-            "React Native",
-            "Swift",
-            "TypeScript",
-            "Mobile UX"
-        ],
         "summary": "Sviluppatore mobile esperto in React Native e Swift. Ha pubblicato app con milioni di download su App Store e Play Store.",
         "matchReason": "Portfolio eccezionale. La sua esperienza con app ad alto traffico e' esattamente cio che cerchiamo.",
         "softSkills": [
@@ -1051,12 +986,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 9,
         "appliedDate": "2026-05-17",
         "status": "Hired",
-        "tags": [
-            "Figma",
-            "Design Systems",
-            "User Research",
-            "Accessibility"
-        ],
         "summary": "Product designer senior con focus su design system enterprise. Ha costruito e mantenuto design system utilizzati da oltre 200 sviluppatori.",
         "matchReason": "Esperienza rara nella costruzione di design system scalabili. Perfetta per guidare il nostro team design.",
         "softSkills": [
@@ -1135,12 +1064,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "tags": [
-            "CISSP",
-            "Penetration Testing",
-            "GDPR",
-            "Cloud Security"
-        ],
         "summary": "Ingegnere della sicurezza con certificazioni CISSP e CEH. Esperienza in penetration testing, audit di sicurezza e compliance GDPR.",
         "matchReason": "Competenze di sicurezza molto richieste. Profilo ideale per rafforzare il team security.",
         "softSkills": [
@@ -1219,12 +1142,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-26",
         "status": "Applied",
-        "tags": [
-            "SEO",
-            "Content Marketing",
-            "Copywriting",
-            "B2B"
-        ],
         "summary": "Content strategist con esperienza in SEO copywriting, content marketing B2B e gestione editoriale multi-canale.",
         "matchReason": "Buone competenze di scrittura tecnica. Da verificare esperienza su contenuti SaaS.",
         "softSkills": [
@@ -1282,12 +1199,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 8,
         "appliedDate": "2026-05-14",
         "status": "Interviewing",
-        "tags": [
-            "PyTorch",
-            "NLP",
-            "Computer Vision",
-            "MLOps"
-        ],
         "summary": "ML Engineer con PhD in Computer Science. Pubblicazioni su NeurIPS e ICML. Esperienza in produzione di modelli NLP e computer vision.",
         "matchReason": "Profilo accademico e industriale eccezionale. Ideale per guidare le iniziative AI dell'azienda.",
         "softSkills": [
@@ -1386,12 +1297,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 7,
         "appliedDate": "2026-05-23",
         "status": "Screening",
-        "tags": [
-            "Talent Acquisition",
-            "Employer Branding",
-            "People Analytics",
-            "OKR"
-        ],
         "summary": "HR Business Partner con esperienza in aziende tech scale-up. Specializzata in employer branding, talent acquisition e people analytics.",
         "matchReason": "Esperienza rilevante in contesti tech ad alta crescita. Buon fit culturale.",
         "softSkills": [
@@ -1470,12 +1375,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-20",
         "status": "Rejected",
-        "tags": [
-            "Vue.js",
-            "Angular",
-            "CSS",
-            "Web Animations"
-        ],
         "summary": "Frontend developer con esperienza in Vue.js e Angular. Buona conoscenza di CSS avanzato e animazioni web.",
         "matchReason": "Competenze frontend solide ma manca esperienza React, nostro stack principale.",
         "softSkills": [
@@ -1554,12 +1453,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-18",
         "status": "Interviewing",
-        "tags": [
-            "Cypress",
-            "Playwright",
-            "API Testing",
-            "Test Automation"
-        ],
         "summary": "QA Engineer con esperienza in test automation, Cypress, Playwright e testing di API REST. Forte orientamento alla quality culture.",
         "matchReason": "Ottima esperienza con Cypress e Playwright. Perfetta per il nostro processo di CI/CD.",
         "softSkills": [
@@ -1651,12 +1544,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 2,
         "appliedDate": "2026-05-27",
         "status": "Applied",
-        "tags": [
-            "Salesforce",
-            "Outbound",
-            "Cold Calling",
-            "LinkedIn Sales"
-        ],
         "summary": "SDR motivato con esperienza in outbound prospecting B2B. Conosce bene Salesforce e strumenti di sales engagement.",
         "matchReason": "Giovane ma determinato. Buoni numeri nel ruolo precedente. Da valutare in screening.",
         "softSkills": [
@@ -1714,12 +1601,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "tags": [
-            "After Effects",
-            "Lottie",
-            "Micro-interactions",
-            "Framer Motion"
-        ],
         "summary": "Motion designer creativa con esperienza in After Effects, Lottie e micro-interazioni per prodotti digitali.",
         "matchReason": "Portfolio visivamente impressionante. Le sue animazioni Lottie sono molto fluide.",
         "softSkills": [
@@ -1798,12 +1679,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 7,
         "appliedDate": "2026-05-16",
         "status": "Offered",
-        "tags": [
-            "SRE",
-            "Prometheus",
-            "Grafana",
-            "Chaos Engineering"
-        ],
         "summary": "SRE con esperienza in sistemi ad alta disponibilita. Expert in observability, incident management e chaos engineering.",
         "matchReason": "Profilo SRE raro e molto richiesto. Esperienza diretta con sistemi 99.99% uptime.",
         "softSkills": [
@@ -1895,12 +1770,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "tags": [
-            "Scrum",
-            "User Stories",
-            "Jira",
-            "Product Discovery"
-        ],
         "summary": "Product Owner certificata CSPO con forte esperienza in metodologie agili. Ha gestito prodotti SaaS B2B con oltre 50k utenti attivi.",
         "matchReason": "Ottima combinazione di competenze tecniche e business. Forte nel definire user stories.",
         "softSkills": [
@@ -1992,12 +1861,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-26",
         "status": "Applied",
-        "tags": [
-            "React",
-            "Node.js",
-            "PostgreSQL",
-            "TypeScript"
-        ],
         "summary": "Sviluppatore full stack con esperienza in React, Node.js e PostgreSQL. Appassionato di clean code e testing.",
         "matchReason": "Profilo junior-mid promettente. Da valutare la profondita delle competenze architetturali.",
         "softSkills": [
@@ -2055,12 +1918,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-19",
         "status": "Rejected",
-        "tags": [
-            "Branding",
-            "PR",
-            "Corporate Communication",
-            "Media Relations"
-        ],
         "summary": "Brand manager con esperienza in rebranding aziendale e comunicazione corporate. Forte background in PR e media relations.",
         "matchReason": "Profilo interessante ma il ruolo richiede competenze digitali piu avanzate.",
         "softSkills": [
@@ -2139,12 +1996,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 11,
         "appliedDate": "2026-05-13",
         "status": "Hired",
-        "tags": [
-            "AWS Lambda",
-            "Architecture",
-            "Team Leadership",
-            "Serverless"
-        ],
         "summary": "Technical Lead con esperienza nella guida di team distribuiti. Expert in architetture serverless e event-driven su AWS.",
         "matchReason": "Leadership tecnica eccezionale. Ha gestito team di 15+ developer in contesti enterprise.",
         "softSkills": [
@@ -2236,12 +2087,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-28",
         "status": "Applied",
-        "tags": [
-            "Requirements Analysis",
-            "Process Mapping",
-            "BPMN",
-            "Confluence"
-        ],
         "summary": "Business analyst con competenze in analisi dei requisiti, process mapping e documentazione tecnica.",
         "matchReason": "Profilo promettente. Da valutare esperienza con stakeholder tecnici.",
         "softSkills": [
@@ -2299,12 +2144,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-20",
         "status": "Interviewing",
-        "tags": [
-            "Backstage",
-            "ArgoCD",
-            "Platform Engineering",
-            "Golden Paths"
-        ],
         "summary": "Platform engineer con esperienza in Internal Developer Platforms. Competenze in Backstage, ArgoCD e self-service infra.",
         "matchReason": "Profilo raro e molto ricercato. Conosce bene le esigenze dei team di sviluppo interni.",
         "softSkills": [
@@ -2396,12 +2235,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-22",
         "status": "Screening",
-        "tags": [
-            "User Research",
-            "Usability Testing",
-            "A/B Testing",
-            "Hotjar"
-        ],
         "summary": "UX Researcher qualitativa e quantitativa. Esperta in user interviews, usability testing e analisi comportamentale.",
         "matchReason": "Forte approccio metodologico alla ricerca. Portfolio di case study molto dettagliato.",
         "softSkills": [
@@ -2480,12 +2313,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "tags": [
-            "Customer Success",
-            "Onboarding",
-            "Churn Prevention",
-            "Gainsight"
-        ],
         "summary": "CSM con esperienza in onboarding clienti enterprise e gestione portafoglio. Buone capacita di upselling.",
         "matchReason": "Esperienza CS solida. Da verificare competenze su tool di customer success automation.",
         "softSkills": [
@@ -2543,12 +2370,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-27",
         "status": "Screening",
-        "tags": [
-            "API Documentation",
-            "Markdown",
-            "Swagger",
-            "Docs-as-Code"
-        ],
         "summary": "Technical writer con esperienza in documentazione API, guide utente e knowledge base. Competenze in Markdown e docs-as-code.",
         "matchReason": "Scrive documentazione chiara e strutturata. Esperienza con OpenAPI/Swagger.",
         "softSkills": [
@@ -2627,12 +2448,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 8,
         "appliedDate": "2026-05-21",
         "status": "Interviewing",
-        "tags": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Query Optimization"
-        ],
         "summary": "DBA senior con esperienza in PostgreSQL, MongoDB e Redis. Specializzato in ottimizzazione query e database sharding.",
         "matchReason": "Competenze DBA molto solide. Ha gestito database con miliardi di record.",
         "softSkills": [
@@ -2724,12 +2539,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-18",
         "status": "Offered",
-        "tags": [
-            "Google Ads",
-            "Meta Ads",
-            "Programmatic",
-            "Attribution"
-        ],
         "summary": "Performance marketer con track record in Google Ads, Meta Ads e programmatic advertising. ROI medio 4.5x sulle campagne gestite.",
         "matchReason": "Numeri eccellenti sulle campagne precedenti. Ottimo approccio data-driven.",
         "softSkills": [
@@ -2821,12 +2630,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 4,
         "appliedDate": "2026-05-26",
         "status": "Rejected",
-        "tags": [
-            "Scrum",
-            "Kanban",
-            "Facilitation",
-            "Retrospectives"
-        ],
         "summary": "Scrum Master certificato PSM II con esperienza in team di sviluppo software. Buone capacita di facilitazione.",
         "matchReason": "Buon profilo ma cerchiamo qualcuno con esperienza in contesti di scaling (SAFe/LeSS).",
         "softSkills": [
@@ -2905,12 +2708,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 3,
         "appliedDate": "2026-05-25",
         "status": "Applied",
-        "tags": [
-            "Illustration",
-            "Branding",
-            "Figma",
-            "Adobe Suite"
-        ],
         "summary": "Visual designer con forte sensibilita estetica. Competenze in illustrazione digitale, branding e design di interfacce.",
         "matchReason": "Stile visivo molto allineato alla nostra brand identity. Da valutare competenze UX.",
         "softSkills": [
@@ -2968,12 +2765,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-23",
         "status": "Rejected",
-        "tags": [
-            "C/C++",
-            "RTOS",
-            "IoT",
-            "Firmware"
-        ],
         "summary": "Ingegnere embedded con esperienza in C/C++ e sistemi RTOS. Competenze in firmware development e protocolli IoT.",
         "matchReason": "Competenze tecniche ottime ma il ruolo non esiste nel nostro stack attuale (solo web/cloud).",
         "softSkills": [
@@ -3052,12 +2843,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 6,
         "appliedDate": "2026-05-20",
         "status": "Screening",
-        "tags": [
-            "Partnerships",
-            "B2B",
-            "Co-marketing",
-            "Channel Sales"
-        ],
         "summary": "Partnership manager con rete di contatti estesa nel settore SaaS europeo. Ha chiuso deal di co-marketing da oltre 500k euro.",
         "matchReason": "Rete di contatti molto interessante per il nostro programma partner.",
         "softSkills": [
@@ -3136,12 +2921,6 @@ export const APPLICANT_DETAIL_MOCK: Record<string, CandidateDetail> = {
         "experienceYears": 5,
         "appliedDate": "2026-05-24",
         "status": "Screening",
-        "tags": [
-            "REST",
-            "GraphQL",
-            "API Gateway",
-            "OpenAPI"
-        ],
         "summary": "API Engineer specializzato in design RESTful e GraphQL. Esperienza in API gateway, rate limiting e versioning strategies.",
         "matchReason": "Competenze API design molto solide. Perfetto per il nostro progetto di API pubblica.",
         "softSkills": [

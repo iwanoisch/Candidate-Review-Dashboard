@@ -42,9 +42,9 @@ export const CandidateList = ({candidates, selectedId, totalCount, isLoading = f
                 ) : (
                     <div
                         onScroll={handleScroll}
-                        className="space-y-2 max-h-144 overflow-y-auto pr-1"
+                        className="space-y-2 max-h-96 lg:max-h-144 overflow-y-auto overscroll-contain pr-1"
                         role="list"
-                        aria-label={t('candidates.list_aria', 'Lista candidati')}
+                        aria-label={t('candidates.list_aria')}
                     >
                         {candidates.map((candidate) => (
                             <div key={candidate.id} role="listitem">

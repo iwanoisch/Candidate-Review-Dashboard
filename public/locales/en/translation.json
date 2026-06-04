@@ -91,7 +91,7 @@
     "current_label": "Current Status",
     "status_selection": "Candidate status selection",
     "confirm_change_title": "Confirm status change",
-    "confirm_change": "Do you want to change the candidate's status?"
+    "confirm_change": "Do you want to change the candidate's status to \"{{statusName}}\"?"
   },
   "application_date": {
     "section_label": "Application date",
