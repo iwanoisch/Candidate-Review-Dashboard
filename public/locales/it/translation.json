@@ -89,7 +89,9 @@
     "title": "Stato Assunzione",
     "current_status": "Avanzamento Stato",
     "current_label": "Stato Corrente",
-    "status_selection": "Selezione stato candidato"
+    "status_selection": "Selezione stato candidato",
+    "confirm_change_title": "Conferma cambio stato",
+    "confirm_change": "Vuoi cambiare lo stato del candidato?"
   },
   "application_date": {
     "section_label": "Data candidatura",
@@ -102,7 +104,9 @@
     "submit": "Rilascia Nota",
     "list_label": "Lista note",
     "empty": "Nessuna nota presente",
-    "delete": "Elimina nota"
+    "delete": "Elimina nota",
+    "confirm_delete_title": "Elimina nota",
+    "confirm_delete": "Sei sicuro di voler eliminare questa nota? L'azione non può essere annullata."
   },
   "timeline": {
     "section_label": "Timeline storico",

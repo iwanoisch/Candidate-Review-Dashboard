@@ -1,10 +1,45 @@
 import {useTranslation} from 'react-i18next';
 import {BoltIcon} from '@heroicons/react/24/outline';
+import {useModalDialog} from "../../common/modal-dialog/useModalDialog.ts";
 import type {StatusRecruitmentProps} from './StatusRecruitment.type.ts';
+import type {CandidateStatus} from '../../features/applicant/applicant.type';
 import {STATUS_STEPS} from "../../constants/filter.constant.ts";
 
 export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: StatusRecruitmentProps) => {
     const {t} = useTranslation();
+    const {showModalDialog, hideModalDialog} = useModalDialog();
+
+    const handleStatusClick = (newStatus: CandidateStatus) => {
+        if (newStatus === currentStatus) return;
+
+        const stepLabel = STATUS_STEPS.find(s => s.status === newStatus);
+        const statusName = stepLabel ? t(stepLabel.labelKey, stepLabel.labelFallback) : newStatus;
+
+        const modalId = showModalDialog({
+            type: 'info',
+            title: t('pipeline.confirm_change_title', 'Conferma cambio stato'),
+            message: t('pipeline.confirm_change', `Vuoi cambiare lo stato del candidato a "${statusName}"?`),
+            focusBlocked: true,
+            duration: 0,
+            links: [
+                {
+                    text: t('common.confirm', 'Conferma'),
+                    variant: 'primary',
+                    onClick: () => {
+                        onStatusChange(newStatus);
+                        hideModalDialog(modalId);
+                    },
+                },
+                {
+                    text: t('common.cancel', 'Annulla'),
+                    variant: 'cancel',
+                    onClick: () => {
+                        hideModalDialog(modalId);
+                    },
+                },
+            ],
+        });
+    };
 
     const currentLabel = STATUS_STEPS.find(s => s.status === currentStatus);
 
@@ -44,7 +79,7 @@ export const StatusRecruitment = ({currentStatus, isAdmin, onStatusChange}: Stat
                                 role="radio"
                                 aria-checked={isActive}
                                 aria-label={t(step.labelKey, step.labelFallback)}
-                                onClick={() => isAdmin && onStatusChange(step.status)}
+                                onClick={() => isAdmin && handleStatusClick(step.status)}
                                 disabled={!isAdmin}
                                 className={`min-h-12 px-3 py-2 flex items-center justify-center text-center text-xs font-semibold rounded-xl border transition-all duration-150 ${
                                     isActive

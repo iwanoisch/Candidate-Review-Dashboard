@@ -198,7 +198,7 @@ export const Dashboard = () => {
             {/* Candidate List + Detail */}
             <section aria-label={t('candidates.section_label', 'Gestione candidati')}>
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-12 items-start">
-                    <div className="md:max-w-md lg:max-w-lg xl:max-w-none xl:col-span-5 min-w-0 space-y-4">
+                    <div className="xl:col-span-5 min-w-0 space-y-4">
                         <FilterList
                             filters={filters}
                             departments={departments}

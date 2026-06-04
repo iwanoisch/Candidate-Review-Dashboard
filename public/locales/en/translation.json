@@ -89,7 +89,9 @@
     "title": "Pipeline Recruitment",
     "current_status": "Status Progress",
     "current_label": "Current Status",
-    "status_selection": "Candidate status selection"
+    "status_selection": "Candidate status selection",
+    "confirm_change_title": "Confirm status change",
+    "confirm_change": "Do you want to change the candidate's status?"
   },
   "application_date": {
     "section_label": "Application date",
@@ -102,7 +104,9 @@
     "submit": "Submit Note",
     "list_label": "Notes list",
     "empty": "No notes yet",
-    "delete": "Delete note"
+    "delete": "Delete note",
+    "confirm_delete_title": "Delete note",
+    "confirm_delete": "Are you sure you want to delete this note? This action cannot be undone."
   },
   "timeline": {
     "section_label": "History timeline",

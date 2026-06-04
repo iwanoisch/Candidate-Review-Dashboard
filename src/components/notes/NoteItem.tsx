@@ -1,15 +1,38 @@
 import {useTranslation} from 'react-i18next';
 import {TrashIcon} from '@heroicons/react/24/outline';
-import type {CandidateNote} from "../../features/applicant/applicant.type.ts";
-
-interface NoteItemProps {
-    note: CandidateNote;
-    canDelete: boolean;
-    onDelete: (noteId: string) => void;
-}
+import {useModalDialog} from "../../common/modal-dialog/useModalDialog.ts";
+import {NoteItemProps} from "./NoteItem.type.ts";
 
 const NoteItem = ({note, canDelete, onDelete}: NoteItemProps) => {
     const {t} = useTranslation();
+    const {showModalDialog, hideModalDialog} = useModalDialog();
+
+    const handleDelete = () => {
+        const modalId = showModalDialog({
+            type: 'warning',
+            title: t('notes.confirm_delete_title', 'Elimina nota'),
+            message: t('notes.confirm_delete', 'Sei sicuro di voler eliminare questa nota? L\'azione non può essere annullata.'),
+            focusBlocked: true,
+            duration: 0,
+            links: [
+                {
+                    text: t('common.delete', 'Elimina'),
+                    variant: 'danger',
+                    onClick: () => {
+                        onDelete(note.id);
+                        hideModalDialog(modalId);
+                    },
+                },
+                {
+                    text: t('common.cancel', 'Annulla'),
+                    variant: 'cancel',
+                    onClick: () => {
+                        hideModalDialog(modalId);
+                    },
+                },
+            ],
+        });
+    };
 
     return (
         <article className="p-3 bg-slate-50 border border-slate-100 rounded-xl text-xs space-y-1.5">
@@ -28,7 +51,7 @@ const NoteItem = ({note, canDelete, onDelete}: NoteItemProps) => {
                     {canDelete && (
                         <button
                             type="button"
-                            onClick={() => onDelete(note.id)}
+                            onClick={handleDelete}
                             className="text-slate-400 hover:text-red-500 transition-colors duration-150 p-0.5 rounded focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none"
                             aria-label={t('notes.delete', 'Elimina nota')}
                         >

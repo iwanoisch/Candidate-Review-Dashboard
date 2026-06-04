@@ -23,7 +23,7 @@ export const Timeline = ({events}: TimelineProps) => {
             {/* Timeline */}
             {events.length > 0 ? (
                 <div
-                    className="relative pl-6 space-y-5 border-l-2 border-slate-100 ml-2.5 max-h-72 overflow-y-auto pr-1"
+                    className="relative pl-6 space-y-5 border-l-2 border-slate-100 ml-2.5 max-h-[32rem] overflow-y-auto pr-1"
                     role="list"
                     aria-label={t('timeline.list_label', 'Lista eventi')}
                 >
