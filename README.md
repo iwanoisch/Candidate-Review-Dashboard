@@ -1,6 +1,6 @@
 # Candidate Review Dashboard
 
-Web application per la gestione di candidati in un processo di selezione. Permette di visualizzare, filtrare, valutare e gestire candidati attraverso una dashboard completa con ruoli utente differenziati. Layout responsive e ottimizzato per mobile.
+Web application per la gestione di candidati in un processo di selezione. Permette di visualizzare, filtrare, valutare e gestire candidati attraverso una dashboard completa con ruoli utente differenziati. Layout responsive e ottimizzato per mobile. Include due toggle per simulare latenza e errori API, attivabili e disattivabili dalla dashboard per testare il comportamento dell'app in scenari reali.
 
 ## Quick Start
 
