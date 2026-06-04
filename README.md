@@ -228,6 +228,7 @@ Per ogni errore API verifico: la funzione ritorna `null`/`false`, l'alert viene 
 
 Claude Code (Claude Opus) e stato usato come copilota durante l'intero sviluppo:
 
+- **Design UI**: ho usato Google AI Studio per generare una base HTML/CSS della grafica, poi ho adattato e personalizzato il layout a mio piacimento (ad esempio la sidebar non era prevista nel design generato da Google)
 - **Scaffolding iniziale**: struttura cartelle, provider tree, configurazione store
 - **Implementazione componenti**: ho descritto il design target (screenshot/HTML di riferimento) e Claude ha generato i componenti seguendo le convenzioni del progetto
 - **Mock data**: generazione di 37 candidati realistici con nomi, ruoli, score, timeline
