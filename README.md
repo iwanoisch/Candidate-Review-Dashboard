@@ -271,7 +271,7 @@ Questo approccio garantisce che ogni intervento dell'AI sia coerente con le conv
 
 ## Compromessi e cose lasciate fuori
 
-- **Nessun backend reale**: tutto mockato. Il filtro/ricerca e la paginazione avvengono lato client, in produzione sarebbero server-side
+- **Nessun backend reale**: tutto mockato. Il filtro/ricerca e la paginazione avvengono lato client, in produzione sarebbero server-side. Lo scroll della lista candidati non implementa infinite scroll con caricamento progressivo (load on scroll finché ci sono pagine rimanenti) e i filtri operano lato client sull'intero dataset invece di inviare query al server, perché i dati mock non restituiscono metadati di paginazione né supportano filtraggio server-side come farebbe un'API reale
 - **Autenticazione semplificata**: login hardcoded senza JWT reale, senza refresh token, senza scadenza sessione
 - **Nessun form di edit candidato**: si possono cambiare stato e note, ma non i dati anagrafici
 - **Nessun upload file**: CV, foto profilo — mancanti
@@ -280,6 +280,8 @@ Questo approccio garantisce che ogni intervento dell'AI sia coerente con le conv
 - **Accessibility**: buona base (aria-label, semantica, focus ring) ma non audit completo WCAG 2.1 AAA
 - **Gestione completa candidato**: manca CRUD completo (creazione, modifica anagrafica, eliminazione candidato). Attualmente si possono solo cambiare stato e gestire note
 - **Gestione azienda/cliente**: manca tutta la sezione dedicata all'azienda che cerca il candidato (anagrafica cliente, posizioni aperte per cliente, associazione candidato-azienda)
+- **Pagine di errore limitate**: gestita solo la 404 (NotFound), mancano pagine dedicate per errori server (500, 503) e una pagina di errore generico con possibilità di retry
+- **Permessi granulari**: attualmente i ruoli sono solo due (admin/viewer) con un semplice check su `role`. Manca un sistema di permessi strutturato (es. un hook `usePermissions`) che definisca in modo granulare cosa ogni ruolo può vedere, leggere, modificare ed eliminare
 
 ---
 
@@ -291,10 +293,8 @@ Questo approccio garantisce che ogni intervento dell'AI sia coerente con le conv
 4. **Error boundary** a livello di route per catturare errori non gestiti senza crashare tutta l'app
 5. **Monitoring**: Sentry per error tracking, analytics per user behavior
 6. **CI/CD**: GitHub Actions con lint, test, build, deploy automatico. In locale, **Husky** per eseguire lint e test sui git hooks (pre-commit, pre-push) cosi da bloccare codice rotto prima che arrivi nel repository
-7. **Storybook** per documentazione componenti e design system
-8. **Lazy loading** piu aggressivo: split per feature, non solo per pagina
-9. **Ottimizzazione performance**: `React.memo` dove serve. Per le liste, la paginazione con scroll infinito e i filtri server-side limitano gia il numero di elementi per chiamata (7-10), ma in caso di viste senza paginazione (es. dashboard riassuntive, report) si potrebbe valutare la virtualizzazione con react-window
-10. **Accessibilita**: audit WCAG 2.1 AA completo, screen reader testing
+7. **Ottimizzazione performance**: `React.memo` dove serve. Per le liste, la paginazione con scroll infinito e i filtri server-side limitano gia il numero di elementi per chiamata (7-10), ma in caso di viste senza paginazione (es. dashboard riassuntive, report) si potrebbe valutare la virtualizzazione con react-window
+8. **Accessibilita**: audit WCAG 2.1 AA completo, screen reader testing
 
 ---
 
