@@ -4,6 +4,8 @@ import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
 import {APPLICANT_DETAIL_MOCK} from "../../data_mock/APPLICANT_DETAIL_MOCK.ts";
 import {APPLICANT_STATS_MOCK} from "../../data_mock/APPLICANT_STATS_MOCK.ts";
 import {filterCandidates} from "../../utility/candidate-filter.utils.ts";
+import {useAlert} from "../../common/alert/useAlert.ts";
+import {useApiSimulation} from "../../common/api-simulation/useApiSimulation.ts";
 import type {ApplicantStats, CandidateDetail, CandidateNote, CandidateStatus, TimelineEvent} from './applicant.type';
 import type {IApiResponse} from "../../hooks/api/useApiClient.type.ts";
 import type {IFilterList} from "../../common/filterList/FilterList.type.ts";
@@ -13,12 +15,25 @@ const DEFAULT_PAGE_SIZE = 7;
 export const useApplicant = () => {
     const dispatch = useAppDispatch();
     const state = useAppSelector(state => state.applicant);
+    const {showAlert} = useAlert();
+    const {simulateError, simulateLatency} = useApiSimulation();
+
+    const simulateDelay = async () => {
+        const delay = simulateLatency ? 2500 : 800;
+        await new Promise(resolve => setTimeout(resolve, delay));
+    };
+
+    const throwIfSimulatingError = (endpoint: string) => {
+        if (simulateError) {
+            throw new Error(`Errore API simulato: GET ${endpoint} ha restituito 500 Internal Server Error`);
+        }
+    };
 
     const getCandidates = async (filters: IFilterList, page: number = 1, pageSize: number = DEFAULT_PAGE_SIZE): Promise<boolean> => {
         try {
             // TODO: sostituire con get<IApiResponse<Candidate[]>>('/candidates', { ...filters, page, pageSize })
-            // TODO: rimuovere il timeout, simula latenza backend
-            await new Promise(resolve => setTimeout(resolve, 800));
+            await simulateDelay();
+            throwIfSimulatingError('/api/candidates');
             const filtered = filterCandidates(APPLICANT_DATA_MOCK, filters);
 
             const totalPages = Math.ceil(filtered.length / pageSize);
@@ -35,7 +50,12 @@ export const useApplicant = () => {
             }
 
             return true;
-        } catch {
+        } catch (error) {
+            showAlert({
+                type: 'error',
+                title: 'Errore caricamento candidati',
+                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento dei candidati',
+            });
             return false;
         }
     };
@@ -43,8 +63,8 @@ export const useApplicant = () => {
     const getApplicantStats = async (): Promise<IApiResponse<ApplicantStats> | null> => {
         try {
             // TODO: sostituire con get<IApiResponse<ApplicantStats>>('/candidates/stats')
-            // TODO: rimuovere il timeout, simula latenza backend
-            await new Promise(resolve => setTimeout(resolve, 800));
+            await simulateDelay();
+            throwIfSimulatingError('/api/candidates/stats');
             const response: IApiResponse<ApplicantStats> = {
                 data: APPLICANT_STATS_MOCK,
                 meta: {
@@ -57,7 +77,12 @@ export const useApplicant = () => {
 
             dispatch(loadStats(response.data));
             return response;
-        } catch {
+        } catch (error) {
+            showAlert({
+                type: 'error',
+                title: 'Errore caricamento statistiche',
+                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento delle statistiche',
+            });
             return null;
         }
     };
@@ -65,13 +90,24 @@ export const useApplicant = () => {
     const getCandidateDetail = async (candidateId: string): Promise<CandidateDetail | null> => {
         try {
             // TODO: sostituire con get<IApiResponse<CandidateDetail>>(`/candidates/${candidateId}`)
-            await new Promise(resolve => setTimeout(resolve, 600));
+            await simulateDelay();
+            throwIfSimulatingError(`/api/candidates/${candidateId}`);
             const detail = APPLICANT_DETAIL_MOCK[candidateId] ?? null;
             dispatch(selectCandidate(detail));
             return detail;
-        } catch {
+        } catch (error) {
+            showAlert({
+                type: 'error',
+                title: 'Errore caricamento dettaglio',
+                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento del dettaglio candidato',
+            });
+            dispatch(selectCandidate(null));
             return null;
         }
+    };
+
+    const clearSelectedCandidate = () => {
+        dispatch(selectCandidate(null));
     };
 
     const changeCandidateStatus = (status: CandidateStatus, author: string, authorRole: 'admin' | 'viewer') => {
@@ -144,6 +180,7 @@ export const useApplicant = () => {
         getCandidates,
         getCandidateDetail,
         getApplicantStats,
+        clearSelectedCandidate,
         changeCandidateStatus,
         addNote,
         deleteNote,

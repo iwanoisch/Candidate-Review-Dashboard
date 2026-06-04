@@ -7,6 +7,7 @@ import {
     FlagIcon,
     UserPlusIcon,
     StarIcon,
+    BookOpenIcon,
 } from '@heroicons/react/24/outline';
 import {useApplicant} from "../../features/applicant/useApplicant.ts";
 import {useEffect, useMemo, useState, useCallback} from "react";
@@ -31,11 +32,14 @@ import {NotesSkeleton} from "../../components/notes/NotesSkeleton.tsx";
 import {ApplicationDateSkeleton} from "../../components/applicationDate/ApplicationDateSkeleton.tsx";
 import {TimelineSkeleton} from "../../components/timeline/TimelineSkeleton.tsx";
 import {APPLICANT_DATA_MOCK} from "../../data_mock/APPLICANT_DATA_MOCK.ts";
+import {useApiSimulation} from "../../common/api-simulation/useApiSimulation.ts";
+import {BoltIcon, ExclamationTriangleIcon} from '@heroicons/react/24/outline';
 
 export const Dashboard = () => {
     const {t} = useTranslation();
     const {user} = useAuth();
-    const {stats, candidates, selectedCandidate, pagination, getApplicantStats, getCandidates, getCandidateDetail, changeCandidateStatus, addNote, deleteNote} = useApplicant();
+    const {simulateError, setSimulateError, simulateLatency, setSimulateLatency} = useApiSimulation();
+    const {stats, candidates, selectedCandidate, pagination, getApplicantStats, getCandidates, getCandidateDetail, clearSelectedCandidate, changeCandidateStatus, addNote, deleteNote} = useApplicant();
     const [isStatsLoad, setIsStatsLoad] = useState<boolean>(false);
     const [isCandidatesLoad, setIsCandidatesLoad] = useState<boolean>(false);
     const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
@@ -80,6 +84,8 @@ export const Dashboard = () => {
     useEffect(() => {
         if (candidates.length > 0) {
             loadCandidateDetail(candidates[0].id);
+        } else {
+            clearSelectedCandidate();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [candidateIds]);
@@ -108,13 +114,45 @@ export const Dashboard = () => {
     return (
         <div className="space-y-6">
             {/* Header */}
-            <header>
-                <h1 className="text-2xl font-bold text-text-primary sm:text-3xl">
-                    {t('dashboard.title')}
-                </h1>
-                <p className="mt-1 text-sm text-text-muted">
-                    {t('dashboard.welcome')}, {user?.first_name || 'Utente'}
-                </p>
+            <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                    <h1 className="text-2xl font-bold text-text-primary sm:text-3xl">
+                        {t('dashboard.title')}
+                    </h1>
+                    <p className="mt-1 text-sm text-text-muted">
+                        {t('dashboard.welcome')}, {user?.first_name || 'Utente'}
+                    </p>
+                </div>
+
+                {/* Dev Toolbar - Simulazione API */}
+                <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 shadow-sm">
+                    <button
+                        type="button"
+                        onClick={() => setSimulateLatency(!simulateLatency)}
+                        className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors duration-150 cursor-pointer ${
+                            simulateLatency
+                                ? 'bg-amber-100 text-amber-700'
+                                : 'text-slate-500 hover:bg-slate-50'
+                        }`}
+                        aria-label={t('dashboard.simulate_latency', 'Simula Latenza')}
+                    >
+                        <BoltIcon className="size-4" aria-hidden="true"/>
+                        {t('dashboard.simulate_latency', 'Simula Latenza')}
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setSimulateError(!simulateError)}
+                        className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors duration-150 cursor-pointer ${
+                            simulateError
+                                ? 'bg-red-100 text-red-700'
+                                : 'text-slate-500 hover:bg-slate-50'
+                        }`}
+                        aria-label={t('dashboard.simulate_error', 'Simula Errore API')}
+                    >
+                        <ExclamationTriangleIcon className="size-4" aria-hidden="true"/>
+                        {t('dashboard.simulate_error', 'Simula Errore API')}
+                    </button>
+                </div>
             </header>
 
             {/* Stat Cards */}
@@ -147,7 +185,7 @@ export const Dashboard = () => {
                             />
                             <StatCard
                                 label={t('dashboard.avg_score')}
-                                value={stats ? `${stats.avgScore}/100` : '-'}
+                                value={stats?.avgScore != null && !isNaN(stats.avgScore) ? `${stats.avgScore}/100` : '-'}
                                 description={t('dashboard.avg_score_desc')}
                                 icon={StarIcon}
                                 variant="indigo"
@@ -197,7 +235,7 @@ export const Dashboard = () => {
                                     </div>
                                 </div>
                             </>
-                        ) : selectedCandidate && (
+                        ) : selectedCandidate ? (
                             <>
                                 <CandidateDetail candidate={selectedCandidate}/>
                                 {selectedCandidate.jobPosition && (
@@ -233,6 +271,16 @@ export const Dashboard = () => {
                                     </div>
                                 </div>
                             </>
+                        ) : (
+                            <article className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col items-center justify-center py-24 px-6 text-center">
+                                <BookOpenIcon className="size-14 text-slate-300 mb-4" aria-hidden="true"/>
+                                <h2 className="text-lg font-semibold text-slate-700">
+                                    {t('candidates.no_selection_title', 'Nessun candidato selezionato')}
+                                </h2>
+                                <p className="mt-2 text-sm text-slate-400 max-w-sm">
+                                    {t('candidates.no_selection_desc', 'Seleziona un candidato dall\'elenco per visualizzare il suo dossier completo, lo storico e i dettagli delle valutazioni.')}
+                                </p>
+                            </article>
                         )}
                     </div>
                 </div>

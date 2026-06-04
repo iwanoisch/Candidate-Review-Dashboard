@@ -41,7 +41,9 @@
     "hired": "Candidati Assunti",
     "hired_desc": "Risorse inserite in organico",
     "avg_score": "Punteggio Medio",
-    "avg_score_desc": "Valutazione media screening"
+    "avg_score_desc": "Valutazione media screening",
+    "simulate_latency": "Simula Latenza",
+    "simulate_error": "Simula Errore API"
   },
   "candidates": {
     "detail_section": "Dettaglio candidato",
@@ -71,7 +73,9 @@
     "select": "Seleziona",
     "top_score": "Top score",
     "registered": "Reg:",
-    "section_label": "Gestione candidati"
+    "section_label": "Gestione candidati",
+    "no_selection_title": "Nessun candidato selezionato",
+    "no_selection_desc": "Seleziona un candidato dall'elenco per visualizzare il suo dossier completo, lo storico e i dettagli delle valutazioni."
   },
   "dossier": {
     "section_label": "Dossier professionale",

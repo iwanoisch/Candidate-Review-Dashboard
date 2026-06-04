@@ -9,6 +9,7 @@ import {ModalDialogProvider} from "./common/modal-dialog/ModalDialogProvider.tsx
 import {AlertProvider} from "./common/alert/AlertProvider.tsx";
 import {ThemeProvider} from "./common/theme-selector/ThemeProvider.tsx";
 import {LanguageProvider} from "./common/language-selector/LanguageProvider.tsx";
+import {ApiSimulationProvider} from "./common/api-simulation/ApiSimulationProvider.tsx";
 
 
 const root = ReactDOM.createRoot(
@@ -23,9 +24,11 @@ root.render(
             <ThemeProvider>
                 <LanguageProvider>
                     <AlertProvider>
-                        <ModalDialogProvider>
-                            <AppRouting/>
-                        </ModalDialogProvider>
+                        <ApiSimulationProvider>
+                            <ModalDialogProvider>
+                                <AppRouting/>
+                            </ModalDialogProvider>
+                        </ApiSimulationProvider>
                     </AlertProvider>
                 </LanguageProvider>
             </ThemeProvider>

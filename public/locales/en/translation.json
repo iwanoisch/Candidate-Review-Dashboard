@@ -41,7 +41,9 @@
     "hired": "Hired Candidates",
     "hired_desc": "Resources added to staff",
     "avg_score": "Average Score",
-    "avg_score_desc": "Screening average rating"
+    "avg_score_desc": "Screening average rating",
+    "simulate_latency": "Simulate Latency",
+    "simulate_error": "Simulate API Error"
   },
   "candidates": {
     "detail_section": "Candidate detail",
@@ -71,7 +73,9 @@
     "select": "Select",
     "top_score": "Top score",
     "registered": "Reg:",
-    "section_label": "Candidate management"
+    "section_label": "Candidate management",
+    "no_selection_title": "No candidate selected",
+    "no_selection_desc": "Select a candidate from the list to view their full dossier, history, and evaluation details."
   },
   "dossier": {
     "section_label": "Professional dossier",
