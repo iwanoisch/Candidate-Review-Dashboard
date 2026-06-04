@@ -50,7 +50,7 @@ try {
 
 ### 5. Internazionalizzazione
 - Nessuna stringa hardcoded
-- Traduzioni in tutte e tre le lingue (it, en, ar)
+- Traduzioni in entrambe le lingue (it, en)
 
 ## Output
 

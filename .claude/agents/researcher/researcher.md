@@ -54,7 +54,7 @@ src/features/nomeFeature/
 - Pattern: Workspace → Project → Activity
 
 **i18n:**
-- File traduzioni in `/public/locales/{it,en,ar}/translation.json`
+- File traduzioni in `/public/locales/{it,en}/translation.json`
 
 ### 4. Output
 

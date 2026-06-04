@@ -53,7 +53,7 @@ Redux Provider → PersistGate → ThemeProvider → LanguageProvider → AlertP
 
 ### i18n
 - `src/i18n.ts` — i18next with HTTP backend, default language Italian (`it`)
-- Supported: `it`, `en`, `ar`
+- Supported: `it`, `en`
 - Translation files: `public/locales/{lng}/translation.json`
 - Per-user language preference stored/loaded via `LanguageProvider`
 

@@ -2,10 +2,10 @@ import {screen, waitFor} from '@testing-library/react';
 import {Login} from '../Login';
 import {renderWithProviders, setupUser} from '../../../test/test-utils';
 
-// Mock i18next
+// Mock i18next — ritorna il fallback se presente, altrimenti la chiave
 vi.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: (_key: string, fallback: string) => fallback,
+        t: (key: string, fallback?: string) => fallback ?? key,
     }),
 }));
 
@@ -15,7 +15,7 @@ describe('Login', () => {
 
         expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
         expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
-        expect(screen.getByRole('button', {name: /accedi/i})).toBeInTheDocument();
+        expect(screen.getByRole('button', {name: /login\.submit/i})).toBeInTheDocument();
     });
 
     it('should update email and password fields', async () => {
@@ -38,10 +38,10 @@ describe('Login', () => {
 
         await user.type(screen.getByLabelText(/email/i), 'wrong');
         await user.type(screen.getByLabelText(/password/i), 'wrong');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText('Credenziali non valide')).toBeInTheDocument();
+            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
         });
     });
 
@@ -51,13 +51,12 @@ describe('Login', () => {
 
         await user.type(screen.getByLabelText(/email/i), 'admin');
         await user.type(screen.getByLabelText(/password/i), 'wrongpassword');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText('Credenziali non valide')).toBeInTheDocument();
+            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
         });
-        // Should NOT be authenticated
-        expect(screen.getByRole('button', {name: /accedi/i})).not.toBeDisabled();
+        expect(screen.getByRole('button', {name: /login\.submit/i})).not.toBeDisabled();
     });
 
     it('should show error with wrong email but correct password', async () => {
@@ -66,36 +65,32 @@ describe('Login', () => {
 
         await user.type(screen.getByLabelText(/email/i), 'wrongemail');
         await user.type(screen.getByLabelText(/password/i), 'admin');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText('Credenziali non valide')).toBeInTheDocument();
+            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
         });
-        expect(screen.getByRole('button', {name: /accedi/i})).not.toBeDisabled();
+        expect(screen.getByRole('button', {name: /login\.submit/i})).not.toBeDisabled();
     });
 
     it('should not submit when email field is empty (HTML required)', async () => {
         const user = setupUser();
         renderWithProviders(<Login/>, {initialEntries: ['/login']});
 
-        // Only fill password, leave email empty
         await user.type(screen.getByLabelText(/password/i), 'admin');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
-        // Form should not submit — no error message shown (HTML validation blocks it)
-        expect(screen.queryByText('Credenziali non valide')).not.toBeInTheDocument();
+        expect(screen.queryByText(/credenziali non valide/i)).not.toBeInTheDocument();
     });
 
     it('should not submit when password field is empty (HTML required)', async () => {
         const user = setupUser();
         renderWithProviders(<Login/>, {initialEntries: ['/login']});
 
-        // Only fill email, leave password empty
         await user.type(screen.getByLabelText(/email/i), 'admin');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
-        // Form should not submit — no error message shown
-        expect(screen.queryByText('Credenziali non valide')).not.toBeInTheDocument();
+        expect(screen.queryByText(/credenziali non valide/i)).not.toBeInTheDocument();
     });
 
     it('should login successfully with admin credentials', async () => {
@@ -104,11 +99,10 @@ describe('Login', () => {
 
         await user.type(screen.getByLabelText(/email/i), 'admin');
         await user.type(screen.getByLabelText(/password/i), 'admin');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
-        // After successful login, the button should be disabled (isAuthenticated = true)
         await waitFor(() => {
-            expect(screen.getByRole('button', {name: /accedi/i})).toBeDisabled();
+            expect(screen.getByRole('button', {name: /login\.submit/i})).toBeDisabled();
         });
     });
 
@@ -118,10 +112,10 @@ describe('Login', () => {
 
         await user.type(screen.getByLabelText(/email/i), 'viewer');
         await user.type(screen.getByLabelText(/password/i), 'viewer');
-        await user.click(screen.getByRole('button', {name: /accedi/i}));
+        await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByRole('button', {name: /accedi/i})).toBeDisabled();
+            expect(screen.getByRole('button', {name: /login\.submit/i})).toBeDisabled();
         });
     });
 
@@ -133,7 +127,7 @@ describe('Login', () => {
             }],
         });
 
-        expect(screen.getByText(/sessione.*scaduta/i)).toBeInTheDocument();
+        expect(screen.getByText(/login\.session_expired/i)).toBeInTheDocument();
     });
 
     it('should disable submit button when already authenticated', () => {
@@ -144,6 +138,6 @@ describe('Login', () => {
             },
         });
 
-        expect(screen.getByRole('button', {name: /accedi/i})).toBeDisabled();
+        expect(screen.getByRole('button', {name: /login\.submit/i})).toBeDisabled();
     });
 });

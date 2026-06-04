@@ -8,7 +8,7 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage/session';
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {reducers} from "../features/rootReducers.ts";

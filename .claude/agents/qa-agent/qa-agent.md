@@ -45,7 +45,7 @@ npm run dev
 
 #### i18n
 - [ ] Nessuna stringa hardcoded visibile all'utente
-- [ ] Chiavi presenti in tutte e tre le lingue (it, en, ar)
+- [ ] Chiavi presenti in entrambe le lingue (it, en)
 
 #### Sicurezza Base
 - [ ] Nessun secret/API key nel codice

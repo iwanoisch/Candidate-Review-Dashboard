@@ -7,7 +7,7 @@ import type {AuthState} from '../../../features/auth/auth.type';
 // Mock i18next
 vi.mock('react-i18next', () => ({
     useTranslation: () => ({
-        t: (_key: string, fallback: string) => fallback,
+        t: (key: string, fallback?: string) => fallback ?? key,
     }),
 }));
 
@@ -45,18 +45,18 @@ describe('Layout', () => {
         renderLayout({
             auth: {auth: {isAuthenticated: true, user: mockAdminUser, token: 'tok'}},
         });
-        // Admin should see Dashboard and Impostazioni
-        expect(screen.getAllByText('Dashboard').length).toBeGreaterThan(0);
-        expect(screen.getAllByText('Impostazioni').length).toBeGreaterThan(0);
+        // t('sidebar.dashboard') → 'sidebar.dashboard', t('sidebar.settings') → 'sidebar.settings'
+        expect(screen.getAllByText('sidebar.dashboard').length).toBeGreaterThan(0);
+        expect(screen.getAllByText('sidebar.settings').length).toBeGreaterThan(0);
     });
 
     it('should hide admin-only menu items for viewer', () => {
         renderLayout({
             auth: {auth: {isAuthenticated: true, user: mockViewerUser, token: 'tok'}},
         });
-        // Viewer should see Dashboard but NOT Impostazioni
-        expect(screen.getAllByText('Dashboard').length).toBeGreaterThan(0);
-        expect(screen.queryByText('Impostazioni')).not.toBeInTheDocument();
+        // Viewer should see dashboard but NOT settings
+        expect(screen.getAllByText('sidebar.dashboard').length).toBeGreaterThan(0);
+        expect(screen.queryByText('sidebar.settings')).not.toBeInTheDocument();
     });
 
     it('should have a toggle button for sidebar collapse', () => {
@@ -76,7 +76,6 @@ describe('Layout', () => {
         const toggleButton = screen.getByLabelText(/sidebar/i);
         await user.click(toggleButton);
 
-        // After click, the label should change
         expect(screen.getByLabelText(/sidebar/i)).toBeInTheDocument();
     });
 });

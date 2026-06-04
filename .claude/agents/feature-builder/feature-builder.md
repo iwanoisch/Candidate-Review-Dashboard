@@ -95,4 +95,3 @@ Aggiungi lo slice in `src/features/rootReducers.ts`
 Aggiungere chiavi in:
 - `/public/locales/it/translation.json`
 - `/public/locales/en/translation.json`
-- `/public/locales/ar/translation.json`
