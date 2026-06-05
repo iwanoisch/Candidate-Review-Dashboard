@@ -83,6 +83,8 @@ export const Dashboard = () => {
 
     useEffect(() => {
         if (candidates.length > 0) {
+            // Se il candidato selezionato è ancora nella lista, non ricaricare
+            if (selectedCandidate && candidates.some(c => c.id === selectedCandidate.id)) return;
             loadCandidateDetail(candidates[0].id);
         } else {
             clearSelectedCandidate();
@@ -219,7 +221,7 @@ export const Dashboard = () => {
 
                     {/* Colonna destra - Dettaglio candidato */}
                     <div className="xl:col-span-7 min-w-0 space-y-6">
-                        {isDetailLoad || isCandidatesLoad ? (
+                        {isDetailLoad ? (
                             <>
                                 <CandidateDetailSkeleton/>
                                 <JobPositionCardSkeleton/>
