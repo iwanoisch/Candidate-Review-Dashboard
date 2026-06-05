@@ -158,6 +158,9 @@
     "neutral_background": "Sfondo neutro",
     "neutral_background_desc": "Usa uno sfondo grigio sobrio invece del colore del tema",
     "language_section": "Lingua",
-    "language_description": "Seleziona la lingua dell'applicazione"
+    "language_description": "Seleziona la lingua dell'applicazione",
+    "save_profile": "Salva Profilo",
+    "save_profile_success": "Profilo salvato con successo",
+    "save_profile_error": "Errore nel salvataggio del profilo"
   }
 }

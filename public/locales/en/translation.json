@@ -158,6 +158,9 @@
     "neutral_background": "Neutral background",
     "neutral_background_desc": "Use a subtle gray background instead of the theme color",
     "language_section": "Language",
-    "language_description": "Select the application language"
+    "language_description": "Select the application language",
+    "save_profile": "Save Profile",
+    "save_profile_success": "Profile saved successfully",
+    "save_profile_error": "Error saving profile"
   }
 }
