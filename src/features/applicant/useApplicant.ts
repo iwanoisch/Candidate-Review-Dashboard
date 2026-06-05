@@ -25,7 +25,7 @@ export const useApplicant = () => {
 
     const throwIfSimulatingError = (endpoint: string) => {
         if (simulateError) {
-            throw new Error(`Errore API simulato: GET ${endpoint} ha restituito 500 Internal Server Error`);
+            throw new Error(`Simulated API Error: GET ${endpoint} returned 500 Internal Server Error`);
         }
     };
 
@@ -53,8 +53,8 @@ export const useApplicant = () => {
         } catch (error) {
             showAlert({
                 type: 'error',
-                title: 'Errore caricamento candidati',
-                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento dei candidati',
+                title: 'Error loading candidates',
+                message: error instanceof Error ? error.message : 'Unknown error while loading candidates',
             });
             return false;
         }
@@ -80,8 +80,8 @@ export const useApplicant = () => {
         } catch (error) {
             showAlert({
                 type: 'error',
-                title: 'Errore caricamento statistiche',
-                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento delle statistiche',
+                title: 'Error loading statistics',
+                message: error instanceof Error ? error.message : 'Unknown error while loading statistics',
             });
             return null;
         }
@@ -98,8 +98,8 @@ export const useApplicant = () => {
         } catch (error) {
             showAlert({
                 type: 'error',
-                title: 'Errore caricamento dettaglio',
-                message: error instanceof Error ? error.message : 'Errore sconosciuto nel caricamento del dettaglio candidato',
+                title: 'Error loading detail',
+                message: error instanceof Error ? error.message : 'Unknown error while loading candidate detail',
             });
             dispatch(selectCandidate(null));
             return null;
@@ -115,11 +115,11 @@ export const useApplicant = () => {
         if (!state.selectedCandidate || !state.pagination) return;
         const today = new Date().toISOString().split('T')[0];
         const timelineEvent: TimelineEvent = {
-            id: `tl-${Date.now()}`,
+            id: `tl-${Math.random()}`,
             date: today,
             type: 'status_change',
-            title: `Stato Aggiornato: ${status}`,
-            description: `Il candidato è stato spostato da "${state.selectedCandidate.status}" a "${status}" da ${author}.`,
+            title: `Status Updated: ${status}`,
+            description: `Candidate moved from "${state.selectedCandidate.status}" to "${status}" by ${author}.`,
             author,
             authorRole,
             meta: {oldStatus: state.selectedCandidate.status, newStatus: status},
@@ -139,7 +139,7 @@ export const useApplicant = () => {
         if (!state.selectedCandidate) return;
         // TODO: sostituire con chiamata API post
         const today = new Date().toISOString().split('T')[0];
-        const noteId = Date.now();
+        const noteId = Math.random();
         const newNote: CandidateNote = {
             id: `note-${noteId}`,
             author,
@@ -151,8 +151,8 @@ export const useApplicant = () => {
             id: `tl-note-${noteId}`,
             date: today,
             type: 'note_added',
-            title: 'Nuovo Feedback Inserito',
-            description: `Nota aggiunta da ${author}: "${content.length > 50 ? content.substring(0, 50) + '...' : content}"`,
+            title: 'New Feedback Added',
+            description: `Note added by ${author}: "${content.length > 50 ? content.substring(0, 50) + '...' : content}"`,
             author,
             authorRole,
         };

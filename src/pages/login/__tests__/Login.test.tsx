@@ -41,7 +41,7 @@ describe('Login', () => {
         await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
+            expect(screen.getByText(/invalid credentials/i)).toBeInTheDocument();
         });
     });
 
@@ -54,7 +54,7 @@ describe('Login', () => {
         await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
+            expect(screen.getByText(/invalid credentials/i)).toBeInTheDocument();
         });
         expect(screen.getByRole('button', {name: /login\.submit/i})).not.toBeDisabled();
     });
@@ -68,7 +68,7 @@ describe('Login', () => {
         await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
         await waitFor(() => {
-            expect(screen.getByText(/credenziali non valide/i)).toBeInTheDocument();
+            expect(screen.getByText(/invalid credentials/i)).toBeInTheDocument();
         });
         expect(screen.getByRole('button', {name: /login\.submit/i})).not.toBeDisabled();
     });
@@ -80,7 +80,7 @@ describe('Login', () => {
         await user.type(screen.getByLabelText(/password/i), 'admin');
         await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
-        expect(screen.queryByText(/credenziali non valide/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/invalid credentials/i)).not.toBeInTheDocument();
     });
 
     it('should not submit when password field is empty (HTML required)', async () => {
@@ -90,7 +90,7 @@ describe('Login', () => {
         await user.type(screen.getByLabelText(/email/i), 'admin');
         await user.click(screen.getByRole('button', {name: /login\.submit/i}));
 
-        expect(screen.queryByText(/credenziali non valide/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/invalid credentials/i)).not.toBeInTheDocument();
     });
 
     it('should login successfully with admin credentials', async () => {

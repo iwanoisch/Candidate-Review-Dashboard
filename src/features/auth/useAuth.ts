@@ -21,8 +21,8 @@ export const useAuth = () => {
             );
 
             if (!found) {
-                dispatch(loginFailure('Credenziali non valide'));
-                return {success: false, error: 'Credenziali non valide'};
+                dispatch(loginFailure('Invalid credentials'));
+                return {success: false, error: 'Invalid credentials'};
             }
 
             const {user, token} = found;
@@ -35,7 +35,7 @@ export const useAuth = () => {
 
             return {success: true};
         } catch (error) {
-            const message = error instanceof Error ? error.message : 'Errore sconosciuto';
+            const message = error instanceof Error ? error.message : 'Unknown error';
             dispatch(loginFailure(message));
             return {success: false, error: message};
         }
@@ -86,7 +86,7 @@ export const useAuth = () => {
             dispatch(restoreAuth({user: updatedUser, token}));
             return updatedUser;
         } catch (error) {
-            const message = error instanceof Error ? error.message : 'Errore sconosciuto';
+            const message = error instanceof Error ? error.message : 'Unknown error';
             dispatch(loginFailure(message));
             return null;
         }

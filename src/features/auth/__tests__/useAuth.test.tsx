@@ -91,7 +91,7 @@ describe('useAuth', () => {
             });
 
             expect(loginResult!.success).toBe(false);
-            expect(loginResult!.error).toBe('Credenziali non valide');
+            expect(loginResult!.error).toBe('Invalid credentials');
             expect(result.current.isAuthenticated).toBe(false);
             expect(result.current.user).toBeNull();
             expect(result.current.token).toBeNull();
@@ -107,7 +107,7 @@ describe('useAuth', () => {
             });
 
             expect(loginResult!.success).toBe(false);
-            expect(loginResult!.error).toBe('Credenziali non valide');
+            expect(loginResult!.error).toBe('Invalid credentials');
             expect(result.current.isAuthenticated).toBe(false);
         });
 
@@ -121,7 +121,7 @@ describe('useAuth', () => {
             });
 
             expect(loginResult!.success).toBe(false);
-            expect(loginResult!.error).toBe('Credenziali non valide');
+            expect(loginResult!.error).toBe('Invalid credentials');
             expect(result.current.isAuthenticated).toBe(false);
         });
 
